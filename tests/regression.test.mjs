@@ -94,6 +94,24 @@ test('opening and leaving a lesson switches scroll owners and resets both positi
   assert.equal(h.evaluate('activeStoryId'),null);
 });
 
+test('reader display toggles preserve lesson DOM instead of rebuilding scrolled content',()=>{
+  const h=appHarness();
+  h.evaluate(`
+    activeStoryId='pinyin-four-tones'; render();
+    const readerMarkup=app.innerHTML;
+    const translations=[{hidden:true},{hidden:true}];
+    document.querySelectorAll=selector=>selector==='.paragraph-translation'?translations:[];
+    renderReader=()=>{throw Error('Reader was rebuilt');};
+    handleAppClick({target:{closest:selector=>selector==='[data-toggle-pinyin]'?{}:null}});
+    handleAppClick({target:{closest:selector=>selector==='[data-toggle-translation]'?{}:null}});
+  `);
+  assert.equal(h.evaluate('state.showPinyin'),false);
+  assert.equal(h.evaluate('state.showTranslation'),true);
+  assert.equal(h.evaluate('translations.every(paragraph=>!paragraph.hidden)'),true);
+  assert.equal(h.evaluate('app.innerHTML===readerMarkup'),true);
+  assert.equal(JSON.parse(h.store.get('hanzi-path-state-v1')).showTranslation,true);
+});
+
 function workerHarness({offline=false}={}) {
   const handlers={}, deleted=[], cached=[], response={from:'cache'}, network={from:'network'};
   const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>({addAll:async files=>cached.push(...files),match:async()=>({json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})})}),keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>response},fetch:async()=>{if(offline)throw Error('offline');return network;}});

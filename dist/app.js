@@ -259,13 +259,15 @@ function renderReader() {
 
   app.innerHTML = `
     <article class="reader-shell">
-      <header class="reader-header ${story.accent}">
+      <div class="reader-toolbar ${story.accent}" role="group" aria-label="Lesson controls">
         <button class="reader-back" type="button" data-reader-back aria-label="Return to previous page">←</button>
         <div class="reader-actions">
           <button class="reader-tool ${state.showPinyin ? "active" : ""}" type="button" data-toggle-pinyin aria-pressed="${state.showPinyin}">拼音</button>
           <button class="reader-tool ${state.showTranslation ? "active" : ""}" type="button" data-toggle-translation aria-pressed="${state.showTranslation}">EN</button>
           <button class="reader-tool sound-tool" type="button" data-speak-story="${escapeAttr(story.paragraphs.flatMap((paragraph) => paragraph.tokens).map((token) => token.h).join(""))}" aria-label="Read story aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8m2.5-11a10 10 0 0 1 0 14" /></svg></button>
         </div>
+      </div>
+      <header class="reader-header ${story.accent}">
         <div class="story-meta"><span>${story.level}</span><span>${story.topicLabel}</span><span>${story.minutes} min</span></div>
         <h1>${story.title}</h1><p>${story.englishTitle}</p>
       </header>
@@ -279,7 +281,7 @@ function renderReader() {
             <section class="story-paragraph">
               ${paragraph.speaker ? `<p class="speaker-tag">${escapeHtml(paragraph.speaker)}</p>` : ""}
               <p class="chinese-copy">${paragraph.tokens.map((token) => tokenMarkup(token)).join("")}</p>
-              ${state.showTranslation ? `<p class="paragraph-translation">${paragraph.translation}</p>` : ""}
+              <p class="paragraph-translation" ${state.showTranslation ? "" : "hidden"}>${paragraph.translation}</p>
             </section>`).join("")}
         </div>
 
@@ -301,6 +303,18 @@ function renderReader() {
     </article>
   `;
   updateAudioControls();
+}
+
+function updateReaderPreferences() {
+  const copy = document.querySelector(".story-copy");
+  copy.classList.toggle("show-pinyin", state.showPinyin);
+  copy.classList.toggle("hide-pinyin", !state.showPinyin);
+  document.querySelectorAll(".paragraph-translation").forEach((paragraph) => { paragraph.hidden = !state.showTranslation; });
+  for (const [selector, enabled] of [["[data-toggle-pinyin]", state.showPinyin], ["[data-toggle-translation]", state.showTranslation]]) {
+    const button = document.querySelector(selector);
+    button.classList.toggle("active", enabled);
+    button.setAttribute("aria-pressed", String(enabled));
+  }
 }
 
 function storyCard(story, featured) {
@@ -362,12 +376,12 @@ function handleAppClick(event) {
 
   if (event.target.closest("[data-toggle-pinyin]")) {
     state.showPinyin = !state.showPinyin;
-    saveState(); renderReader(); return;
+    saveState(); updateReaderPreferences(); return;
   }
 
   if (event.target.closest("[data-toggle-translation]")) {
     state.showTranslation = !state.showTranslation;
-    saveState(); renderReader(); return;
+    saveState(); updateReaderPreferences(); return;
   }
 
   if (event.target.closest("[data-speak-story]")) {
