@@ -1,6 +1,16 @@
 # Test report — 3 November 2026
 
-## iPhone blank-area report — app 0.2.2 (current)
+## Twenty personal-interest entries — app 0.3.0 (current)
+
+The library contains 34 entries. The new `personal-20` collection contains exactly 20: four cars, three anime, three technology, three engineering, three arts and four slang entries. There are ten articles, nine conversations and one chat. All have translated passages, a learning focus, three recorded practice examples, tappable vocabulary and one quiz. Articles include background links. Slang notes distinguish register, ambiguous meanings and neutral alternatives.
+
+All 30 automated tests pass. Coverage includes the exact collection size/topic distribution, source-link protocols, vocabulary completeness, speaker labels, slang context, every quiz, all word/practice/full-entry WAVs, saved progress and offline behavior. A separate comparison confirmed the original fourteen content objects are unchanged. All 189 previous manifest entries/recordings are reused unchanged. The final audio library contains 763 clips totaling 63,800,204 bytes; the new batch adds 574 clips. The authoring script replaces only its own collection and was checked for idempotent output. Audio generation uses independent local worker processes and atomic clip/manifest writes.
+
+Browser checks opened all twenty new entries, verified rendered paragraphs/practice examples/source links, and exercised quiz feedback. All six home-page interest shortcuts selected their expected shelf counts (4/3/3/3/3/4). No horizontal overflow was observed in the actual narrow preview, measured at about 358 × 1412. This is a desktop browser preview, not a physical iPhone test. The repaired normal-document scrolling layout is retained.
+
+The new 原厂 practice recording and full car-meet narration played to completion online. The full-entry control stayed inactive during sample playback. With the HTTP server stopped, the updated app reloaded offline, an unplayed 种草 recording played and completed, and complete slang-entry narration started and stopped successfully offline. Offline cache v15 and versioned data/module/style URLs identify the complete release. Native-speaker review of synthetic speech and technical vocabulary remains an editorial follow-up.
+
+## iPhone blank-area report — app 0.2.2 (confirmed by user)
 
 The user's before/after screenshots show a large paper-coloured blank area covering the top of a lesson card, not ordinary header scrolling. The screenshots also lack the newer pinned lesson controls; that suggests an older loaded page, but does not prove its version. The previous desktop scrolling checks did not reproduce this failure.
 

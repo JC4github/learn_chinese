@@ -227,6 +227,11 @@ input[type="range"] { width: 100%; accent-color: var(--persimmon); }
 .practice-sound small { color: #59665f; font-size: 10px; line-height: 1.5; }
 .listen-label { margin-top: 5px; color: var(--jade); font-size: 11px; font-weight: 700; }
 .speaker-tag { margin: 0 0 5px; color: #9c4a31; font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.entry-sources { max-width: 690px; margin: 28px auto; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.entry-sources h2 { margin: 0 0 8px; font: bold 19px Georgia, serif; }
+.entry-sources p, .entry-sources li { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.entry-sources ul { margin-bottom: 0; padding-left: 18px; }
+.entry-sources a { color: var(--jade); text-decoration: underline; overflow-wrap: anywhere; }
 .check-chip input:focus-visible + span, .switch input:focus-visible + span { outline: 3px solid var(--persimmon); outline-offset: 3px; }
 
 button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid rgba(200,107,74,.45); outline-offset: 3px; }

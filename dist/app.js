@@ -1,8 +1,9 @@
 import { MandarinPlayer } from "./speech.js?v=recordings-1";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
-const APP_VERSION = "0.2.2";
-const TOPICS = [["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
+const APP_VERSION = "0.3.0";
+const INTEREST_TOPICS = [["cars", "JDM & cars", "车"], ["anime", "Anime", "画"], ["technology", "Technology", "芯"], ["engineering", "Engineering", "工"], ["arts", "Creative arts", "艺"], ["slang", "Internet slang", "梗"]];
+const TOPICS = [...INTEREST_TOPICS.map(([id, label]) => [id, label]), ["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 
 const defaultState = {
   name: "Learner",
@@ -40,7 +41,7 @@ init();
 
 async function init() {
   try {
-    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=lessons-1"), fetch("./audio/manifest.json?v=lessons-1")]);
+    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=personal-20-1"), fetch("./audio/manifest.json?v=personal-20-1")]);
     if (!response.ok) throw new Error("Story library could not be loaded");
     stories = (await response.json()).stories;
     if (!audioResponse.ok) throw new Error("Audio library could not be loaded");
@@ -160,6 +161,7 @@ function renderHome() {
       ${storyCard(recommended, true)}
     </section>
 
+    ${interestPaths()}
     ${studyPaths()}
     <section class="page-shell section-block compact-bottom">
       <div class="section-heading"><div><span class="eyebrow">Continue exploring</span><h2>Short reads</h2></div><a href="#library" class="text-link">See all</a></div>
@@ -177,10 +179,18 @@ function studyPaths() {
   </div></section>`;
 }
 
+function interestPaths() {
+  return `<section class="page-shell section-block"><div class="section-heading"><div><span class="eyebrow">Made for your interests</span><h2>Learn something new</h2></div></div><div class="study-paths">${INTEREST_TOPICS.map(([id, label, glyph]) => `<button class="study-path" type="button" data-open-topic="${id}"><span class="path-symbol" aria-hidden="true">${glyph}</span><strong>${escapeHtml(label)}</strong><small>${stories.filter((story) => story.topic === id).length} conversations & reads</small><span class="path-arrow" aria-hidden="true">→</span></button>`).join("")}</div></section>`;
+}
+
+function entryFormat(story) {
+  return story.format || (story.topic === "pinyin" ? "Practice" : story.topic === "conversation" ? "Conversation" : "Story");
+}
+
 function learningFocus(story) {
   if (!story.coach) return "";
   return `<section class="learning-focus" aria-label="Learning focus">
-    <span class="eyebrow">${story.topic === "pinyin" ? "Pinyin lab" : "Say it in real life"}</span>
+    <span class="eyebrow">${story.topic === "pinyin" ? "Pinyin lab" : story.format === "Article" ? "Ideas & useful language" : story.topic === "slang" ? "Casual language in context" : "Say it in real life"}</span>
     <h2>${escapeHtml(story.coach.title)}</h2>
     <ul>${story.coach.notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>
     <p class="practice-hint">Tap a sound, listen, then repeat aloud.</p>
@@ -193,7 +203,7 @@ function renderLibrary() {
   const visible = stories.filter((story) => libraryFilter === "all" || story.topic === libraryFilter);
 
   app.innerHTML = `
-    <section class="page-shell page-title"><span class="eyebrow">Your reading shelf</span><h1>Story library</h1><p>${stories.length} short reads and guided lessons. Listen, repeat, then try the quick check.</p></section>
+    <section class="page-shell page-title"><span class="eyebrow">Your reading shelf</span><h1>Your library</h1><p>${stories.length} conversations, articles, stories and guided lessons. Find a topic, listen, and learn something new.</p></section>
     <section class="page-shell">
       <div class="filter-row" role="group" aria-label="Filter stories by topic">
         ${topics.map(([value, label]) => `<button class="filter-chip ${libraryFilter === value ? "active" : ""}" type="button" data-filter="${value}">${label}</button>`).join("")}
@@ -272,7 +282,7 @@ function renderReader() {
         </div>
       </div>
       <header class="reader-header ${story.accent}">
-        <div class="story-meta"><span>${story.level}</span><span>${story.topicLabel}</span><span>${story.minutes} min</span></div>
+        <div class="story-meta"><span>${story.level}</span><span>${story.topicLabel}</span><span>${entryFormat(story)}</span><span>${story.minutes} min</span></div>
         <h1>${story.title}</h1><p>${story.englishTitle}</p>
       </header>
 
@@ -289,6 +299,7 @@ function renderReader() {
             </section>`).join("")}
         </div>
 
+        ${story.sources?.length ? `<aside class="entry-sources"><h2>Explore further</h2><p>Background reading for this entry. The Mandarin text is original.</p><ul>${story.sources.map((source) => `<li><a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)} ↗</a></li>`).join("")}</ul></aside>` : ""}
         <section class="quiz-card">
           <span class="eyebrow">Quick check</span>
           <h2>${story.quiz.question}</h2>
@@ -324,7 +335,7 @@ function updateReaderPreferences() {
 function storyCard(story, featured) {
   const completed = state.completed.includes(story.id);
   return `<article class="story-card ${story.accent} ${featured ? "featured" : ""}">
-    <div class="story-card-top"><span class="story-level">${story.level} · ${story.topicLabel}</span>${completed ? `<span class="complete-mark">✓ Read</span>` : `<span>${story.minutes} min</span>`}</div>
+    <div class="story-card-top"><span class="story-level">${story.level} · ${story.topicLabel}</span><span>${entryFormat(story)} · ${story.minutes} min${completed ? " · ✓ Read" : ""}</span></div>
     <div class="story-card-copy"><span class="story-glyph" aria-hidden="true">${story.title.charAt(0)}</span><div><h3>${story.title}</h3><p>${story.englishTitle}</p><small>${story.summary}</small></div></div>
     <button class="story-open" type="button" data-open-story="${story.id}">${completed ? "Read again" : "Start reading"}<span aria-hidden="true">→</span></button>
   </article>`;

@@ -758,6 +758,2302 @@
     "这个十五元。不好意思，我没听懂。请再说一遍。请说慢一点。好的。十五元。": {
       "src": "audio/19fcd348033addf3caedb7cf.wav",
       "duration": 9.076
+    },
+    "这辆": {
+      "src": "audio/5ea8a2eac49724466e4d5efe.wav",
+      "duration": 0.62
+    },
+    "老车": {
+      "src": "audio/5c370e43fa6ba8037ffb18eb.wav",
+      "duration": 0.698
+    },
+    "是": {
+      "src": "audio/1841c1b0d495a5066c1b0fdf.wav",
+      "duration": 0.591
+    },
+    "你的吗": {
+      "src": "audio/e5accacc3da5ce7e792bfdf8.wav",
+      "duration": 0.738
+    },
+    "改装过": {
+      "src": "audio/d8a24846eab66f6bb7cf0a43.wav",
+      "duration": 0.951
+    },
+    "是的": {
+      "src": "audio/ebf9afcd2ff54208e3cbc7d7.wav",
+      "duration": 0.695
+    },
+    "发动机": {
+      "src": "audio/1e63a5338a748db2b7d26feb.wav",
+      "duration": 0.924
+    },
+    "原厂的": {
+      "src": "audio/31e87c8b95ab56a2fcbd42e8.wav",
+      "duration": 0.981
+    },
+    "只": {
+      "src": "audio/4e2335fb44ba0a88a897bb93.wav",
+      "duration": 0.519
+    },
+    "换了": {
+      "src": "audio/6b3ede342f13fa63f070b908.wav",
+      "duration": 0.745
+    },
+    "轮圈": {
+      "src": "audio/ee9fbcb8749eb6d7bb0926a4.wav",
+      "duration": 0.723
+    },
+    "更喜欢": {
+      "src": "audio/e6fdcfd9c113553116925ceb.wav",
+      "duration": 0.936
+    },
+    "新车": {
+      "src": "audio/2cf127ee3e4490ea27cbe72d.wav",
+      "duration": 0.758
+    },
+    "喜欢": {
+      "src": "audio/b976e0c11723da5e6e3f7ee4.wav",
+      "duration": 0.708
+    },
+    "老款天际线的": {
+      "src": "audio/3c563794fb3b585f8079d49b.wav",
+      "duration": 1.815
+    },
+    "机械感": {
+      "src": "audio/0f124712bb20dbdddd956977.wav",
+      "duration": 0.971
+    },
+    "不过": {
+      "src": "audio/796055e24079c692a618fafa.wav",
+      "duration": 0.768
+    },
+    "平时": {
+      "src": "audio/2a1d7833a768606f2a777dd3.wav",
+      "duration": 0.797
+    },
+    "开": {
+      "src": "audio/07de6524e3fdf07e35bf5fea.wav",
+      "duration": 0.615
+    },
+    "新款丰田八六": {
+      "src": "audio/ca4b6fe284a63ce39dd4b6a0.wav",
+      "duration": 1.999
+    },
+    "通勤": {
+      "src": "audio/f72e78b44a05a90341fb866d.wav",
+      "duration": 0.761
+    },
+    "对我来说": {
+      "src": "audio/18595d2d032f005d19ca14f8.wav",
+      "duration": 1.129
+    },
+    "开着": {
+      "src": "audio/1789c39c49973b2ff3cd609f.wav",
+      "duration": 0.707
+    },
+    "舒服": {
+      "src": "audio/33704c1869dfef194544afc7.wav",
+      "duration": 0.735
+    },
+    "更重要": {
+      "src": "audio/78533429aff17b175396f378.wav",
+      "duration": 0.838
+    },
+    "拍张照": {
+      "src": "audio/3617b27f5a69d393709564ef.wav",
+      "duration": 0.91
+    },
+    "当然": {
+      "src": "audio/8ea94aedb0336be994fdb9af.wav",
+      "duration": 0.66
+    },
+    "别": {
+      "src": "audio/cab9a88877f1233c483128ae.wav",
+      "duration": 0.609
+    },
+    "拍到": {
+      "src": "audio/93e2ce27dba27c394df0fa00.wav",
+      "duration": 0.664
+    },
+    "车牌": {
+      "src": "audio/124522fe1aa13ee227c854bc.wav",
+      "duration": 0.766
+    },
+    "就好": {
+      "src": "audio/61e09e6c365014fe951b6788.wav",
+      "duration": 0.713
+    },
+    "原厂": {
+      "src": "audio/a82142d5cd92b22935af75c1.wav",
+      "duration": 0.751
+    },
+    "改装": {
+      "src": "audio/dcc17c4dd47790c948ccd507.wav",
+      "duration": 0.69
+    },
+    "这辆老车是你的吗？你改装过吗？是的。发动机还是原厂的，我只换了轮圈。你更喜欢老车还是新车？我喜欢老款天际线的机械感，不过平时开新款丰田八六通勤。对我来说，开着舒服更重要。可以拍张照吗？当然！请别拍到车牌就好。": {
+      "src": "audio/4c695235c4a032a1da48c136.wav",
+      "duration": 25.652
+    },
+    "车迷": {
+      "src": "audio/d6149505ef32a8ed4e5217e3.wav",
+      "duration": 0.701
+    },
+    "常常": {
+      "src": "audio/47002aceb7a3210349fd0e17.wav",
+      "duration": 0.765
+    },
+    "聊": {
+      "src": "audio/d4b935cad698181a7e26c644.wav",
+      "duration": 0.603
+    },
+    "日规车": {
+      "src": "audio/ad2830ecee3604cb3737293c.wav",
+      "duration": 0.932
+    },
+    "这个词": {
+      "src": "audio/d1b1dc9af3f3daa31540c53d.wav",
+      "duration": 0.945
+    },
+    "说的是": {
+      "src": "audio/39ecf052af89448b051e6158.wav",
+      "duration": 0.919
+    },
+    "汽车": {
+      "src": "audio/e0d41a3159ec259a528228b3.wav",
+      "duration": 0.732
+    },
+    "原本": {
+      "src": "audio/0e17e18a07de952b6b99a42e.wav",
+      "duration": 0.659
+    },
+    "面向的": {
+      "src": "audio/ca2b5b53fe9f3b07dd272524.wav",
+      "duration": 1.04
+    },
+    "市场": {
+      "src": "audio/2e9d6be7ec95a8eef452eb92.wav",
+      "duration": 0.739
+    },
+    "日系车": {
+      "src": "audio/1acba13c123fde36fff1e94a.wav",
+      "duration": 0.917
+    },
+    "不一定": {
+      "src": "audio/a1a7323938d54ab6106c3582.wav",
+      "duration": 0.839
+    },
+    "同一款车": {
+      "src": "audio/a4a2dfcc4e74cfabb4fe05be.wav",
+      "duration": 1.353
+    },
+    "不同国家": {
+      "src": "audio/0fdbfbdf73e33320a0f3d450.wav",
+      "duration": 1.324
+    },
+    "可能": {
+      "src": "audio/6f09f2d21ba4597ec85c0cdf.wav",
+      "duration": 0.639
+    },
+    "不同版本": {
+      "src": "audio/c2f559e8e490372e20df0a7b.wav",
+      "duration": 1.367
+    },
+    "生产地": {
+      "src": "audio/e7cfe821fcb724c5fedaa266.wav",
+      "duration": 1.053
+    },
+    "品牌": {
+      "src": "audio/fde41deff98611d07a3af289.wav",
+      "duration": 0.715
+    },
+    "原销售市场": {
+      "src": "audio/6ccc3557ef3fe38a21b88f36.wav",
+      "duration": 1.763
+    },
+    "三种": {
+      "src": "audio/b0e975dc537a29d8ec6dfa79.wav",
+      "duration": 0.713
+    },
+    "不同的": {
+      "src": "audio/0ea4b55a3ed925f1769e2f1e.wav",
+      "duration": 0.848
+    },
+    "信息": {
+      "src": "audio/7bdd3adabb281b16289aa8d7.wav",
+      "duration": 0.788
+    },
+    "聊天时": {
+      "src": "audio/cbb21a36e7f260361c8c2b8c.wav",
+      "duration": 1.088
+    },
+    "这辆车": {
+      "src": "audio/d334ee872e4055f50e0d352c.wav",
+      "duration": 0.909
+    },
+    "日规版本": {
+      "src": "audio/97847ade9a3a97654bfce7a5.wav",
+      "duration": 1.474
+    },
+    "这": {
+      "src": "audio/c5c6d2f7c2c4d346f141769c.wav",
+      "duration": 0.593
+    },
+    "比": {
+      "src": "audio/e2156ff6e390709af65c31e7.wav",
+      "duration": 0.59
+    },
+    "只问": {
+      "src": "audio/4cebd2958d6e8a788ad98e32.wav",
+      "duration": 0.682
+    },
+    "更准确": {
+      "src": "audio/7c2bfc08bc8db7ddf43916b9.wav",
+      "duration": 1.006
+    },
+    "车迷常常聊日规车。这个词说的是汽车原本面向的市场。日系车不一定是日规车。同一款车在不同国家可能有不同版本。生产地、品牌和原销售市场，是三种不同的信息。聊天时可以问：这辆车是日规版本吗？这比只问品牌更准确。": {
+      "src": "audio/ab80f68d4d2f8ead54e0ab5e.wav",
+      "duration": 25.874
+    },
+    "发布的": {
+      "src": "audio/44dea9052aac34a703c392b2.wav",
+      "duration": 0.886
+    },
+    "车": {
+      "src": "audio/05a023366fafba49af95915e.wav",
+      "duration": 0.648
+    },
+    "还在": {
+      "src": "audio/017f2bd0775e114e0c9f39d9.wav",
+      "duration": 0.82
+    },
+    "看看": {
+      "src": "audio/f12adbe58f82fae1d7e04755.wav",
+      "duration": 0.717
+    },
+    "想了解": {
+      "src": "audio/2e40918cfb5de7b5a34d1fab.wav",
+      "duration": 1.099
+    },
+    "哪方面": {
+      "src": "audio/855e049f997bf7b2520b5332.wav",
+      "duration": 0.943
+    },
+    "有没有": {
+      "src": "audio/b47458927513c47115ed7e32.wav",
+      "duration": 0.837
+    },
+    "保养记录": {
+      "src": "audio/7f307c174f48430beef25df6.wav",
+      "duration": 1.332
+    },
+    "一些": {
+      "src": "audio/35c4c87c54b7247d3068d04e.wav",
+      "duration": 0.693
+    },
+    "记录": {
+      "src": "audio/458b7d176bdb6d4de7f9c08e.wav",
+      "duration": 0.65
+    },
+    "把": {
+      "src": "audio/228cfd4dd9183c136ab76321.wav",
+      "duration": 0.503
+    },
+    "零件清单": {
+      "src": "audio/325f9293bc704aef74c974b3.wav",
+      "duration": 1.425
+    },
+    "也": {
+      "src": "audio/fe835ecc2a4c7438c5703be2.wav",
+      "duration": 0.495
+    },
+    "发给你": {
+      "src": "audio/b44e947e7c94bef5536d2e59.wav",
+      "duration": 0.956
+    },
+    "能": {
+      "src": "audio/232872a4695f5013beef53f3.wav",
+      "duration": 0.607
+    },
+    "安排": {
+      "src": "audio/bfc25d5ea63bcaf652b96b92.wav",
+      "duration": 0.752
+    },
+    "独立检查": {
+      "src": "audio/0f6ed46759ecb93321da6ebd.wav",
+      "duration": 1.316
+    },
+    "周六上午": {
+      "src": "audio/f7f5bcf041df807f07feb2e9.wav",
+      "duration": 1.414
+    },
+    "方便吗": {
+      "src": "audio/583e2405c2188c4073ecf608.wav",
+      "duration": 0.972
+    },
+    "先": {
+      "src": "audio/c05cf2962dddcbd2f1fc4ef8.wav",
+      "duration": 0.679
+    },
+    "确认": {
+      "src": "audio/fde17570c91a2c04d77200e0.wav",
+      "duration": 0.719
+    },
+    "时间": {
+      "src": "audio/8255464436e5f309e26cf89f.wav",
+      "duration": 0.685
+    },
+    "地点": {
+      "src": "audio/fc04ecafcb086e898440958c.wav",
+      "duration": 0.658
+    },
+    "你好，你发布的车还在吗？我想看看。还在。你想了解哪方面？有没有保养记录？发动机改装过吗？有一些记录。我把零件清单也发给你。谢谢。能安排独立检查吗？周六上午方便吗？可以。我们先确认时间和地点吧。": {
+      "src": "audio/e0b555aa3b2aadd56efffe4c.wav",
+      "duration": 23.573
+    },
+    "涡轮增压器": {
+      "src": "audio/3b28e417f5fbf2589825eb3c.wav",
+      "duration": 1.593
+    },
+    "利用": {
+      "src": "audio/002f060f7cde0face6bb6897.wav",
+      "duration": 0.656
+    },
+    "废气中的": {
+      "src": "audio/c687f0311f95c60c0450f0b1.wav",
+      "duration": 1.426
+    },
+    "能量": {
+      "src": "audio/af4a4a14ffb649e438229467.wav",
+      "duration": 0.614
+    },
+    "废气": {
+      "src": "audio/171de91bcf6f5b3b3faa67f8.wav",
+      "duration": 0.764
+    },
+    "推动": {
+      "src": "audio/e5beecd157f82e0f220e4649.wav",
+      "duration": 0.689
+    },
+    "涡轮": {
+      "src": "audio/af60be508702afd0fe6df61c.wav",
+      "duration": 0.634
+    },
+    "通过": {
+      "src": "audio/fb178e90553971ca3fadc9f2.wav",
+      "duration": 0.674
+    },
+    "一根轴": {
+      "src": "audio/9fb800fd352cfa636202722c.wav",
+      "duration": 0.913
+    },
+    "带动": {
+      "src": "audio/2a3f9d716669179fe41d61a5.wav",
+      "duration": 0.695
+    },
+    "压气机": {
+      "src": "audio/7f9714279f81fe1264203d5b.wav",
+      "duration": 0.998
+    },
+    "再": {
+      "src": "audio/037699e633632f5c4bbd8346.wav",
+      "duration": 0.622
+    },
+    "更多空气": {
+      "src": "audio/d3476e7d31b75791cab60589.wav",
+      "duration": 1.314
+    },
+    "送进": {
+      "src": "audio/1654b162c9bf1b92beae1fd7.wav",
+      "duration": 0.766
+    },
+    "配合": {
+      "src": "audio/d561f972278ef454387887ee.wav",
+      "duration": 0.779
+    },
+    "合适的": {
+      "src": "audio/651b6f581746c3cc24159815.wav",
+      "duration": 0.911
+    },
+    "供油": {
+      "src": "audio/b0e719f3fe22586adaac71a9.wav",
+      "duration": 0.617
+    },
+    "帮助": {
+      "src": "audio/8638a0198064294dc5fd3718.wav",
+      "duration": 0.69
+    },
+    "产生": {
+      "src": "audio/2a8c8c2a024fe73293b60512.wav",
+      "duration": 0.747
+    },
+    "更多动力": {
+      "src": "audio/bf89646aae72125f4986bf8a.wav",
+      "duration": 1.256
+    },
+    "并不是": {
+      "src": "audio/3e9f4c4859215249e10d3dd9.wav",
+      "duration": 0.921
+    },
+    "凭空出现的": {
+      "src": "audio/ec6abaeb6b895afe39df31c6.wav",
+      "duration": 1.653
+    },
+    "空气": {
+      "src": "audio/1cfd379ff4abc43d5df1d01a.wav",
+      "duration": 0.743
+    },
+    "被压缩后": {
+      "src": "audio/790f89867ec5450817ecc78f.wav",
+      "duration": 1.324
+    },
+    "会": {
+      "src": "audio/ed096a17631f7468d2184498.wav",
+      "duration": 0.659
+    },
+    "变热": {
+      "src": "audio/cc4425cfb806d54b3f48c29c.wav",
+      "duration": 0.68
+    },
+    "许多": {
+      "src": "audio/1e5f037b6e571ff0942dfaef.wav",
+      "duration": 0.692
+    },
+    "涡轮车": {
+      "src": "audio/e3df06f588fe564b3c650efb.wav",
+      "duration": 0.907
+    },
+    "用": {
+      "src": "audio/321b47de45da0e635ae7bb97.wav",
+      "duration": 0.618
+    },
+    "中冷器": {
+      "src": "audio/0776c2e6b77fbb4015bdab6e.wav",
+      "duration": 0.951
+    },
+    "冷却": {
+      "src": "audio/1b335e3d036aed0bbc538a06.wav",
+      "duration": 0.715
+    },
+    "进气": {
+      "src": "audio/1f0a50833f31380c52c70928.wav",
+      "duration": 0.768
+    },
+    "涡轮增压": {
+      "src": "audio/33956b5876fcec13563fb6f9.wav",
+      "duration": 1.297
+    },
+    "压缩空气": {
+      "src": "audio/7b152f0b9a21008bb4abfaa2.wav",
+      "duration": 1.444
+    },
+    "涡轮增压器利用废气中的能量。废气先推动涡轮。涡轮通过一根轴带动压气机。压气机再把更多空气送进发动机。配合合适的供油，更多空气能帮助产生更多动力。能量并不是凭空出现的。空气被压缩后会变热。许多涡轮车用中冷器冷却进气。": {
+      "src": "audio/5c8c30e8cf2b69db3db5c776.wav",
+      "duration": 27.403
+    },
+    "最近": {
+      "src": "audio/4523142cd155d148d326018e.wav",
+      "duration": 0.716
+    },
+    "在看": {
+      "src": "audio/d9148b509143b32f58bd3998.wav",
+      "duration": 0.725
+    },
+    "什么": {
+      "src": "audio/73dcdd734eb8873f550b70dd.wav",
+      "duration": 0.609
+    },
+    "动画": {
+      "src": "audio/c432600b479d7bcc7c05842d.wav",
+      "duration": 0.699
+    },
+    "推荐": {
+      "src": "audio/2da360c5be45d75ef36272f9.wav",
+      "duration": 0.712
+    },
+    "日常类": {
+      "src": "audio/a52e2bd0938fbacd3a45ab16.wav",
+      "duration": 0.971
+    },
+    "动作类": {
+      "src": "audio/c0a6c51575bc3546f2dd53e7.wav",
+      "duration": 0.934
+    },
+    "都可以": {
+      "src": "audio/e66a4c6bdb1d56adc93dcb16.wav",
+      "duration": 0.877
+    },
+    "想看": {
+      "src": "audio/05eba63d8576ea8ef502c3a9.wav",
+      "duration": 0.749
+    },
+    "人物": {
+      "src": "audio/2a9288f952e7ac97ce4d7c6d.wav",
+      "duration": 0.668
+    },
+    "写得好": {
+      "src": "audio/3b3cef9643731e88900ed89c.wav",
+      "duration": 0.876
+    },
+    "节奏": {
+      "src": "audio/cb39abf61403f3f036b028eb.wav",
+      "duration": 0.665
+    },
+    "不太慢的": {
+      "src": "audio/412bb028e5c5ff220d8eac71.wav",
+      "duration": 1.266
+    },
+    "作品": {
+      "src": "audio/bbf57a1b2671c79f919fa899.wav",
+      "duration": 0.741
+    },
+    "那": {
+      "src": "audio/bd6dd574ed75c72e76a71da7.wav",
+      "duration": 0.564
+    },
+    "试试": {
+      "src": "audio/a0248252fc5363d0b2f300b3.wav",
+      "duration": 0.753
+    },
+    "这部": {
+      "src": "audio/0782b39281c9f648fe348941.wav",
+      "duration": 0.658
+    },
+    "很喜欢": {
+      "src": "audio/55dd291273d4c7c24728c2c8.wav",
+      "duration": 0.943
+    },
+    "它的": {
+      "src": "audio/a9b9dc22c8372c0915c63284.wav",
+      "duration": 0.678
+    },
+    "画风": {
+      "src": "audio/44ef622cab383b1800853dd1.wav",
+      "duration": 0.759
+    },
+    "配乐": {
+      "src": "audio/fb0ebd9b3374e11a0bdeb943.wav",
+      "duration": 0.729
+    },
+    "名字": {
+      "src": "audio/5b359374961e58af62479b3c.wav",
+      "duration": 0.69
+    },
+    "发我": {
+      "src": "audio/03caca15bd1ef90618375f8b.wav",
+      "duration": 0.735
+    },
+    "别剧透": {
+      "src": "audio/77fe6dfb9a488cf6e0f6bb8f.wav",
+      "duration": 0.901
+    },
+    "连": {
+      "src": "audio/890f0c66db7a8a6e70429818.wav",
+      "duration": 0.606
+    },
+    "第一集": {
+      "src": "audio/4f3eb955fea53205f477435f.wav",
+      "duration": 0.903
+    },
+    "都没看": {
+      "src": "audio/8f7ec9d55d1cf941dd4c5ea9.wav",
+      "duration": 0.842
+    },
+    "剧透": {
+      "src": "audio/b05279d81a0eb746b1f9d9d9.wav",
+      "duration": 0.737
+    },
+    "你最近在看什么动画？有没有推荐？你更喜欢日常类还是动作类？都可以。我想看人物写得好、节奏不太慢的作品。那试试这部吧。我很喜欢它的画风和配乐。好啊，名字发我。不过别剧透，我连第一集都没看！": {
+      "src": "audio/194d631d0a0803516f22ae8b.wav",
+      "duration": 22.971
+    },
+    "看": {
+      "src": "audio/253c5daf128c255d9de62e4d.wav",
+      "duration": 0.644
+    },
+    "字幕版": {
+      "src": "audio/3042c0785f6c52b000bd65e9.wav",
+      "duration": 0.904
+    },
+    "配音版": {
+      "src": "audio/8caebe553890e0e06a05a949.wav",
+      "duration": 0.948
+    },
+    "选": {
+      "src": "audio/e4dd77ecdb874252d9d68d5e.wav",
+      "duration": 0.581
+    },
+    "原声": {
+      "src": "audio/2c42a87e84f8b03d0678d930.wav",
+      "duration": 0.706
+    },
+    "想用": {
+      "src": "audio/afe580be77dd6e5f64a09c6e.wav",
+      "duration": 0.732
+    },
+    "中文配音": {
+      "src": "audio/c2d82c35e770f078460518fd.wav",
+      "duration": 1.416
+    },
+    "练听力": {
+      "src": "audio/63b7199ff18e7a287f641d67.wav",
+      "duration": 1.047
+    },
+    "熟悉的": {
+      "src": "audio/bd65da357e6c38a28bb9e5e0.wav",
+      "duration": 0.927
+    },
+    "片段": {
+      "src": "audio/4b79367ff73cb103dfcb8840.wav",
+      "duration": 0.712
+    },
+    "字幕": {
+      "src": "audio/5b47e38c3edf67133b595946.wav",
+      "duration": 0.667
+    },
+    "看一遍": {
+      "src": "audio/779f537928a8260dbf69a40a.wav",
+      "duration": 0.953
+    },
+    "关掉": {
+      "src": "audio/5ecacfe8b7e62e1ade81dcc0.wav",
+      "duration": 0.69
+    },
+    "听一遍": {
+      "src": "audio/0044f0941600da93d3330912.wav",
+      "duration": 0.924
+    },
+    "听不懂": {
+      "src": "audio/20205df922daea54aedaf7f7.wav",
+      "duration": 0.809
+    },
+    "就": {
+      "src": "audio/b7f29ada0f075b8909fbc3ec.wav",
+      "duration": 0.625
+    },
+    "暂停": {
+      "src": "audio/5dd0921da588e418979b8837.wav",
+      "duration": 0.788
+    },
+    "可以吗": {
+      "src": "audio/a59ea2fd30f55b2b2de481aa.wav",
+      "duration": 0.821
+    },
+    "记住": {
+      "src": "audio/406358c66f7dbe61baf03cfb.wav",
+      "duration": 0.672
+    },
+    "一句": {
+      "src": "audio/19a8f2606d649832f761d0a0.wav",
+      "duration": 0.662
+    },
+    "实用的话": {
+      "src": "audio/000f7eb5a9a514957ba9e325.wav",
+      "duration": 1.051
+    },
+    "赶着": {
+      "src": "audio/505308e24404bb76c2b02c91.wav",
+      "duration": 0.695
+    },
+    "看完": {
+      "src": "audio/bb09761ef8827d2085477d1c.wav",
+      "duration": 0.726
+    },
+    "更有用": {
+      "src": "audio/a224ca04a5cda166994e2c3e.wav",
+      "duration": 0.902
+    },
+    "配音": {
+      "src": "audio/694b4562dbb203bf1d40c53c.wav",
+      "duration": 0.754
+    },
+    "你看字幕版还是配音版？我平时选原声。不过也想用中文配音练听力。可以选一个熟悉的片段。先开着字幕看一遍。再关掉字幕听一遍？听不懂就暂停，可以吗？当然。记住一句实用的话，比赶着看完更有用。": {
+      "src": "audio/f68c801a3d94d20b098e787e.wav",
+      "duration": 23.223
+    },
+    "手绘动画中": {
+      "src": "audio/3f5a7585ca0c842fcd7eccea.wav",
+      "duration": 1.699
+    },
+    "原画": {
+      "src": "audio/4d4e1c64c535911b2f9320ec.wav",
+      "duration": 0.739
+    },
+    "确定": {
+      "src": "audio/f8837c24174ac60e5eee14ea.wav",
+      "duration": 0.707
+    },
+    "重要姿势": {
+      "src": "audio/1e0ee245642eb488cd6ac214.wav",
+      "duration": 1.427
+    },
+    "比如": {
+      "src": "audio/c15c413f07573a34c91f2689.wav",
+      "duration": 0.682
+    },
+    "起跳前": {
+      "src": "audio/4ae535efb5946550220abfff.wav",
+      "duration": 1.023
+    },
+    "蹲下": {
+      "src": "audio/856e9902736fe20310d2dcd8.wav",
+      "duration": 0.688
+    },
+    "跳到": {
+      "src": "audio/be0dd89440606fe5ae0807fc.wav",
+      "duration": 0.699
+    },
+    "最高点": {
+      "src": "audio/2eac8021ae67a54ac009a784.wav",
+      "duration": 1.045
+    },
+    "中间画": {
+      "src": "audio/c9ac8da1f8f05b52278a2ba5.wav",
+      "duration": 0.927
+    },
+    "连接": {
+      "src": "audio/e1e476e33805b4d71ea33220.wav",
+      "duration": 0.719
+    },
+    "这些": {
+      "src": "audio/8cef328dfb7b5e65e9c98d83.wav",
+      "duration": 0.699
+    },
+    "姿势": {
+      "src": "audio/5cbe3b383f57d30f70e7deac.wav",
+      "duration": 0.687
+    },
+    "让": {
+      "src": "audio/b306554ccf35a92beff793ef.wav",
+      "duration": 0.617
+    },
+    "动作": {
+      "src": "audio/18f038d137acbe0e43dd5a05.wav",
+      "duration": 0.704
+    },
+    "连贯": {
+      "src": "audio/5e9fd56d95940615fbf156c8.wav",
+      "duration": 0.67
+    },
+    "流畅度": {
+      "src": "audio/fce8d2a90e6f859506e1c75f.wav",
+      "duration": 0.996
+    },
+    "不只": {
+      "src": "audio/a505d1888754d3cae48d97ba.wav",
+      "duration": 0.773
+    },
+    "取决于": {
+      "src": "audio/2bdfefc58fd2f5aa4b4e5c1b.wav",
+      "duration": 0.923
+    },
+    "画的数量": {
+      "src": "audio/50bdb263db3e7a3c3d73b3e4.wav",
+      "duration": 1.365
+    },
+    "停顿的": {
+      "src": "audio/22aaa09358eac460cf5ac538.wav",
+      "duration": 0.96
+    },
+    "长短": {
+      "src": "audio/77cfa6d8dc5c559ec9a8954a.wav",
+      "duration": 0.71
+    },
+    "也会": {
+      "src": "audio/874f62d0eac35cee1dc9b5fe.wav",
+      "duration": 0.667
+    },
+    "改变": {
+      "src": "audio/7932fd092dc92652d644bc71.wav",
+      "duration": 0.673
+    },
+    "试着": {
+      "src": "audio/6dd7bcfe9174de2215261947.wav",
+      "duration": 0.701
+    },
+    "画": {
+      "src": "audio/003dcb51c2526abfaaa7eb8c.wav",
+      "duration": 0.685
+    },
+    "挥手的": {
+      "src": "audio/04b0440078f136edbf10ff03.wav",
+      "duration": 0.972
+    },
+    "中间那张": {
+      "src": "audio/3e646162a400b2656833c857.wav",
+      "duration": 1.368
+    },
+    "停留的时间": {
+      "src": "audio/bde698c38b2f13fa5e3cdcfc.wav",
+      "duration": 1.639
+    },
+    "观察": {
+      "src": "audio/60eb7a4bcfeae4895c7daf7a.wav",
+      "duration": 0.738
+    },
+    "感觉": {
+      "src": "audio/98a49a76ebeda71a2ffc69d5.wav",
+      "duration": 0.74
+    },
+    "怎么变": {
+      "src": "audio/85089d4492b8188423710862.wav",
+      "duration": 0.785
+    },
+    "停顿": {
+      "src": "audio/f9da2f5ab07a05f7be32f679.wav",
+      "duration": 0.707
+    },
+    "手绘动画中，原画确定重要姿势，比如起跳前蹲下和跳到最高点。中间画连接这些姿势，让动作连贯。不过，流畅度不只取决于画的数量。停顿的长短也会改变节奏。试着画三个挥手的姿势。改变中间那张停留的时间，观察感觉怎么变。": {
+      "src": "audio/fe93b1e013a9126b6fabe820.wav",
+      "duration": 26.403
+    },
+    "我的": {
+      "src": "audio/959a14fd2f0e04538593f758.wav",
+      "duration": 0.646
+    },
+    "手机": {
+      "src": "audio/9e631ef5112f52a127c49551.wav",
+      "duration": 0.737
+    },
+    "显示": {
+      "src": "audio/3805b4bdd0ecdd577361a119.wav",
+      "duration": 0.791
+    },
+    "连上了": {
+      "src": "audio/ff024a635ca2e8a920468ee5.wav",
+      "duration": 0.976
+    },
+    "网页": {
+      "src": "audio/e24a089b249a01d747dc3cdd.wav",
+      "duration": 0.71
+    },
+    "打不开": {
+      "src": "audio/78de557ade9e6dad266bded2.wav",
+      "duration": 0.835
+    },
+    "只有": {
+      "src": "audio/2cfa28551e450eae2996378b.wav",
+      "duration": 0.702
+    },
+    "你的手机": {
+      "src": "audio/c3b1a5264e933f67e1c2fc21.wav",
+      "duration": 1.149
+    },
+    "这样": {
+      "src": "audio/aed129d53fe3384b192a4202.wav",
+      "duration": 0.64
+    },
+    "电脑": {
+      "src": "audio/9715d72227a757ae14254be4.wav",
+      "duration": 0.674
+    },
+    "不能上网": {
+      "src": "audio/3821dc2795c02b5cbe521fb1.wav",
+      "duration": 1.312
+    },
+    "断开": {
+      "src": "audio/c8309df5b56b322db0b3af50.wav",
+      "duration": 0.857
+    },
+    "无线网": {
+      "src": "audio/9b1a5eeb895edc5cfb13dc80.wav",
+      "duration": 0.966
+    },
+    "重新连接": {
+      "src": "audio/bca05d32fba13b6f818b72a1.wav",
+      "duration": 1.543
+    },
+    "先别": {
+      "src": "audio/5f6977f88c5439f63b92af8c.wav",
+      "duration": 0.753
+    },
+    "急着": {
+      "src": "audio/1e7fd2226ac3f27035e112b3.wav",
+      "duration": 0.693
+    },
+    "重置": {
+      "src": "audio/3f2f05b54b7425999cc9a915.wav",
+      "duration": 0.722
+    },
+    "路由器的": {
+      "src": "audio/2431f3758bc6293d6f880713.wav",
+      "duration": 1.342
+    },
+    "设置": {
+      "src": "audio/d7d169f8cc82fa67b4618460.wav",
+      "duration": 0.709
+    },
+    "现在": {
+      "src": "audio/8a8ba8dfdadd4e266c55daa7.wav",
+      "duration": 0.758
+    },
+    "可以了": {
+      "src": "audio/8e03f85ab39bf1aa99233366.wav",
+      "duration": 0.801
+    },
+    "下次": {
+      "src": "audio/045c6ac1ec207e9a30b88e60.wav",
+      "duration": 0.789
+    },
+    "说清楚": {
+      "src": "audio/1768ce2e80b724c423f9ef62.wav",
+      "duration": 0.948
+    },
+    "哪些设备": {
+      "src": "audio/4117091860ee57bf6c6d2888.wav",
+      "duration": 1.403
+    },
+    "有问题": {
+      "src": "audio/17e89db5e5cd44fb70e7d3f6.wav",
+      "duration": 0.947
+    },
+    "路由器": {
+      "src": "audio/66d7775e4ed2ab6b6161b938.wav",
+      "duration": 1.047
+    },
+    "重启": {
+      "src": "audio/809c50b6bc425c35d94abd0d.wav",
+      "duration": 0.787
+    },
+    "我的手机显示连上了，可是网页打不开。只有你的手机这样，还是电脑也不能上网？电脑可以。我先断开无线网试试？对，再重新连接。先别急着重置路由器的设置。现在可以了！下次我先说清楚哪些设备有问题。": {
+      "src": "audio/46e3ce51a685742da7e7898b.wav",
+      "duration": 24.146
+    },
+    "同步文件夹": {
+      "src": "audio/37ae7a29bccb04696beac59a.wav",
+      "duration": 1.652
+    },
+    "很方便": {
+      "src": "audio/80eb4a2d4c5245dbad178c5d.wav",
+      "duration": 1.066
+    },
+    "一台设备": {
+      "src": "audio/53aff564a3ae898b725563a1.wav",
+      "duration": 1.394
+    },
+    "删除文件": {
+      "src": "audio/c6bf5810a4284ae0e95bf50d.wav",
+      "duration": 1.487
+    },
+    "另一台": {
+      "src": "audio/3ccfbda6abd0871c80c999f3.wav",
+      "duration": 0.911
+    },
+    "也可能": {
+      "src": "audio/8d438279d424ef06b3c2c4ac.wav",
+      "duration": 0.862
+    },
+    "跟着删除": {
+      "src": "audio/68de99d1f5a45b0474ef8481.wav",
+      "duration": 1.397
+    },
+    "备份": {
+      "src": "audio/bce98c0c81d7192e84a3ac45.wav",
+      "duration": 0.723
+    },
+    "是为了": {
+      "src": "audio/df28b0618e21623567275ab5.wav",
+      "duration": 0.922
+    },
+    "恢复数据": {
+      "src": "audio/3fe060bb0aaec6266332bb1f.wav",
+      "duration": 1.47
+    },
+    "保留": {
+      "src": "audio/062dc12639e36d921ba3f8c9.wav",
+      "duration": 0.712
+    },
+    "能回到的": {
+      "src": "audio/a632fc579498eea695f8d733.wav",
+      "duration": 1.227
+    },
+    "版本": {
+      "src": "audio/244c0bb87abd872edba52d84.wav",
+      "duration": 0.651
+    },
+    "并": {
+      "src": "audio/a0f1ab160e52025197cd682d.wav",
+      "duration": 0.619
+    },
+    "了解": {
+      "src": "audio/4306a09bd1046fc3105352c6.wav",
+      "duration": 0.723
+    },
+    "服务的": {
+      "src": "audio/868bad7378476c6248f12bad.wav",
+      "duration": 0.868
+    },
+    "恢复规则": {
+      "src": "audio/364d72c55a29aedb62659538.wav",
+      "duration": 1.401
+    },
+    "常见原则": {
+      "src": "audio/9facda4c1f6d2f4d0ac1ed92.wav",
+      "duration": 1.516
+    },
+    "包括原件": {
+      "src": "audio/2a6043eb9fa9433b2983b257.wav",
+      "duration": 1.383
+    },
+    "共三份": {
+      "src": "audio/d2fc17b101fce5780495c27a.wav",
+      "duration": 1.032
+    },
+    "两种介质": {
+      "src": "audio/e35d372932a0a4d301e81912.wav",
+      "duration": 1.457
+    },
+    "一份": {
+      "src": "audio/794b4242bee723e94c5b3d14.wav",
+      "duration": 0.648
+    },
+    "放在": {
+      "src": "audio/a467cd76ecc18397620c43ae.wav",
+      "duration": 0.709
+    },
+    "异地": {
+      "src": "audio/4882d434fb0aca0b18b7c65e.wav",
+      "duration": 0.649
+    },
+    "还要": {
+      "src": "audio/679a56629c3400582877d546.wav",
+      "duration": 0.816
+    },
+    "恢复": {
+      "src": "audio/b0ae438c69cc8aee68548f1d.wav",
+      "duration": 0.714
+    },
+    "一个文件": {
+      "src": "audio/9320666980a59db26499230d.wav",
+      "duration": 1.28
+    },
+    "能恢复": {
+      "src": "audio/536c6056d8d7925fa2316a1d.wav",
+      "duration": 0.915
+    },
+    "才知道": {
+      "src": "audio/f9438d8a566253cdede1ab9e.wav",
+      "duration": 0.821
+    },
+    "有用": {
+      "src": "audio/00bd62bb07bd39dbcefc47f5.wav",
+      "duration": 0.656
+    },
+    "同步": {
+      "src": "audio/4ef4fa3c6fb823f0b59148a3.wav",
+      "duration": 0.713
+    },
+    "同步文件夹很方便，可是在一台设备删除文件，另一台也可能跟着删除。备份是为了恢复数据。保留能回到的版本，并了解服务的恢复规则。一个常见原则是：包括原件共三份，两种介质，一份放在异地。还要试着恢复一个文件。能恢复，才知道备份有用。": {
+      "src": "audio/df52ec6fe141b1f58bad0b2d.wav",
+      "duration": 28.762
+    },
+    "人工智能的": {
+      "src": "audio/e1d6042faaee60b8b2d54529.wav",
+      "duration": 1.551
+    },
+    "回答": {
+      "src": "audio/9e818f31083a3ed1dd0bcac0.wav",
+      "duration": 0.67
+    },
+    "有时": {
+      "src": "audio/c745bc372cd839dfad527d10.wav",
+      "duration": 0.717
+    },
+    "听起来": {
+      "src": "audio/0fab30ff054bfa8e00734144.wav",
+      "duration": 0.91
+    },
+    "很肯定": {
+      "src": "audio/2a23b236ab2871d49a9a0894.wav",
+      "duration": 0.958
+    },
+    "语气肯定": {
+      "src": "audio/0627a3ca7301b1ee5fd66657.wav",
+      "duration": 1.385
+    },
+    "不代表": {
+      "src": "audio/90b4522c0e8325df4bdb8463.wav",
+      "duration": 0.832
+    },
+    "信息正确": {
+      "src": "audio/9b2c7a56743e9dc77514eec4.wav",
+      "duration": 1.42
+    },
+    "它": {
+      "src": "audio/c912ca6eb816dd4406162856.wav",
+      "duration": 0.612
+    },
+    "写出": {
+      "src": "audio/d20538afe57f80916edc799b.wav",
+      "duration": 0.768
+    },
+    "不存在的": {
+      "src": "audio/adf3e0dae36b688b44d6c01d.wav",
+      "duration": 1.288
+    },
+    "书": {
+      "src": "audio/0035a6e456bb6a39e65f5db3.wav",
+      "duration": 0.658
+    },
+    "或者": {
+      "src": "audio/12944fb4126c89e4ae232099.wav",
+      "duration": 0.687
+    },
+    "错误的": {
+      "src": "audio/7c4c60576155915cae5b4dc3.wav",
+      "duration": 0.889
+    },
+    "日期": {
+      "src": "audio/ef20cbd1b3ade6ae106aa82d.wav",
+      "duration": 0.711
+    },
+    "来源链接": {
+      "src": "audio/f64facb1e66f28695ff46cae.wav",
+      "duration": 1.337
+    },
+    "查证": {
+      "src": "audio/20195e8aebe90b085a480b44.wav",
+      "duration": 0.732
+    },
+    "这个结论": {
+      "src": "audio/82d1725c55a3bff8048c5897.wav",
+      "duration": 1.298
+    },
+    "根据什么": {
+      "src": "audio/b4ba616d4bea11a8474595bc.wav",
+      "duration": 1.235
+    },
+    "打开": {
+      "src": "audio/9e292a4ceda87a2b8e487f7e.wav",
+      "duration": 0.846
+    },
+    "原始资料": {
+      "src": "audio/1a3b4c39eb2b1629760be321.wav",
+      "duration": 1.338
+    },
+    "找": {
+      "src": "audio/3c663c3e345d1da0262aad04.wav",
+      "duration": 0.524
+    },
+    "支持证据": {
+      "src": "audio/ffcaa501a051c988650471d8.wav",
+      "duration": 1.353
+    },
+    "当作": {
+      "src": "audio/621f268c07d440b2cc35fb09.wav",
+      "duration": 0.717
+    },
+    "学习的起点": {
+      "src": "audio/dd1962e2e2c34fe5e63c12f1.wav",
+      "duration": 1.565
+    },
+    "找不到": {
+      "src": "audio/5946c26ea38372caed8a88af.wav",
+      "duration": 0.837
+    },
+    "证据": {
+      "src": "audio/fff9dcfaebb4072e21e9410a.wav",
+      "duration": 0.718
+    },
+    "保留疑问": {
+      "src": "audio/0306308cfcbb88a359cc324b.wav",
+      "duration": 1.348
+    },
+    "来源": {
+      "src": "audio/14b9e0dda18300a456435c81.wav",
+      "duration": 0.674
+    },
+    "人工智能的回答有时听起来很肯定。语气肯定不代表信息正确。它可能写出不存在的书，或者错误的日期。来源链接也要查证。你可以问：这个结论根据什么？再打开原始资料，找支持证据。把回答当作学习的起点。找不到证据，就先保留疑问。": {
+      "src": "audio/1059e6fccf8f1ba089e284d2.wav",
+      "duration": 27.378
+    },
+    "想象": {
+      "src": "audio/c26c768c7a11973811a5c8f2.wav",
+      "duration": 0.764
+    },
+    "二十齿的": {
+      "src": "audio/05e764f2faf39bb87bc4b1d0.wav",
+      "duration": 1.401
+    },
+    "齿轮": {
+      "src": "audio/b1f06ef12221be265450563f.wav",
+      "duration": 0.653
+    },
+    "四十齿的": {
+      "src": "audio/0f7b12c0e741b7c394bd605c.wav",
+      "duration": 1.423
+    },
+    "大齿轮": {
+      "src": "audio/953e3e035630fc9210e94e09.wav",
+      "duration": 0.98
+    },
+    "小齿轮": {
+      "src": "audio/5fbf12a1603381ac2e27ac17.wav",
+      "duration": 1.005
+    },
+    "输入端": {
+      "src": "audio/5299fb6647fc18503aeb74d2.wav",
+      "duration": 0.893
+    },
+    "转两圈": {
+      "src": "audio/b180f0c11e288c0fe3814d4c.wav",
+      "duration": 0.974
+    },
+    "转一圈": {
+      "src": "audio/d734a9d8069791a355de4a11.wav",
+      "duration": 0.946
+    },
+    "输出转速": {
+      "src": "audio/06814fa78af9995707d44d37.wav",
+      "duration": 1.453
+    },
+    "变成": {
+      "src": "audio/b99a8c911be97bf25a1a739b.wav",
+      "duration": 0.727
+    },
+    "一半": {
+      "src": "audio/e300dbb19db45e935f679641.wav",
+      "duration": 0.607
+    },
+    "忽略损耗": {
+      "src": "audio/16d7f28e5b41c52b2cb23944.wav",
+      "duration": 1.303
+    },
+    "输出扭矩": {
+      "src": "audio/d09e82ac202a40d8923905df.wav",
+      "duration": 1.511
+    },
+    "两倍": {
+      "src": "audio/89aa789672cf50e7be2ee556.wav",
+      "duration": 0.673
+    },
+    "这是": {
+      "src": "audio/ee1aed9a1b30be134e765464.wav",
+      "duration": 0.713
+    },
+    "用速度": {
+      "src": "audio/b5fbf940e2e0a35f633f0432.wav",
+      "duration": 0.97
+    },
+    "换": {
+      "src": "audio/786a0592ff8f85817bbbca1c.wav",
+      "duration": 0.708
+    },
+    "扭矩": {
+      "src": "audio/6958d57daecac1576fd6c8de.wav",
+      "duration": 0.704
+    },
+    "创造能量": {
+      "src": "audio/f7c7e67f096b7854fef71265.wav",
+      "duration": 1.464
+    },
+    "实际齿轮": {
+      "src": "audio/1fc4d1f3960c15b84a12d8a5.wav",
+      "duration": 1.451
+    },
+    "摩擦": {
+      "src": "audio/1cc9c478eb0a35ac2f2d02c6.wav",
+      "duration": 0.747
+    },
+    "所以": {
+      "src": "audio/b0137a1d11feb595b0de053e.wav",
+      "duration": 0.723
+    },
+    "实际输出": {
+      "src": "audio/fa6495f2ae991d653e3cc396.wav",
+      "duration": 1.388
+    },
+    "理想结果": {
+      "src": "audio/9449653c1ae294c41ce3bf19.wav",
+      "duration": 1.473
+    },
+    "低": {
+      "src": "audio/5589c0525328f6bab3fa429a.wav",
+      "duration": 0.559
+    },
+    "转速": {
+      "src": "audio/694ea537726af65e4ad0b894.wav",
+      "duration": 0.748
+    },
+    "想象一个二十齿的齿轮带动四十齿的大齿轮。小齿轮是输入端。小齿轮转两圈，大齿轮转一圈。输出转速变成一半。忽略损耗，输出扭矩变成两倍。这是用速度换扭矩，不是创造能量。实际齿轮有摩擦，所以实际输出比理想结果低。": {
+      "src": "audio/793cb77392fca40398c8efbc.wav",
+      "duration": 25.991
+    },
+    "设计了": {
+      "src": "audio/16872784ff9b1b4835974382.wav",
+      "duration": 0.944
+    },
+    "手机支架": {
+      "src": "audio/ece2000570e063304a079e51.wav",
+      "duration": 1.321
+    },
+    "直接": {
+      "src": "audio/e2aaf1cd402b5b1e1ba1fc78.wav",
+      "duration": 0.666
+    },
+    "做": {
+      "src": "audio/9b472d93e00865eee5684d29.wav",
+      "duration": 0.627
+    },
+    "成品": {
+      "src": "audio/d59fe700a6af993bdfc925e9.wav",
+      "duration": 0.749
+    },
+    "一个原型": {
+      "src": "audio/661979f60f547e2f8c309f5c.wav",
+      "duration": 1.366
+    },
+    "最想": {
+      "src": "audio/d79f4fb9d28ca4430db6b39c.wav",
+      "duration": 0.755
+    },
+    "测试": {
+      "src": "audio/8aad53fbf9a9d1debb24ac4b.wav",
+      "duration": 0.76
+    },
+    "能不能": {
+      "src": "audio/8cf387a5df54152839ce80f0.wav",
+      "duration": 0.819
+    },
+    "装得上": {
+      "src": "audio/62cf222161715dde48b03974.wav",
+      "duration": 0.904
+    },
+    "还有": {
+      "src": "audio/f1066aa76e96e08dd35cf424.wav",
+      "duration": 0.717
+    },
+    "会不会": {
+      "src": "audio/5d7f63774e683988730b35fb.wav",
+      "duration": 0.854
+    },
+    "挡住": {
+      "src": "audio/a4f372d9d7d30f198436d173.wav",
+      "duration": 0.693
+    },
+    "充电线": {
+      "src": "audio/77a99f7732258c3020951947.wav",
+      "duration": 1.105
+    },
+    "打印": {
+      "src": "audio/203eaee5a53f72afb947d5c6.wav",
+      "duration": 0.684
+    },
+    "一个小样": {
+      "src": "audio/c2502a061bd3c790ccd24086.wav",
+      "duration": 1.206
+    },
+    "打印后": {
+      "src": "audio/ddb65a3ede8a6d246dfdeecc.wav",
+      "duration": 0.841
+    },
+    "量一下": {
+      "src": "audio/880e2525321af316f4c4df7e.wav",
+      "duration": 0.901
+    },
+    "只看": {
+      "src": "audio/59a379af1584002a33ccfe28.wav",
+      "duration": 0.699
+    },
+    "屏幕": {
+      "src": "audio/8eba01ebf1cd563103c5e3d4.wav",
+      "duration": 0.715
+    },
+    "明白了": {
+      "src": "audio/ee33e33afb4ac4c34917384c.wav",
+      "duration": 0.921
+    },
+    "测尺寸": {
+      "src": "audio/474700068560b5096628a29b.wav",
+      "duration": 1.004
+    },
+    "根据": {
+      "src": "audio/7adf8c022917f5e721ddd93c.wav",
+      "duration": 0.666
+    },
+    "用途": {
+      "src": "audio/2ed8687788acdbffac6f9570.wav",
+      "duration": 0.748
+    },
+    "选材料": {
+      "src": "audio/4010bf7444e61c5eded16b99.wav",
+      "duration": 1.028
+    },
+    "原型": {
+      "src": "audio/6cc9b3a76f630773381482d0.wav",
+      "duration": 0.754
+    },
+    "尺寸": {
+      "src": "audio/c085a51ccc1b003bcf51b3ce.wav",
+      "duration": 0.757
+    },
+    "我设计了一个手机支架。直接做成品吗？先做一个原型吧。你最想测试什么？手机能不能装得上，还有会不会挡住充电线。那先打印一个小样。打印后量一下，别只看屏幕。明白了。先测尺寸，再根据用途选材料。": {
+      "src": "audio/4165015d7edaf2a10a3ccdd9.wav",
+      "duration": 24.023
+    },
+    "图纸上": {
+      "src": "audio/e7579d8719720f00aebc4562.wav",
+      "duration": 0.947
+    },
+    "孔": {
+      "src": "audio/f45b2255f83fd20b9779735a.wav",
+      "duration": 0.519
+    },
+    "轴销": {
+      "src": "audio/f0b327989a774592e28ebb4d.wav",
+      "duration": 0.709
+    },
+    "都标着": {
+      "src": "audio/a0534d80aa28d9097165fb15.wav",
+      "duration": 0.968
+    },
+    "十毫米": {
+      "src": "audio/38c498488cb6f2804c10d5a1.wav",
+      "duration": 1.038
+    },
+    "直径": {
+      "src": "audio/af18692022736bbee8d2f72e.wav",
+      "duration": 0.66
+    },
+    "一定": {
+      "src": "audio/1a11946f6f78112851071710.wav",
+      "duration": 0.627
+    },
+    "实际加工": {
+      "src": "audio/4d41ecca1d9fa184bcd83e31.wav",
+      "duration": 1.329
+    },
+    "会有": {
+      "src": "audio/5accaa1ba89793a687a18c26.wav",
+      "duration": 0.716
+    },
+    "偏差": {
+      "src": "audio/8bfc88ff745a3247f2e9c625.wav",
+      "duration": 0.725
+    },
+    "公差": {
+      "src": "audio/901ce2bc948c1695268c3f86.wav",
+      "duration": 0.718
+    },
+    "规定": {
+      "src": "audio/bb51b3581b86e454c4326e6e.wav",
+      "duration": 0.678
+    },
+    "允许的": {
+      "src": "audio/f0b6aba3c9c8329680109239.wav",
+      "duration": 0.903
+    },
+    "尺寸范围": {
+      "src": "audio/3ab6365aea823f1690907466.wav",
+      "duration": 1.52
+    },
+    "偏大": {
+      "src": "audio/d4b251b096faf38823d11baa.wav",
+      "duration": 0.692
+    },
+    "偏小": {
+      "src": "audio/6256047c7f93ae7930ba8d2f.wav",
+      "duration": 0.768
+    },
+    "就可能": {
+      "src": "audio/96575e8e267ad66b8d32b929.wav",
+      "duration": 0.88
+    },
+    "卡住": {
+      "src": "audio/3e6881896a7c2082b6fc5f0e.wav",
+      "duration": 0.728
+    },
+    "滑动配合": {
+      "src": "audio/259b54809c69dfc1dd3a0f79.wav",
+      "duration": 1.55
+    },
+    "间隙": {
+      "src": "audio/0bc8d4d4dfae3c3d64862208.wav",
+      "duration": 0.748
+    },
+    "明确用途": {
+      "src": "audio/2cc7c52b38792a2b4d889e20.wav",
+      "duration": 1.452
+    },
+    "选择配合": {
+      "src": "audio/19ab9d51c9966edbf7e3b177.wav",
+      "duration": 1.552
+    },
+    "测量": {
+      "src": "audio/15cc1554e40921bc31bcc484.wav",
+      "duration": 0.712
+    },
+    "实际零件": {
+      "src": "audio/5ac75f2937561fc6cbf70e80.wav",
+      "duration": 1.411
+    },
+    "给": {
+      "src": "audio/2a379342e5d4459d61e54f9f.wav",
+      "duration": 0.575
+    },
+    "所有材料": {
+      "src": "audio/50b74d8e48b914eab382e12d.wav",
+      "duration": 1.402
+    },
+    "套用": {
+      "src": "audio/ee4199cb6a3fdac576024055.wav",
+      "duration": 0.73
+    },
+    "同一个": {
+      "src": "audio/696ff8cf3542422fb146e6e1.wav",
+      "duration": 0.848
+    },
+    "图纸上，孔和轴销都标着十毫米直径。这样就一定装得上吗？不一定。实际加工会有偏差。公差规定允许的尺寸范围。轴销偏大、孔偏小，就可能卡住。滑动配合需要合适的间隙。先明确用途，再选择配合，测量实际零件。别给所有材料套用同一个间隙。": {
+      "src": "audio/518f7e983df361fd0567584a.wav",
+      "duration": 28.528
+    },
+    "想约": {
+      "src": "audio/bc7ff97593c05738dc5a49c7.wav",
+      "duration": 0.799
+    },
+    "一张插画": {
+      "src": "audio/e6cd61c39a5d4489ad7d024f.wav",
+      "duration": 1.331
+    },
+    "哪些信息": {
+      "src": "audio/3303b97080305f05843e41d5.wav",
+      "duration": 1.385
+    },
+    "这张图": {
+      "src": "audio/da33a82aae9e12fb481e7e6c.wav",
+      "duration": 0.972
+    },
+    "准备": {
+      "src": "audio/b63e1a719f5a2a7e84f2657a.wav",
+      "duration": 0.694
+    },
+    "用在哪里": {
+      "src": "audio/3f5eb6ef06ad5e6c35d790f3.wav",
+      "duration": 1.362
+    },
+    "个人头像": {
+      "src": "audio/809d1725390325211e998510.wav",
+      "duration": 1.358
+    },
+    "商业海报": {
+      "src": "audio/7b545390a6aba87265b29c7f.wav",
+      "duration": 1.451
+    },
+    "会发": {
+      "src": "audio/3c7f4dc21e080a793c7c7ae5.wav",
+      "duration": 0.696
+    },
+    "参考图": {
+      "src": "audio/08e4a90df70425dae9b34d0c.wav",
+      "duration": 1.096
+    },
+    "但": {
+      "src": "audio/58298f076f95e45b62b597df.wav",
+      "duration": 0.564
+    },
+    "不想": {
+      "src": "audio/ff00fab64c838b79c2b02ce8.wav",
+      "duration": 0.679
+    },
+    "直接照抄": {
+      "src": "audio/b396cc7c428891b077b84a72.wav",
+      "duration": 1.228
+    },
+    "好": {
+      "src": "audio/25e5109782f83d97b36394ec.wav",
+      "duration": 0.65
+    },
+    "确认一下": {
+      "src": "audio/f83d8f4f94576faed7738c8a.wav",
+      "duration": 1.305
+    },
+    "截止日期": {
+      "src": "audio/ab577c0c620ba5fe45af6d3d.wav",
+      "duration": 1.37
+    },
+    "修改范围": {
+      "src": "audio/2c5d85dbfd62ef241e844899.wav",
+      "duration": 1.493
+    },
+    "麻烦你": {
+      "src": "audio/78bc835b257696e64737a986.wav",
+      "duration": 1.093
+    },
+    "给我看": {
+      "src": "audio/2cc1d696a340d120a884a976.wav",
+      "duration": 0.816
+    },
+    "草稿": {
+      "src": "audio/abdff7d81eae27cd064e99fd.wav",
+      "duration": 0.719
+    },
+    "确认方向后": {
+      "src": "audio/c7396e70917176efa4c5ff9c.wav",
+      "duration": 1.739
+    },
+    "上色": {
+      "src": "audio/f0a2d986a9cf4b244208e7d1.wav",
+      "duration": 0.726
+    },
+    "我想约一张插画。请问需要哪些信息？这张图准备用在哪里？个人头像，还是商业海报？个人头像。我会发参考图，但不想直接照抄。好。我们确认一下尺寸、截止日期和修改范围。麻烦你先给我看草稿，确认方向后再上色。": {
+      "src": "audio/e03b80564af869ae1e166f6b.wav",
+      "duration": 25.417
+    },
+    "照片": {
+      "src": "audio/d1373c8dc7832e07ac4d3baf.wav",
+      "duration": 0.779
+    },
+    "通常": {
+      "src": "audio/43cd09d2d096ad96dfd6cca0.wav",
+      "duration": 0.722
+    },
+    "由像素": {
+      "src": "audio/6ce09927419fce62b8eb6873.wav",
+      "duration": 0.973
+    },
+    "组成的": {
+      "src": "audio/36afd89bd5d20ceba182bb3c.wav",
+      "duration": 0.982
+    },
+    "位图": {
+      "src": "audio/b9210a5c4a28589fd8b92504.wav",
+      "duration": 0.729
+    },
+    "放得太大": {
+      "src": "audio/5d63f72be5887e4e6e56baba.wav",
+      "duration": 1.396
+    },
+    "出现": {
+      "src": "audio/0c7fc4d28bc5cff8b58fdbd2.wav",
+      "duration": 0.732
+    },
+    "方块": {
+      "src": "audio/5af4f22c5eb9e627cc2cfe91.wav",
+      "duration": 0.713
+    },
+    "或模糊": {
+      "src": "audio/11133dac5d48e73ae110e2e1.wav",
+      "duration": 0.979
+    },
+    "矢量图": {
+      "src": "audio/a1ca53900718954f7c8ba7dd.wav",
+      "duration": 0.988
+    },
+    "数学方式": {
+      "src": "audio/5cbb7229d44e3613498c96ea.wav",
+      "duration": 1.486
+    },
+    "描述": {
+      "src": "audio/73cae5c70c37c708439645cd.wav",
+      "duration": 0.705
+    },
+    "线条": {
+      "src": "audio/bf8458a5fe5768520908c457.wav",
+      "duration": 0.796
+    },
+    "和形状": {
+      "src": "audio/840d88c0a6cdab8fae736051.wav",
+      "duration": 0.996
+    },
+    "改变大小时": {
+      "src": "audio/e094513c75b96453bb480aa1.wav",
+      "duration": 1.658
+    },
+    "重新计算": {
+      "src": "audio/1e4964959695b37d5c9c28fb.wav",
+      "duration": 1.554
+    },
+    "这些形状": {
+      "src": "audio/0f4d6ffa19c7caf53d3b7757.wav",
+      "duration": 1.44
+    },
+    "适合": {
+      "src": "audio/700d3f3437680797590df8ba.wav",
+      "duration": 0.748
+    },
+    "不同尺寸的": {
+      "src": "audio/eac97108478470878210bff8.wav",
+      "duration": 1.601
+    },
+    "标志": {
+      "src": "audio/2b886700735a7332517587f2.wav",
+      "duration": 0.705
+    },
+    "导出": {
+      "src": "audio/24b96c6a5e2ba1f5ddd2a050.wav",
+      "duration": 0.698
+    },
+    "小位图后": {
+      "src": "audio/9dfa6305aa07741f326d7ea5.wav",
+      "duration": 1.378
+    },
+    "不能": {
+      "src": "audio/a73cc5e4d35a38382aebb630.wav",
+      "duration": 0.643
+    },
+    "无限放大": {
+      "src": "audio/a535f380c72e71c7a5309a78.wav",
+      "duration": 1.341
+    },
+    "交付文件前": {
+      "src": "audio/1d54d9238d27e4a9f4ac4b24.wav",
+      "duration": 1.68
+    },
+    "先问": {
+      "src": "audio/ce34955bdcd097f36c7dcab3.wav",
+      "duration": 0.883
+    },
+    "用于": {
+      "src": "audio/f175511d87ace8fdfce53c28.wav",
+      "duration": 0.717
+    },
+    "印刷": {
+      "src": "audio/ea7465e560d76b3847db3869.wav",
+      "duration": 0.66
+    },
+    "再确认": {
+      "src": "audio/ebd15948302fc71e6b0bc554.wav",
+      "duration": 1.022
+    },
+    "和文件类型": {
+      "src": "audio/666bc59178848d16de2c908f.wav",
+      "duration": 1.709
+    },
+    "像素": {
+      "src": "audio/a990b9a2c92368146369b2ff.wav",
+      "duration": 0.762
+    },
+    "放大": {
+      "src": "audio/dad3370d21cc83c615575182.wav",
+      "duration": 0.694
+    },
+    "照片通常是由像素组成的位图。放得太大，可能出现方块或模糊。矢量图用数学方式描述线条和形状。改变大小时，重新计算这些形状。所以矢量图适合不同尺寸的标志。不过导出小位图后，不能无限放大。交付文件前，先问用于屏幕还是印刷，再确认尺寸和文件类型。": {
+      "src": "audio/b452795e236a3201b384c864.wav",
+      "duration": 30.523
+    },
+    "人像中": {
+      "src": "audio/85005d1eb56ded8332ddb251.wav",
+      "duration": 0.943
+    },
+    "柔光": {
+      "src": "audio/e569735d7beec5c4731a32ea.wav",
+      "duration": 0.687
+    },
+    "阴影边缘": {
+      "src": "audio/a45c2ff23212a33a28af7dbd.wav",
+      "duration": 1.363
+    },
+    "过渡": {
+      "src": "audio/c066cb00b49fc31cbdbf07c7.wav",
+      "duration": 0.643
+    },
+    "更柔和": {
+      "src": "audio/048f19e054c6d8be7761e5bf.wav",
+      "duration": 0.98
+    },
+    "不只是": {
+      "src": "audio/72263fa1e215f15b7b869dde.wav",
+      "duration": 0.885
+    },
+    "光线暗": {
+      "src": "audio/d1d1c149a75388eaa3ca69da.wav",
+      "duration": 0.958
+    },
+    "从": {
+      "src": "audio/07cc957b4fe937b58f359621.wav",
+      "duration": 0.646
+    },
+    "被摄物的": {
+      "src": "audio/18a2183896fbbde04b9eff23.wav",
+      "duration": 1.363
+    },
+    "位置看": {
+      "src": "audio/d0bc565b2c70b759dcff477b.wav",
+      "duration": 0.924
+    },
+    "光源": {
+      "src": "audio/59d5fcb15adb0ffc7770acf4.wav",
+      "duration": 0.683
+    },
+    "越大": {
+      "src": "audio/15323a4ac0a862c6366ae063.wav",
+      "duration": 0.7
+    },
+    "光": {
+      "src": "audio/2e9171d4e4bd65c37c655866.wav",
+      "duration": 0.647
+    },
+    "越柔": {
+      "src": "audio/2976db558a2fe436a23b17a3.wav",
+      "duration": 0.721
+    },
+    "一扇大窗": {
+      "src": "audio/a5f21e159c17148b68b6f28b.wav",
+      "duration": 1.293
+    },
+    "作为": {
+      "src": "audio/0be7372cbeb106fcab4a7001.wav",
+      "duration": 0.689
+    },
+    "大光源": {
+      "src": "audio/fe5bc794179e60b2b25d8d52.wav",
+      "duration": 0.984
+    },
+    "离它更远": {
+      "src": "audio/051a749bd13f4970e811dd0b.wav",
+      "duration": 1.331
+    },
+    "相对大小": {
+      "src": "audio/4a8cd829b43f1827f1ed8be4.wav",
+      "duration": 1.492
+    },
+    "会改变": {
+      "src": "audio/b1052360eee0147db8bdf976.wav",
+      "duration": 0.971
+    },
+    "同一个物体": {
+      "src": "audio/5516d022cdfcbb9d866a405d.wav",
+      "duration": 1.619
+    },
+    "离窗": {
+      "src": "audio/18ac229ce5bcddd0e7f6e011.wav",
+      "duration": 0.834
+    },
+    "不同距离的": {
+      "src": "audio/b309d8fd01a166cddc6bf5dd.wav",
+      "duration": 1.479
+    },
+    "位置": {
+      "src": "audio/d471df6317e0b5fdbe984356.wav",
+      "duration": 0.715
+    },
+    "尽量": {
+      "src": "audio/da4db085eef329d917af4be7.wav",
+      "duration": 0.687
+    },
+    "保持": {
+      "src": "audio/d5e4d4b946621c7e0d3a3d9c.wav",
+      "duration": 0.758
+    },
+    "拍摄角度": {
+      "src": "audio/ae13f3a470bd58b81f8d0d5a.wav",
+      "duration": 1.462
+    },
+    "一致": {
+      "src": "audio/9482e5014c96b3265fbe9262.wav",
+      "duration": 0.651
+    },
+    "比较": {
+      "src": "audio/6a2596582c23d89229f2846e.wav",
+      "duration": 0.647
+    },
+    "阴影": {
+      "src": "audio/0326b45c73b444975c4973f8.wav",
+      "duration": 0.655
+    },
+    "人像中，柔光通常让阴影边缘过渡更柔和，不只是光线暗。从被摄物的位置看，光源看起来越大，光通常越柔。一扇大窗可以作为大光源。离它更远，它的相对大小会改变。把同一个物体放在离窗不同距离的位置，尽量保持拍摄角度一致，比较阴影边缘。": {
+      "src": "audio/c691228d2cb5565f2e7d627c.wav",
+      "duration": 27.499
+    },
+    "到哪儿了": {
+      "src": "audio/90f05492402cbf6341be4f25.wav",
+      "duration": 0.929
+    },
+    "已经": {
+      "src": "audio/0370d42e0aadc8743be8521f.wav",
+      "duration": 0.697
+    },
+    "在门口": {
+      "src": "audio/a8e24c7f121e6f7d9c944a00.wav",
+      "duration": 1.014
+    },
+    "了": {
+      "src": "audio/04a08c7f816b3d9b6bcc8340.wav",
+      "duration": 0.609
+    },
+    "还在路上": {
+      "src": "audio/03b53a15816125002ca0b0b9.wav",
+      "duration": 1.311
+    },
+    "大概": {
+      "src": "audio/3ae919b22e9aba3e2117d6f2.wav",
+      "duration": 0.696
+    },
+    "还有十分钟": {
+      "src": "audio/830d2a5d616926714b21fd99.wav",
+      "duration": 1.595
+    },
+    "立刻到": {
+      "src": "audio/b49d2435a7067513d5d448b4.wav",
+      "duration": 0.854
+    },
+    "收到": {
+      "src": "audio/4e08c57501718557a02417ea.wav",
+      "duration": 0.665
+    },
+    "找位子": {
+      "src": "audio/93af4955747fb973aab27020.wav",
+      "duration": 0.969
+    },
+    "你到了": {
+      "src": "audio/b343adb6dd1fe262c603dff5.wav",
+      "duration": 0.853
+    },
+    "发消息": {
+      "src": "audio/f2c904a941d03dc4d17c7e6e.wav",
+      "duration": 1.098
+    },
+    "到门口了": {
+      "src": "audio/c0cc8ff3fc0a6e47772b87ec.wav",
+      "duration": 1.312
+    },
+    "你们": {
+      "src": "audio/d59264c8f84a0cbab78a19a3.wav",
+      "duration": 0.573
+    },
+    "坐哪儿": {
+      "src": "audio/85ccf75d0878ce874e740492.wav",
+      "duration": 0.695
+    },
+    "靠窗": {
+      "src": "audio/a138d71c82e5995d595cf143.wav",
+      "duration": 0.762
+    },
+    "给你": {
+      "src": "audio/1ada8e9c71e509d15b7946dd.wav",
+      "duration": 0.676
+    },
+    "留了位子": {
+      "src": "audio/782365627dee17066a268c5e.wav",
+      "duration": 1.221
+    },
+    "稳了": {
+      "src": "audio/03310a3bc27b5cd8727e7f78.wav",
+      "duration": 0.663
+    },
+    "在路上": {
+      "src": "audio/1041d97760ca67995cbc6f35.wav",
+      "duration": 0.919
+    },
+    "你到哪儿了？我们已经在门口了。不好意思，我还在路上。大概还有十分钟，不是立刻到！收到。我们先找位子，你到了发消息。我到门口了。你们坐哪儿？靠窗。给你留了位子，稳了！": {
+      "src": "audio/c1f39bad8eb5a00d3db473f7.wav",
+      "duration": 19.749
+    },
+    "评测": {
+      "src": "audio/c7c6e69e788dfb25d81e6013.wav",
+      "duration": 0.749
+    },
+    "好想买": {
+      "src": "audio/a6f792b740d2dd04a60ba458.wav",
+      "duration": 1.137
+    },
+    "这台相机": {
+      "src": "audio/4f84139589a6d9c5b96f2b4c.wav",
+      "duration": 1.436
+    },
+    "被种草了": {
+      "src": "audio/7f238d0b0b70745f2d6a9a54.wav",
+      "duration": 1.385
+    },
+    "评测的人": {
+      "src": "audio/d819dfddcbc1f1e3a68cb527.wav",
+      "duration": 1.306
+    },
+    "安利了": {
+      "src": "audio/53b9d2a78e743b7b81333ea4.wav",
+      "duration": 0.919
+    },
+    "主要": {
+      "src": "audio/34b4ed5390ae6fc0b7288b0e.wav",
+      "duration": 0.645
+    },
+    "拍什么": {
+      "src": "audio/c79575b4a9eab192f8598260.wav",
+      "duration": 0.908
+    },
+    "旅行": {
+      "src": "audio/67506b3443fc8a5e9eef8941.wav",
+      "duration": 0.713
+    },
+    "机身": {
+      "src": "audio/fdebf686e800d0b6834d9a5a.wav",
+      "duration": 0.684
+    },
+    "加镜头": {
+      "src": "audio/6ff0a63bf94c8dea179bc1f2.wav",
+      "duration": 1.003
+    },
+    "好像": {
+      "src": "audio/f1a6f14604ccfc40a3cc9629.wav",
+      "duration": 0.715
+    },
+    "挺重": {
+      "src": "audio/841005be037b12ead7f35723.wav",
+      "duration": 0.71
+    },
+    "借一台": {
+      "src": "audio/89ad358db76c90fd0a734d3e.wav",
+      "duration": 0.903
+    },
+    "再看看": {
+      "src": "audio/ffccc3729283346e369630c1.wav",
+      "duration": 1.009
+    },
+    "是不是真的": {
+      "src": "audio/f949dcd0d756a93886e105db.wav",
+      "duration": 1.516
+    },
+    "那个功能": {
+      "src": "audio/480a86220490ac24af16a022.wav",
+      "duration": 1.154
+    },
+    "暂时": {
+      "src": "audio/0d0f8623a6724b7afb12f25d.wav",
+      "duration": 0.795
+    },
+    "拔草了": {
+      "src": "audio/3178b4baaedb93a96d31cdd1.wav",
+      "duration": 0.96
+    },
+    "不想买了": {
+      "src": "audio/c9951a2322d0f256535da9ea.wav",
+      "duration": 1.267
+    },
+    "不是它不好": {
+      "src": "audio/6666ccf3d2f7660d827e07a4.wav",
+      "duration": 1.543
+    },
+    "不适合我": {
+      "src": "audio/ab46bc11b718213a377a09d2.wav",
+      "duration": 1.375
+    },
+    "种草": {
+      "src": "audio/aaf8393ec108746b751ba2ae.wav",
+      "duration": 0.766
+    },
+    "拔草": {
+      "src": "audio/5c514dc921fb3ff2af1e8f7d.wav",
+      "duration": 0.759
+    },
+    "安利": {
+      "src": "audio/eabf3620485f7a3e2375599d.wav",
+      "duration": 0.7
+    },
+    "看完评测，我好想买这台相机，被种草了！评测的人安利了什么？你主要拍什么？旅行和汽车。不过机身加镜头，好像挺重。那先借一台试试，再看看你是不是真的需要那个功能。暂时拔草了，不想买了。不是它不好，是不适合我。": {
+      "src": "audio/cd7460b93a1737573909e68e.wav",
+      "duration": 26.499
+    },
+    "一段": {
+      "src": "audio/50725b9b6d3b843b3df517b3.wav",
+      "duration": 0.652
+    },
+    "感人的剧情": {
+      "src": "audio/cd0fbc324c5ebf7f66763678.wav",
+      "duration": 1.504
+    },
+    "让人": {
+      "src": "audio/c6c9229a76d1adbb54027947.wav",
+      "duration": 0.682
+    },
+    "我破防了": {
+      "src": "audio/ce826c629e51fed9e2c8d3df.wav",
+      "duration": 1.385
+    },
+    "这里的": {
+      "src": "audio/f24e80c8df8208c98f20fcf7.wav",
+      "duration": 0.727
+    },
+    "破防": {
+      "src": "audio/2253719d23c3abf1845e56fb.wav",
+      "duration": 0.741
+    },
+    "是生气": {
+      "src": "audio/47e3b5c2558c0f6251643764.wav",
+      "duration": 0.957
+    },
+    "在争论中": {
+      "src": "audio/2c414aa43af18553b0fa170f.wav",
+      "duration": 1.392
+    },
+    "同一个词": {
+      "src": "audio/07a67495e44ee2ecef16ce70.wav",
+      "duration": 1.321
+    },
+    "表示": {
+      "src": "audio/db3a5c2e88ce67c6a65d1326.wav",
+      "duration": 0.732
+    },
+    "难受或生气": {
+      "src": "audio/877c6f089f66d8b7dd1ebc3e.wav",
+      "duration": 1.73
+    },
+    "看上下文": {
+      "src": "audio/47d487a7450229cf92609ac1.wav",
+      "duration": 1.504
+    },
+    "这部动画": {
+      "src": "audio/6169ae9793a87ad30561e18c.wav",
+      "duration": 1.117
+    },
+    "太上头了": {
+      "src": "audio/f15e434fa3f548b46be77db0.wav",
+      "duration": 1.436
+    },
+    "是说": {
+      "src": "audio/92a872251f7fa3f56372b1cf.wav",
+      "duration": 0.767
+    },
+    "看得入迷": {
+      "src": "audio/584ec9e8a22859c2d4129416.wav",
+      "duration": 1.289
+    },
+    "停不下来": {
+      "src": "audio/e38b672729fe2cdd32703c19.wav",
+      "duration": 1.425
+    },
+    "另一种感觉": {
+      "src": "audio/3b4e3fba6f42b0fc9cd9f745.wav",
+      "duration": 1.68
+    },
+    "这些说法": {
+      "src": "audio/6aea8140aa2e384fb674cca1.wav",
+      "duration": 1.376
+    },
+    "朋友间": {
+      "src": "audio/b20adeee1d69c44ce6b7b1a1.wav",
+      "duration": 0.917
+    },
+    "随便聊": {
+      "src": "audio/9ad9cda30484204719e5b587.wav",
+      "duration": 0.968
+    },
+    "正式说明时": {
+      "src": "audio/233d6f1a446ebf6179d38897.wav",
+      "duration": 1.667
+    },
+    "可以说": {
+      "src": "audio/c0d08618c9e859e5873115ab.wav",
+      "duration": 0.854
+    },
+    "很感动": {
+      "src": "audio/b825d2136d2176b0f173be83.wav",
+      "duration": 0.885
+    },
+    "或": {
+      "src": "audio/b00d5232defc5654082c35ca.wav",
+      "duration": 0.659
+    },
+    "很入迷": {
+      "src": "audio/3acba5980ac52f9afdb0b893.wav",
+      "duration": 0.945
+    },
+    "上头": {
+      "src": "audio/09a2eab34a2de99150d038d3.wav",
+      "duration": 0.737
+    },
+    "入迷": {
+      "src": "audio/14b928066ada78c350754096.wav",
+      "duration": 0.659
+    },
+    "一段感人的剧情，可能让人说：我破防了。这里的破防不一定是生气。在争论中，同一个词也可能表示难受或生气。要看上下文。这部动画太上头了，是说看得入迷、停不下来，是另一种感觉。这些说法适合朋友间随便聊。正式说明时，可以说很感动或很入迷。": {
+      "src": "audio/8a0f4d2549b42d41ffb61827.wav",
+      "duration": 29.093
+    },
+    "大家": {
+      "src": "audio/fddfcbcee6e842e0e4d162d5.wav",
+      "duration": 0.688
+    },
+    "都在比": {
+      "src": "audio/0afbcf26183187985f5eb24a.wav",
+      "duration": 0.971
+    },
+    "学完了": {
+      "src": "audio/db806b08f355bf2945438a0b.wav",
+      "duration": 0.951
+    },
+    "多少课": {
+      "src": "audio/915ed0e14d25ee61fd3a6291.wav",
+      "duration": 0.943
+    },
+    "太内卷了": {
+      "src": "audio/3b6b2fcfa666e16ca3ed35a3.wav",
+      "duration": 1.433
+    },
+    "你说的": {
+      "src": "audio/0aef3007b95b08f35d4b56ed.wav",
+      "duration": 0.879
+    },
+    "内卷": {
+      "src": "audio/d228de2f7e23f36cb388ea53.wav",
+      "duration": 0.685
+    },
+    "学太多": {
+      "src": "audio/cf9e9aa6336700a5c6b780f9.wav",
+      "duration": 0.989
+    },
+    "比较的压力": {
+      "src": "audio/987e1b2748d201166b895227.wav",
+      "duration": 1.432
+    },
+    "后者": {
+      "src": "audio/cff199009b28efeaba9642fb.wav",
+      "duration": 0.695
+    },
+    "想躺平": {
+      "src": "audio/e61209a5641253f1d39afda3.wav",
+      "duration": 1.15
+    },
+    "哈哈": {
+      "src": "audio/eda1a4f80cd582d46caa45dc.wav",
+      "duration": 0.709
+    },
+    "是想": {
+      "src": "audio/20b4111096aef9f81c4f0ae2.wav",
+      "duration": 0.764
+    },
+    "休息一下": {
+      "src": "audio/299e3f23f374b1141adfd107.wav",
+      "duration": 1.253
+    },
+    "以后": {
+      "src": "audio/2947c5265a65f821d57bf17b.wav",
+      "duration": 0.665
+    },
+    "都不学了": {
+      "src": "audio/78edaaccece7b4cb15ef4505.wav",
+      "duration": 1.364
+    },
+    "只是": {
+      "src": "audio/4a0e7df2ccc60be981c755b7.wav",
+      "duration": 0.716
+    },
+    "歇一会儿": {
+      "src": "audio/379d29f9501af8d037eb7ca9.wav",
+      "duration": 0.903
+    },
+    "想学": {
+      "src": "audio/277270c6feb0f23d53c84268.wav",
+      "duration": 0.8
+    },
+    "画汽车": {
+      "src": "audio/5b77e1974e76231a37e91a4b.wav",
+      "duration": 0.994
+    },
+    "按自己的节奏": {
+      "src": "audio/e598c271b0313d3788ef688a.wav",
+      "duration": 1.858
+    },
+    "来": {
+      "src": "audio/fb6e581ace0f5266811915d7.wav",
+      "duration": 0.575
+    },
+    "躺平": {
+      "src": "audio/e01c4703dbe609e8a7f2d640.wav",
+      "duration": 0.771
+    },
+    "大家都在比学完了多少课，感觉太内卷了。你说的内卷，是学太多，还是比较的压力？后者。今天想躺平，哈哈。你是想休息一下，还是以后都不学了？只是歇一会儿！我还是想学画汽车，按自己的节奏来。": {
+      "src": "audio/eaddafd618abf468c522fcd6.wav",
+      "duration": 22.793
     }
   }
 }

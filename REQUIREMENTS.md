@@ -1,12 +1,12 @@
 # Hanzi Path — Product Requirements
 
 Status: working MVP  
-Version: 0.2
+Version: 0.3
 Updated: 3 November 2026
 
 ## Product direction
 
-Create a personalised Mandarin reading app for one learner. The experience should make graded Chinese stories approachable through tap-to-define vocabulary, optional learning aids, audio, review, and visible progress.
+Create a personalised Mandarin reading app for one learner. The experience should make conversations, articles, nonfiction and graded stories approachable through tap-to-define vocabulary, optional learning aids, audio, review, and visible progress. Content should teach useful language and interesting real-world ideas.
 
 The product may take inspiration from common graded-reader learning patterns, but all branding, interface design, lesson content, code, audio, and artwork must be original or appropriately licensed.
 
@@ -32,16 +32,19 @@ The product may take inspiration from common graded-reader learning patterns, bu
 10. Use an original calm, readable, mobile-first visual design.
 11. Provide guided pinyin lessons with explanations and tappable sound comparisons.
 12. Provide practical daily conversations with speaker labels, reusable phrase examples, translations and comprehension checks.
+13. Cover the learner's interests: older and newer JDM cars, anime, technology, engineering, creative arts and internet slang.
+14. Explain slang register and context-dependent meanings, with neutral alternatives where useful. Include source links for factual explainers; do not require fictional stories as the only content format.
 
 ## Current starter scope
 
 - Four original beginner stories covering daily life, food, travel, and shopping.
 - Four pinyin lessons covering tones, sound contrasts, neutral tones and connected speech.
 - Six daily conversations covering introductions, ordering drinks, checkout, directions, plans and clarification.
+- Twenty personalised entries: four cars, three anime, three technology, three engineering, three creative arts and four internet slang entries. Formats: ten articles, nine conversations and one group chat.
 - One comprehension question per story or lesson, with bundled audio for all vocabulary and practice examples.
 - Browser-local personalisation and progress.
 - No account, cloud sync, payment, social features, or copied third-party content.
 
 ## Next content milestone
 
-Review the expanded curriculum with a native Mandarin speaker, then extend the conversations and add more pinyin initials/finals practice based on learner feedback.
+Review the expanded curriculum with a native Mandarin speaker, then adjust topic depth, difficulty and future slang selections from learner feedback.

@@ -1,6 +1,6 @@
 # Bundled Mandarin audio
 
-The expanded app ships 189 synthetic Mandarin WAV files (14,202,744 bytes) for vocabulary, pronunciation examples and all 14 complete stories/lessons. The original 85 clips are reused unchanged; only 104 new recordings were generated. Playback does not depend on the browser's Web Speech API or installed system voices.
+The app ships 763 synthetic Mandarin WAV files (63,800,204 bytes) for vocabulary, pronunciation examples and all 34 complete entries. The personal-interest expansion adds 574 recordings and reuses all 189 prior clips unchanged. Playback does not depend on the browser's Web Speech API or installed system voices.
 
 ## Libraries selected
 
@@ -18,7 +18,7 @@ The model files are not part of the deployed app. Playback requests only same-or
 3. Download and extract the official model from:
    `https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-int8-multi-lang-v1_1.tar.bz2`
    into `work/kokoro-int8-multi-lang-v1_1`.
-4. Run `work/audio-venv/Scripts/python.exe scripts/generate-audio.py` on Windows. The script derives the word and full-story text from `dist/data/stories.json`, reuses existing clips, checks non-silent finite output, and writes `dist/audio/manifest.json`.
+4. Run `work/audio-venv/Scripts/python.exe scripts/generate-audio.py` on Windows. The script derives vocabulary, practice and full-entry text from `dist/data/stories.json`, validates and reuses existing clips, checks non-silent finite output, and atomically writes `dist/audio/manifest.json`. For larger batches, use `--workers 4 --threads 2`; each worker owns an independent local voice instance. `--model-dir <path>` can reuse an already-downloaded model. Temporary recordings are renamed only after a successful write, so an interrupted run can safely resume.
 5. Run `npm ci`, `npm run vendor`, `npm test`, and `npm run check`.
 6. Bump the service-worker cache version when publishing changed assets.
 

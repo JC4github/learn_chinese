@@ -4,7 +4,9 @@ Hanzi Path is a private, mobile-first Mandarin graded-reading app. It is an orig
 
 ## Current MVP
 
-- Four original beginner stories, four pinyin lessons, and six daily conversations
+- 34 entries: four beginner stories, four pinyin lessons, six everyday conversations and 20 personalised conversations/articles/chat entries
+- Interest shelves for JDM cars, anime, technology, engineering, creative arts and internet slang
+- Short factual explainers with background links, and slang with context, register and neutral alternatives
 - Guided sound comparisons, reusable phrases, and labelled dialogue turns
 - Tap any Chinese word for pinyin and meaning
 - Bundled Mandarin recordings for words and stories
