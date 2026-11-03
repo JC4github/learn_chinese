@@ -1,6 +1,6 @@
 # Bundled Mandarin audio
 
-The app ships 85 synthetic Mandarin WAV files: 81 unique vocabulary items/phrases and four complete stories. Their combined size is 6,235,134 bytes. Playback no longer depends on the browser's Web Speech API or installed system voices.
+The expanded app ships 189 synthetic Mandarin WAV files (14,202,744 bytes) for vocabulary, pronunciation examples and all 14 complete stories/lessons. The original 85 clips are reused unchanged; only 104 new recordings were generated. Playback does not depend on the browser's Web Speech API or installed system voices.
 
 ## Libraries selected
 

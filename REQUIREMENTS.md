@@ -1,7 +1,7 @@
 # Hanzi Path — Product Requirements
 
 Status: working MVP  
-Version: 0.1  
+Version: 0.2
 Updated: 3 November 2026
 
 ## Product direction
@@ -30,14 +30,18 @@ The product may take inspiration from common graded-reader learning patterns, bu
 8. Save preferences, completed stories, streak, minutes read, and saved words locally.
 9. Work as an installable, offline-capable iPhone PWA.
 10. Use an original calm, readable, mobile-first visual design.
+11. Provide guided pinyin lessons with explanations and tappable sound comparisons.
+12. Provide practical daily conversations with speaker labels, reusable phrase examples, translations and comprehension checks.
 
 ## Current starter scope
 
 - Four original beginner stories covering daily life, food, travel, and shopping.
-- One comprehension question per story.
+- Four pinyin lessons covering tones, sound contrasts, neutral tones and connected speech.
+- Six daily conversations covering introductions, ordering drinks, checkout, directions, plans and clarification.
+- One comprehension question per story or lesson, with bundled audio for all vocabulary and practice examples.
 - Browser-local personalisation and progress.
 - No account, cloud sync, payment, social features, or copied third-party content.
 
 ## Next content milestone
 
-Expand to at least 10 reviewed stories and 100 reviewed vocabulary items after the reading interaction and visual direction have been validated.
+Review the expanded curriculum with a native Mandarin speaker, then extend the conversations and add more pinyin initials/finals practice based on learner feedback.

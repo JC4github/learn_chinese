@@ -342,6 +342,422 @@
     "每个星期六，美美家附近都有一个小市场。那里卖蔬菜、水果、鲜花和手工面包。美美买了三个红苹果。老板又送给她一个小梨，说：“尝尝吧，很甜！”": {
       "src": "audio/56a6cc611f18c037543a2dd5.wav",
       "duration": 16.718
+    },
+    "小安": {
+      "src": "audio/64aa866a4aec5c9e471fb65a.wav",
+      "duration": 0.759
+    },
+    "在学": {
+      "src": "audio/2c4c9110531dad4d09b07897.wav",
+      "duration": 0.763
+    },
+    "拼音": {
+      "src": "audio/50bae1637f8479589b631f22.wav",
+      "duration": 0.753
+    },
+    "书上": {
+      "src": "audio/0cf9282e33016779f42e2cdd.wav",
+      "duration": 0.718
+    },
+    "有": {
+      "src": "audio/6e7612c9d0f9a4febcd127f3.wav",
+      "duration": 0.671
+    },
+    "四个字": {
+      "src": "audio/e0685a91bbcf65a8cb21a086.wav",
+      "duration": 0.941
+    },
+    "妈": {
+      "src": "audio/42a4ea23c69f50da3eaf060e.wav",
+      "duration": 0.615
+    },
+    "麻": {
+      "src": "audio/d384380de2c61d11fe7c095e.wav",
+      "duration": 0.64
+    },
+    "马": {
+      "src": "audio/968eba72e9c6b4639fc7d282.wav",
+      "duration": 0.625
+    },
+    "骂": {
+      "src": "audio/92d82d4dc66c7a9fcc364074.wav",
+      "duration": 0.609
+    },
+    "老师": {
+      "src": "audio/65652fb28213a010b02cfd2c.wav",
+      "duration": 0.737
+    },
+    "先听": {
+      "src": "audio/03a3c780a106441504a753a0.wav",
+      "duration": 0.761
+    },
+    "再说": {
+      "src": "audio/eacde57f74830741f285903c.wav",
+      "duration": 0.715
+    },
+    "再听": {
+      "src": "audio/9b285fb715177ead9a4b891c.wav",
+      "duration": 0.758
+    },
+    "一次": {
+      "src": "audio/9180b089444ff7f346f536eb.wav",
+      "duration": 0.706
+    },
+    "慢慢读": {
+      "src": "audio/05b5022646d7a539318786d3.wav",
+      "duration": 1.002
+    },
+    "小安在学拼音。书上有四个字：妈、麻、马、骂。老师说：先听，再说。小安再听一次，慢慢读。": {
+      "src": "audio/7ee373adb8acac88916d8d59.wav",
+      "duration": 10.532
+    },
+    "你好": {
+      "src": "audio/501e255db4770ba208fd5133.wav",
+      "duration": 0.68
+    },
+    "我": {
+      "src": "audio/0772f2e0a4b1a17a5f5bc3aa.wav",
+      "duration": 0.62
+    },
+    "想": {
+      "src": "audio/db98dbc5db7321b972a35652.wav",
+      "duration": 0.581
+    },
+    "买苹果": {
+      "src": "audio/426b0a43b5d4f81d8f8f3256.wav",
+      "duration": 1.017
+    },
+    "苹果": {
+      "src": "audio/c6a249381ffe05824f1dd7c3.wav",
+      "duration": 0.68
+    },
+    "你": {
+      "src": "audio/4b2da93a1348c8978403ede5.wav",
+      "duration": 0.519
+    },
+    "要": {
+      "src": "audio/2a758f585c8a512e94b06b6d.wav",
+      "duration": 0.642
+    },
+    "几个": {
+      "src": "audio/80d0b6afe06707ec52a2dcee.wav",
+      "duration": 0.802
+    },
+    "我要": {
+      "src": "audio/30efaa084839c5ed8d08702d.wav",
+      "duration": 0.644
+    },
+    "谢谢": {
+      "src": "audio/2d4256bdfa2bb8d7654fcbc4.wav",
+      "duration": 0.735
+    },
+    "买": {
+      "src": "audio/7de333cee71a6866edd00d1f.wav",
+      "duration": 0.678
+    },
+    "你好！我想买苹果。我卖苹果。你要几个？我要三个。谢谢！": {
+      "src": "audio/82d1f62dccb1c274e1a47498.wav",
+      "duration": 7.073
+    },
+    "四个": {
+      "src": "audio/45ec7f160d8412e8686213d5.wav",
+      "duration": 0.689
+    },
+    "包子": {
+      "src": "audio/bc9c9ca32f55fdba17a8ceb7.wav",
+      "duration": 0.72
+    },
+    "十个": {
+      "src": "audio/99d1e62b998bb8a4b0ee9af4.wav",
+      "duration": 0.649
+    },
+    "不是": {
+      "src": "audio/611f88373fd532c406a2fca6.wav",
+      "duration": 0.667
+    },
+    "四": {
+      "src": "audio/0457ffb9c0a9d85a4ef55b63.wav",
+      "duration": 0.621
+    },
+    "十": {
+      "src": "audio/886071dfe1cfb868cda7a399.wav",
+      "duration": 0.455
+    },
+    "你好！我要四个包子。十个？四个，不是十个。谢谢！": {
+      "src": "audio/42c31c096f9aaaf6977927d6.wav",
+      "duration": 5.708
+    },
+    "你好吗": {
+      "src": "audio/9a28ea1bad858fdfcbfda3d3.wav",
+      "duration": 0.879
+    },
+    "很好": {
+      "src": "audio/89b003654b380c0d6eb9f350.wav",
+      "duration": 0.757
+    },
+    "你呢": {
+      "src": "audio/e0abae2edebcf12320931e29.wav",
+      "duration": 0.578
+    },
+    "我也": {
+      "src": "audio/9167928ead907009be9287c8.wav",
+      "duration": 0.651
+    },
+    "明天见": {
+      "src": "audio/d2bae6410072135323a8e905.wav",
+      "duration": 1.058
+    },
+    "你好！你好吗？我很好，谢谢。你呢？我也很好。明天见！": {
+      "src": "audio/aa70d250a8e9d77ae1d7ec1f.wav",
+      "duration": 6.546
+    },
+    "我叫": {
+      "src": "audio/d490a5448898c18b4b6ee538.wav",
+      "duration": 0.652
+    },
+    "你叫什么名字": {
+      "src": "audio/ebc915cb1453d97ac163af34.wav",
+      "duration": 1.629
+    },
+    "小林": {
+      "src": "audio/62e2921179ec5cb5a3ab910e.wav",
+      "duration": 0.753
+    },
+    "很高兴认识你": {
+      "src": "audio/405e09ecf60bd884a54f6bd0.wav",
+      "duration": 1.844
+    },
+    "住在": {
+      "src": "audio/a53ebf9abe06a854f82001ed.wav",
+      "duration": 0.703
+    },
+    "附近": {
+      "src": "audio/766364be51089e67d1c0033d.wav",
+      "duration": 0.699
+    },
+    "吗": {
+      "src": "audio/bba971d4a6e57e065011a59c.wav",
+      "duration": 0.641
+    },
+    "对": {
+      "src": "audio/a5c08d7d3742418faa794700.wav",
+      "duration": 0.62
+    },
+    "你好！我叫小安。你叫什么名字？我叫小林。很高兴认识你！我也很高兴认识你。你住在附近吗？对，我住在附近。": {
+      "src": "audio/a34a1b52752936bf5422f119.wav",
+      "duration": 12.925
+    },
+    "我想要": {
+      "src": "audio/db3820b479848e5c2381565f.wav",
+      "duration": 0.866
+    },
+    "热的": {
+      "src": "audio/a2636eea75d4c03f27fe3975.wav",
+      "duration": 0.732
+    },
+    "还是": {
+      "src": "audio/f9fb47b7bb89b2120d1a5294.wav",
+      "duration": 0.867
+    },
+    "冰的": {
+      "src": "audio/c0893361beb4e7e178c0acc7.wav",
+      "duration": 0.697
+    },
+    "多少钱": {
+      "src": "audio/6e8107ee0d1a569a87a438f2.wav",
+      "duration": 0.989
+    },
+    "十元": {
+      "src": "audio/48548005e1490fcc38a1b3f4.wav",
+      "duration": 0.685
+    },
+    "请": {
+      "src": "audio/b93334c71a688a8d14d3349f.wav",
+      "duration": 0.64
+    },
+    "稍等": {
+      "src": "audio/d07007467d70a67976f1eef2.wav",
+      "duration": 0.692
+    },
+    "你好！我想要一杯茶。热的还是冰的？热的，谢谢。多少钱？十元。请稍等。": {
+      "src": "audio/a17ca6e9e3e0cb3468d3e362.wav",
+      "duration": 8.612
+    },
+    "一共": {
+      "src": "audio/ce756ef41982f2a03b0fe668.wav",
+      "duration": 0.65
+    },
+    "二十元": {
+      "src": "audio/db235678d460047a8b78fc46.wav",
+      "duration": 0.946
+    },
+    "需要": {
+      "src": "audio/4b51d76abb34f1bda0e20d47.wav",
+      "duration": 0.66
+    },
+    "袋子": {
+      "src": "audio/5fe944ef8941156efa716c5e.wav",
+      "duration": 0.696
+    },
+    "不需要": {
+      "src": "audio/4aeb0d355525b9330111128f.wav",
+      "duration": 0.796
+    },
+    "我有": {
+      "src": "audio/1d555bc6be2ce30aefe56a24.wav",
+      "duration": 0.654
+    },
+    "可以刷卡吗": {
+      "src": "audio/094198b20db5cb7430f44fd7.wav",
+      "duration": 1.573
+    },
+    "可以": {
+      "src": "audio/b3e9c7e23b630018d55a4c6f.wav",
+      "duration": 0.68
+    },
+    "再见": {
+      "src": "audio/7e44a91cafe4a8b845d0e8ee.wav",
+      "duration": 0.694
+    },
+    "一共二十元。需要袋子吗？不需要，谢谢。我有袋子。可以刷卡吗？可以。谢谢，再见！": {
+      "src": "audio/bf6214d6f75e30c89f42f58d.wav",
+      "duration": 9.867
+    },
+    "请问": {
+      "src": "audio/4d82f6a5baebec6d87970d85.wav",
+      "duration": 0.737
+    },
+    "地铁站": {
+      "src": "audio/07904021f2bc28c79b3e4b10.wav",
+      "duration": 0.938
+    },
+    "在哪里": {
+      "src": "audio/71c62c028f5cf1c7c52525f1.wav",
+      "duration": 1.031
+    },
+    "一直走": {
+      "src": "audio/5b292e18f1eaef66bb6c0d76.wav",
+      "duration": 0.963
+    },
+    "然后": {
+      "src": "audio/a05ca266d4240d8bb7d08484.wav",
+      "duration": 0.675
+    },
+    "左转": {
+      "src": "audio/9a781ca7ade998b98cf102b6.wav",
+      "duration": 0.695
+    },
+    "在": {
+      "src": "audio/f03e667ecaf94dd81bae5a4b.wav",
+      "duration": 0.625
+    },
+    "右边": {
+      "src": "audio/9856cfde993833cbdda487b3.wav",
+      "duration": 0.714
+    },
+    "离这里": {
+      "src": "audio/4419aed1f092c9a3b1c3165b.wav",
+      "duration": 0.882
+    },
+    "远": {
+      "src": "audio/191aa631923b31d511ea5c25.wav",
+      "duration": 0.403
+    },
+    "不远": {
+      "src": "audio/658c9245548f48f1c793dc21.wav",
+      "duration": 0.637
+    },
+    "走路": {
+      "src": "audio/5ad628cd15375339b8715533.wav",
+      "duration": 0.69
+    },
+    "五分钟": {
+      "src": "audio/74617371e110be3b014b1aec.wav",
+      "duration": 0.892
+    },
+    "就到": {
+      "src": "audio/f4d7852089209c79e73e031a.wav",
+      "duration": 0.664
+    },
+    "请问，地铁站在哪里？一直走，然后左转。地铁站在右边。离这里远吗？不远，走路五分钟就到。": {
+      "src": "audio/554630469466a77908a5c4e2.wav",
+      "duration": 10.552
+    },
+    "明天": {
+      "src": "audio/d392f1b6840a1c134c2d0536.wav",
+      "duration": 0.709
+    },
+    "有空": {
+      "src": "audio/c0f84692846b736b361336f0.wav",
+      "duration": 0.725
+    },
+    "一起": {
+      "src": "audio/0a8f821c5499e0a4521507a8.wav",
+      "duration": 0.71
+    },
+    "吧": {
+      "src": "audio/a39cc6e357d2ac4aa082abec.wav",
+      "duration": 0.613
+    },
+    "好啊": {
+      "src": "audio/6d25ea97aff18387a23f9862.wav",
+      "duration": 0.694
+    },
+    "几点": {
+      "src": "audio/cbe1040f63ce1cac61c038fc.wav",
+      "duration": 0.702
+    },
+    "下午三点": {
+      "src": "audio/e850e84ae40b1a3cc5f32da6.wav",
+      "duration": 1.381
+    },
+    "我们": {
+      "src": "audio/7fe10700b2f64768063eb8c5.wav",
+      "duration": 0.57
+    },
+    "咖啡馆": {
+      "src": "audio/22a2cd9ba5dca1f198559e5e.wav",
+      "duration": 0.998
+    },
+    "见面": {
+      "src": "audio/ed01424f68022f182a60dcaa.wav",
+      "duration": 0.699
+    },
+    "好的": {
+      "src": "audio/629464d4dbd6ff1f523b570e.wav",
+      "duration": 0.711
+    },
+    "你明天有空吗？一起喝茶吧。好啊！几点？下午三点。我们在咖啡馆见面吧。好的，明天见！": {
+      "src": "audio/6a8a3420feace627eed02256.wav",
+      "duration": 10.518
+    },
+    "这个": {
+      "src": "audio/907839f494b17403f3e81132.wav",
+      "duration": 0.633
+    },
+    "十五元": {
+      "src": "audio/6ffd85a983e0fc1c2bd9c6e7.wav",
+      "duration": 0.829
+    },
+    "不好意思": {
+      "src": "audio/80c952206b4b6e4cb5e3f82a.wav",
+      "duration": 1.255
+    },
+    "我没听懂": {
+      "src": "audio/4a0666d3b0448cf70edc907a.wav",
+      "duration": 1.155
+    },
+    "请再说一遍": {
+      "src": "audio/569432d86f4d00419fd5a46c.wav",
+      "duration": 1.712
+    },
+    "请说慢一点": {
+      "src": "audio/25ec87e37892a735c6a29b02.wav",
+      "duration": 1.692
+    },
+    "这个十五元。不好意思，我没听懂。请再说一遍。请说慢一点。好的。十五元。": {
+      "src": "audio/19fcd348033addf3caedb7cf.wav",
+      "duration": 9.076
     }
   }
 }

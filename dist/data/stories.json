@@ -123,6 +123,111 @@
         "answer": 0,
         "explanation": "老板又送给她一个小梨 means the seller also gave her a small pear."
       }
+    },
+    {
+      "id":"pinyin-four-tones","title":"四个声调","englishTitle":"One Sound, Four Tones","level":"Beginner 1","topic":"pinyin","topicLabel":"Pinyin","minutes":5,"accent":"jade","summary":"Hear how mā, má, mǎ and mà change a word's meaning.",
+      "coach":{"title":"Meet the four tones","notes":["Pinyin uses letters to show pronunciation. The mark above the main vowel shows the tone: mā, má, mǎ, mà.","1st tone stays high and level; 2nd rises; 3rd is low (often dipping then rising when said on its own); 4th falls sharply.","Play each example separately, then repeat it. Keep the vowel sound similar and change the pitch. These are different words, not four ways to say the same word."],"practice":[{"h":"妈","p":"mā","e":"mum · 1st tone"},{"h":"麻","p":"má","e":"hemp · 2nd tone"},{"h":"马","p":"mǎ","e":"horse · 3rd tone"},{"h":"骂","p":"mà","e":"scold · 4th tone"}]},
+      "paragraphs":[
+        {"translation":"Xiao An is learning pinyin. There are four characters in the book: mum, hemp, horse and scold.","tokens":[{"h":"小安","p":"Xiǎo Ān","e":"Xiao An"},{"h":"在学","p":"zài xué","e":"is learning"},{"h":"拼音","p":"pīnyīn","e":"pinyin"},{"h":"。","punct":true},{"h":"书上","p":"shū shàng","e":"in the book"},{"h":"有","p":"yǒu","e":"there are"},{"h":"四个字","p":"sì ge zì","e":"four characters"},{"h":"：","punct":true},{"h":"妈","p":"mā","e":"mum"},{"h":"、","punct":true},{"h":"麻","p":"má","e":"hemp"},{"h":"、","punct":true},{"h":"马","p":"mǎ","e":"horse"},{"h":"、","punct":true},{"h":"骂","p":"mà","e":"scold"},{"h":"。","punct":true}]},
+        {"translation":"The teacher says, “Listen first, then say it.” Xiao An listens again and reads slowly.","tokens":[{"h":"老师","p":"lǎoshī","e":"teacher"},{"h":"说","p":"shuō","e":"says"},{"h":"：","punct":true},{"h":"先听","p":"xiān tīng","e":"listen first"},{"h":"，","punct":true},{"h":"再说","p":"zài shuō","e":"then say it"},{"h":"。","punct":true},{"h":"小安","p":"Xiǎo Ān","e":"Xiao An"},{"h":"再听","p":"zài tīng","e":"listens again"},{"h":"一次","p":"yí cì","e":"one time"},{"h":"，","punct":true},{"h":"慢慢读","p":"mànmàn dú","e":"reads slowly"},{"h":"。","punct":true}]}
+      ],
+      "quiz":{"question":"Which pinyin means “horse”?","options":["mā — high and level","má — rising","mǎ — third tone"],"answer":2,"explanation":"马 is mǎ, with a third-tone mark. Changing the tone can change the meaning."}
+    },
+    {
+      "id":"pinyin-buy-sell","title":"买还是卖？","englishTitle":"Buying or Selling?","level":"Beginner 1","topic":"pinyin","topicLabel":"Pinyin","minutes":4,"accent":"persimmon","summary":"Practise mǎi and mài at a fruit stall.",
+      "coach":{"title":"Third tone or fourth tone?","notes":["买 mǎi means “buy”; 卖 mài means “sell”. Their initial m and final ai match, but their tones differ.","Say mǎi low; when practising it alone, let it dip and rise. Say mài with a firm falling pitch.","Read the small mark over a: ǎ versus à. Listen, repeat, and then use the word in a sentence."],"practice":[{"h":"买","p":"mǎi","e":"buy · 3rd tone"},{"h":"卖","p":"mài","e":"sell · 4th tone"},{"h":"买苹果","p":"mǎi píngguǒ","e":"buy apples"}]},
+      "paragraphs":[
+        {"speaker":"Customer","translation":"Hello! I want to buy apples.","tokens":[{"h":"你好","p":"nǐ hǎo","e":"hello"},{"h":"！","punct":true},{"h":"我","p":"wǒ","e":"I"},{"h":"想","p":"xiǎng","e":"want to"},{"h":"买苹果","p":"mǎi píngguǒ","e":"buy apples"},{"h":"。","punct":true}]},
+        {"speaker":"Seller","translation":"I sell apples. How many would you like?","tokens":[{"h":"我","p":"wǒ","e":"I"},{"h":"卖","p":"mài","e":"sell"},{"h":"苹果","p":"píngguǒ","e":"apples"},{"h":"。","punct":true},{"h":"你","p":"nǐ","e":"you"},{"h":"要","p":"yào","e":"would like"},{"h":"几个","p":"jǐ ge","e":"how many"},{"h":"？","punct":true}]},
+        {"speaker":"Customer","translation":"I'd like three. Thank you!","tokens":[{"h":"我要","p":"wǒ yào","e":"I'd like"},{"h":"三个","p":"sān ge","e":"three"},{"h":"。","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"！","punct":true}]}
+      ],
+      "quiz":{"question":"Which word would a customer use for “buy”?","options":["卖 mài","买 mǎi","Both mean buy"],"answer":1,"explanation":"The customer 买 mǎi (buys); the seller 卖 mài (sells)."}
+    },
+    {
+      "id":"pinyin-four-ten","title":"四个，不是十个","englishTitle":"Four, Not Ten","level":"Beginner 1","topic":"pinyin","topicLabel":"Pinyin","minutes":4,"accent":"gold","summary":"A dumpling order helps you compare sì and shí.",
+      "coach":{"title":"Hear s and sh","notes":["四 sì means four; 十 shí means ten. Both the initial sound and the tone change.","For s, keep your tongue near the front behind the teeth. For sh, move the tongue tip back toward the ridge behind the teeth; avoid pressing it against the palate.","Don't read pinyin like English spelling. Listen to the complete syllables sì and shí, then practise the order below."],"practice":[{"h":"四","p":"sì","e":"four · s + 4th tone"},{"h":"十","p":"shí","e":"ten · sh + 2nd tone"},{"h":"四个","p":"sì ge","e":"four items"},{"h":"十个","p":"shí ge","e":"ten items"}]},
+      "paragraphs":[
+        {"speaker":"Customer","translation":"Hello! I'd like four steamed buns.","tokens":[{"h":"你好","p":"nǐ hǎo","e":"hello"},{"h":"！","punct":true},{"h":"我要","p":"wǒ yào","e":"I'd like"},{"h":"四个","p":"sì ge","e":"four items"},{"h":"包子","p":"bāozi","e":"steamed buns"},{"h":"。","punct":true}]},
+        {"speaker":"Server","translation":"Ten?","tokens":[{"h":"十个","p":"shí ge","e":"ten items"},{"h":"？","punct":true}]},
+        {"speaker":"Customer","translation":"Four, not ten. Thank you!","tokens":[{"h":"四个","p":"sì ge","e":"four items"},{"h":"，","punct":true},{"h":"不是","p":"bú shì","e":"not"},{"h":"十个","p":"shí ge","e":"ten items"},{"h":"。","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"！","punct":true}]}
+      ],
+      "quiz":{"question":"How many buns does the customer want?","options":["四 sì — four","十 shí — ten","三个 sān ge — three"],"answer":0,"explanation":"The customer corrects the order: 四个，不是十个 — four, not ten."}
+    },
+    {
+      "id":"pinyin-neutral-tone","title":"你好吗？","englishTitle":"A Little Question, a Light Tone","level":"Beginner 1","topic":"pinyin","topicLabel":"Pinyin","minutes":5,"accent":"plum","summary":"Meet the neutral tone in a friendly greeting.",
+      "coach":{"title":"Keep the last syllable light","notes":["吗 ma is a question particle. Its neutral tone has no tone mark: keep it short and light, rather than giving it a fixed full tone.","In 谢谢 xièxie, the second xie is also light. Compare it with the marked first syllable.","Pinyin usually writes 你好 as nǐ hǎo. In speech, the first third tone changes to a rising tone before the next third tone. Listen for ní hǎo, while remembering the usual written form."],"practice":[{"h":"你好","p":"nǐ hǎo","e":"hello · listen for tone change"},{"h":"你好吗","p":"nǐ hǎo ma","e":"how are you? · light ma"},{"h":"谢谢","p":"xièxie","e":"thank you · light second syllable"}]},
+      "paragraphs":[
+        {"speaker":"A","translation":"Hello! How are you?","tokens":[{"h":"你好","p":"nǐ hǎo","e":"hello"},{"h":"！","punct":true},{"h":"你好吗","p":"nǐ hǎo ma","e":"how are you"},{"h":"？","punct":true}]},
+        {"speaker":"B","translation":"I'm very well, thank you. And you?","tokens":[{"h":"我","p":"wǒ","e":"I"},{"h":"很好","p":"hěn hǎo","e":"very well"},{"h":"，","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"。","punct":true},{"h":"你呢","p":"nǐ ne","e":"and you"},{"h":"？","punct":true}]},
+        {"speaker":"A","translation":"I'm well too. See you tomorrow!","tokens":[{"h":"我也","p":"wǒ yě","e":"I also"},{"h":"很好","p":"hěn hǎo","e":"am very well"},{"h":"。","punct":true},{"h":"明天见","p":"míngtiān jiàn","e":"see you tomorrow"},{"h":"！","punct":true}]}
+      ],
+      "quiz":{"question":"Why does ma in nǐ hǎo ma have no tone mark?","options":["It is always first tone","Pinyin never marks a","It has a light neutral tone"],"answer":2,"explanation":"吗 ma is neutral-toned here: it is shorter and lighter than a full-tone syllable."}
+    },
+    {
+      "id":"conversation-meeting","title":"很高兴认识你","englishTitle":"Nice to Meet You","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":4,"accent":"jade","summary":"Introduce yourself and ask someone's name.",
+      "coach":{"title":"A conversation you can reuse","notes":["我叫… means “My name is…”. Replace the example name with your own.","你叫什么名字？ asks “What's your name?”. Finish with 很高兴认识你 — “Nice to meet you”."],"practice":[{"h":"我叫","p":"wǒ jiào","e":"my name is…"},{"h":"你叫什么名字","p":"nǐ jiào shénme míngzi","e":"what's your name?"},{"h":"很高兴认识你","p":"hěn gāoxìng rènshi nǐ","e":"nice to meet you"}]},
+      "paragraphs":[
+        {"speaker":"Xiao An","translation":"Hello! My name is Xiao An. What's your name?","tokens":[{"h":"你好","p":"nǐ hǎo","e":"hello"},{"h":"！","punct":true},{"h":"我叫","p":"wǒ jiào","e":"my name is"},{"h":"小安","p":"Xiǎo Ān","e":"Xiao An"},{"h":"。","punct":true},{"h":"你叫什么名字","p":"nǐ jiào shénme míngzi","e":"what's your name"},{"h":"？","punct":true}]},
+        {"speaker":"Xiao Lin","translation":"My name is Xiao Lin. Nice to meet you!","tokens":[{"h":"我叫","p":"wǒ jiào","e":"my name is"},{"h":"小林","p":"Xiǎo Lín","e":"Xiao Lin"},{"h":"。","punct":true},{"h":"很高兴认识你","p":"hěn gāoxìng rènshi nǐ","e":"nice to meet you"},{"h":"！","punct":true}]},
+        {"speaker":"Xiao An","translation":"I'm happy to meet you too. Do you live nearby?","tokens":[{"h":"我也","p":"wǒ yě","e":"I also"},{"h":"很高兴认识你","p":"hěn gāoxìng rènshi nǐ","e":"am happy to meet you"},{"h":"。","punct":true},{"h":"你","p":"nǐ","e":"you"},{"h":"住在","p":"zhù zài","e":"live in"},{"h":"附近","p":"fùjìn","e":"nearby"},{"h":"吗","p":"ma","e":"question particle"},{"h":"？","punct":true}]},
+        {"speaker":"Xiao Lin","translation":"Yes, I live nearby.","tokens":[{"h":"对","p":"duì","e":"yes / correct"},{"h":"，","punct":true},{"h":"我","p":"wǒ","e":"I"},{"h":"住在","p":"zhù zài","e":"live in"},{"h":"附近","p":"fùjìn","e":"nearby"},{"h":"。","punct":true}]}
+      ],
+      "quiz":{"question":"Which phrase introduces your name?","options":["我叫… wǒ jiào…","你呢？ nǐ ne?","明天见 míngtiān jiàn"],"answer":0,"explanation":"Use 我叫… followed by your name. 你叫什么名字？ is the question you can ask in return."}
+    },
+    {
+      "id":"conversation-drink","title":"一杯热茶","englishTitle":"Ordering a Drink","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":4,"accent":"persimmon","summary":"Order tea, choose hot or iced, and ask the price.",
+      "coach":{"title":"Make a simple order","notes":["我想要… means “I'd like…”. 一杯 yì bēi is “one cup”. Try changing 茶 to 咖啡.","热的还是冰的？ offers a choice: “Hot or iced?”. 多少钱？ asks “How much?”."],"practice":[{"h":"我想要","p":"wǒ xiǎng yào","e":"I'd like…"},{"h":"热的","p":"rè de","e":"a hot one"},{"h":"冰的","p":"bīng de","e":"an iced one"},{"h":"多少钱","p":"duōshao qián","e":"how much?"}]},
+      "paragraphs":[
+        {"speaker":"Customer","translation":"Hello! I'd like a cup of tea.","tokens":[{"h":"你好","p":"nǐ hǎo","e":"hello"},{"h":"！","punct":true},{"h":"我想要","p":"wǒ xiǎng yào","e":"I'd like"},{"h":"一杯茶","p":"yì bēi chá","e":"a cup of tea"},{"h":"。","punct":true}]},
+        {"speaker":"Server","translation":"Hot or iced?","tokens":[{"h":"热的","p":"rè de","e":"a hot one"},{"h":"还是","p":"háishi","e":"or (in a question)"},{"h":"冰的","p":"bīng de","e":"an iced one"},{"h":"？","punct":true}]},
+        {"speaker":"Customer","translation":"Hot, please. How much is it?","tokens":[{"h":"热的","p":"rè de","e":"a hot one"},{"h":"，","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"。","punct":true},{"h":"多少钱","p":"duōshao qián","e":"how much"},{"h":"？","punct":true}]},
+        {"speaker":"Server","translation":"Ten yuan. Please wait a moment.","tokens":[{"h":"十元","p":"shí yuán","e":"ten yuan"},{"h":"。","punct":true},{"h":"请","p":"qǐng","e":"please"},{"h":"稍等","p":"shāo děng","e":"wait a moment"},{"h":"。","punct":true}]}
+      ],
+      "quiz":{"question":"What does the customer order?","options":["An iced coffee","A hot tea","Two cups of water"],"answer":1,"explanation":"The customer asks for 一杯茶 (a cup of tea), then chooses 热的 (hot)."}
+    },
+    {
+      "id":"conversation-checkout","title":"需要袋子吗？","englishTitle":"At the Checkout","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":4,"accent":"gold","summary":"Handle a price, a shopping bag, and payment.",
+      "coach":{"title":"Useful checkout phrases","notes":["需要…吗？ asks “Do you need…?”. 不需要 means “don't need”.", "可以…吗？ asks whether something is allowed or possible. 可以刷卡吗？ means “Can I pay by card?”."],"practice":[{"h":"不需要","p":"bù xūyào","e":"don't need"},{"h":"可以刷卡吗","p":"kěyǐ shuākǎ ma","e":"can I pay by card?"},{"h":"一共","p":"yígòng","e":"in total"}]},
+      "paragraphs":[
+        {"speaker":"Cashier","translation":"That's twenty yuan in total. Do you need a bag?","tokens":[{"h":"一共","p":"yígòng","e":"in total"},{"h":"二十元","p":"èrshí yuán","e":"twenty yuan"},{"h":"。","punct":true},{"h":"需要","p":"xūyào","e":"need"},{"h":"袋子","p":"dàizi","e":"a bag"},{"h":"吗","p":"ma","e":"question particle"},{"h":"？","punct":true}]},
+        {"speaker":"Customer","translation":"No, thank you. I have a bag.","tokens":[{"h":"不需要","p":"bù xūyào","e":"don't need"},{"h":"，","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"。","punct":true},{"h":"我有","p":"wǒ yǒu","e":"I have"},{"h":"袋子","p":"dàizi","e":"a bag"},{"h":"。","punct":true}]},
+        {"speaker":"Customer","translation":"Can I pay by card?","tokens":[{"h":"可以刷卡吗","p":"kěyǐ shuākǎ ma","e":"can I pay by card"},{"h":"？","punct":true}]},
+        {"speaker":"Cashier","translation":"Yes. Thank you, goodbye!","tokens":[{"h":"可以","p":"kěyǐ","e":"yes / you can"},{"h":"。","punct":true},{"h":"谢谢","p":"xièxie","e":"thank you"},{"h":"，","punct":true},{"h":"再见","p":"zàijiàn","e":"goodbye"},{"h":"！","punct":true}]}
+      ],
+      "quiz":{"question":"Why doesn't the customer need a bag?","options":["The shop has no bags","The customer has a bag already","The customer buys nothing"],"answer":1,"explanation":"我有袋子 means “I have a bag”."}
+    },
+    {
+      "id":"conversation-directions","title":"地铁站在哪里？","englishTitle":"Finding the Station","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":5,"accent":"plum","summary":"Ask where something is and follow simple directions.",
+      "coach":{"title":"Ask, then listen for direction words","notes":["请问 is a polite way to get someone's attention before asking a question.","…在哪里？ means “Where is…?”. Listen for 一直走 (go straight), 左转 (turn left), and 右边 (on the right)."],"practice":[{"h":"请问","p":"qǐngwèn","e":"excuse me / may I ask"},{"h":"一直走","p":"yìzhí zǒu","e":"go straight"},{"h":"左转","p":"zuǒ zhuǎn","e":"turn left"},{"h":"右边","p":"yòubian","e":"on the right"}]},
+      "paragraphs":[
+        {"speaker":"Visitor","translation":"Excuse me, where is the metro station?","tokens":[{"h":"请问","p":"qǐngwèn","e":"excuse me / may I ask"},{"h":"，","punct":true},{"h":"地铁站","p":"dìtiězhàn","e":"metro station"},{"h":"在哪里","p":"zài nǎli","e":"where is"},{"h":"？","punct":true}]},
+        {"speaker":"Local","translation":"Go straight, then turn left. The station is on the right.","tokens":[{"h":"一直走","p":"yìzhí zǒu","e":"go straight"},{"h":"，","punct":true},{"h":"然后","p":"ránhòu","e":"then"},{"h":"左转","p":"zuǒ zhuǎn","e":"turn left"},{"h":"。","punct":true},{"h":"地铁站","p":"dìtiězhàn","e":"metro station"},{"h":"在","p":"zài","e":"is at"},{"h":"右边","p":"yòubian","e":"on the right"},{"h":"。","punct":true}]},
+        {"speaker":"Visitor","translation":"Is it far from here?","tokens":[{"h":"离这里","p":"lí zhèli","e":"from here"},{"h":"远","p":"yuǎn","e":"far"},{"h":"吗","p":"ma","e":"question particle"},{"h":"？","punct":true}]},
+        {"speaker":"Local","translation":"Not far. It's a five-minute walk.","tokens":[{"h":"不远","p":"bù yuǎn","e":"not far"},{"h":"，","punct":true},{"h":"走路","p":"zǒulù","e":"walking"},{"h":"五分钟","p":"wǔ fēnzhōng","e":"five minutes"},{"h":"就到","p":"jiù dào","e":"then you'll arrive"},{"h":"。","punct":true}]}
+      ],
+      "quiz":{"question":"What should the visitor do after going straight?","options":["Turn right","Take a bus","Turn left"],"answer":2,"explanation":"然后左转 means “then turn left”. The station itself is on the right after that turn."}
+    },
+    {
+      "id":"conversation-plans","title":"明天有空吗？","englishTitle":"Making Plans for Tomorrow","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":4,"accent":"jade","summary":"Invite a friend and agree on a time and place.",
+      "coach":{"title":"Make an invitation","notes":["你明天有空吗？ asks “Are you free tomorrow?”. 一起…吧 is a friendly suggestion: “Let's… together”.", "几点？ asks “What time?”. Practise changing 下午三点 to a different meeting time."],"practice":[{"h":"有空","p":"yǒu kòng","e":"have free time"},{"h":"几点","p":"jǐ diǎn","e":"what time?"},{"h":"下午三点","p":"xiàwǔ sān diǎn","e":"three in the afternoon"},{"h":"明天见","p":"míngtiān jiàn","e":"see you tomorrow"}]},
+      "paragraphs":[
+        {"speaker":"A","translation":"Are you free tomorrow? Let's have tea together.","tokens":[{"h":"你","p":"nǐ","e":"you"},{"h":"明天","p":"míngtiān","e":"tomorrow"},{"h":"有空","p":"yǒu kòng","e":"have free time"},{"h":"吗","p":"ma","e":"question particle"},{"h":"？","punct":true},{"h":"一起","p":"yìqǐ","e":"together"},{"h":"喝茶","p":"hē chá","e":"drink tea"},{"h":"吧","p":"ba","e":"friendly suggestion particle"},{"h":"。","punct":true}]},
+        {"speaker":"B","translation":"Sure! What time?","tokens":[{"h":"好啊","p":"hǎo a","e":"sure / sounds good"},{"h":"！","punct":true},{"h":"几点","p":"jǐ diǎn","e":"what time"},{"h":"？","punct":true}]},
+        {"speaker":"A","translation":"Three in the afternoon. Let's meet at the café.","tokens":[{"h":"下午三点","p":"xiàwǔ sān diǎn","e":"three in the afternoon"},{"h":"。","punct":true},{"h":"我们","p":"wǒmen","e":"we"},{"h":"在","p":"zài","e":"at"},{"h":"咖啡馆","p":"kāfēiguǎn","e":"café"},{"h":"见面","p":"jiànmiàn","e":"meet"},{"h":"吧","p":"ba","e":"friendly suggestion particle"},{"h":"。","punct":true}]},
+        {"speaker":"B","translation":"Okay. See you tomorrow!","tokens":[{"h":"好的","p":"hǎo de","e":"okay"},{"h":"，","punct":true},{"h":"明天见","p":"míngtiān jiàn","e":"see you tomorrow"},{"h":"！","punct":true}]}
+      ],
+      "quiz":{"question":"When will the friends meet?","options":["Tomorrow at 3 p.m.","Today at 3 a.m.","Tomorrow at 5 p.m."],"answer":0,"explanation":"They are making plans for 明天 (tomorrow), at 下午三点 (3 p.m.)."}
+    },
+    {
+      "id":"conversation-speak-slowly","title":"请再说一遍","englishTitle":"Could You Say That Again?","level":"Beginner 1","topic":"conversation","topicLabel":"Daily conversations","minutes":4,"accent":"persimmon","summary":"Keep a conversation going when you don't understand.",
+      "coach":{"title":"A useful rescue phrase","notes":["不好意思 politely softens a request: “Excuse me / sorry”. 我没听懂 means “I didn't understand what I heard”.", "请再说一遍 means “Please say it again”. 请说慢一点 asks someone to slow down. Try saying both without looking."],"practice":[{"h":"不好意思","p":"bù hǎoyìsi","e":"excuse me / sorry"},{"h":"我没听懂","p":"wǒ méi tīngdǒng","e":"I didn't understand"},{"h":"请再说一遍","p":"qǐng zài shuō yí biàn","e":"please say it again"},{"h":"请说慢一点","p":"qǐng shuō màn yìdiǎn","e":"please speak a little slower"}]},
+      "paragraphs":[
+        {"speaker":"Shop assistant","translation":"This is fifteen yuan.","tokens":[{"h":"这个","p":"zhège","e":"this one"},{"h":"十五元","p":"shíwǔ yuán","e":"fifteen yuan"},{"h":"。","punct":true}]},
+        {"speaker":"Learner","translation":"Sorry, I didn't understand. Please say it again.","tokens":[{"h":"不好意思","p":"bù hǎoyìsi","e":"excuse me / sorry"},{"h":"，","punct":true},{"h":"我没听懂","p":"wǒ méi tīngdǒng","e":"I didn't understand"},{"h":"。","punct":true},{"h":"请再说一遍","p":"qǐng zài shuō yí biàn","e":"please say it again"},{"h":"。","punct":true}]},
+        {"speaker":"Learner","translation":"Please speak a little slower.","tokens":[{"h":"请说慢一点","p":"qǐng shuō màn yìdiǎn","e":"please speak a little slower"},{"h":"。","punct":true}]},
+        {"speaker":"Shop assistant","translation":"Sure. Fifteen yuan.","tokens":[{"h":"好的","p":"hǎo de","e":"okay"},{"h":"。","punct":true},{"h":"十五元","p":"shíwǔ yuán","e":"fifteen yuan"},{"h":"。","punct":true}]}
+      ],
+      "quiz":{"question":"Which phrase asks someone to repeat?","options":["明天见 míngtiān jiàn","请再说一遍 qǐng zài shuō yí biàn","多少钱 duōshao qián"],"answer":1,"explanation":"请再说一遍 means “Please say it again”. Add 请说慢一点 if you also need a slower pace."}
     }
   ]
 }

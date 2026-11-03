@@ -74,7 +74,7 @@ h1 em { color: var(--jade); font-weight: 400; }
 .story-card.gold, .reader-header.gold { background: linear-gradient(145deg, #c59642, #806221); }
 .story-card.plum, .reader-header.plum { background: linear-gradient(145deg, #82566f, #4d3043); }
 .story-card::after { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; right: -72px; bottom: -98px; box-shadow: 0 0 0 26px rgba(255,255,255,.035), 0 0 0 52px rgba(255,255,255,.025); pointer-events: none; }
-.story-card-top { display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.78); font-size: 11px; }
+.story-card-top { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; color: rgba(255,255,255,.78); font-size: 11px; }
 .story-card .story-level { background: rgba(255,255,255,.15); color: #fff; }
 .complete-mark { font-weight: 750; }
 .story-card-copy { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 17px; margin: 22px 0 20px; }
@@ -112,7 +112,7 @@ h1 em { color: var(--jade); font-weight: 400; }
 .reader-tool { min-width: 43px; height: 43px; padding: 0 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 14px; background: rgba(255,255,255,.09); color: rgba(255,255,255,.8); font-size: 11px; font-weight: 800; }
 .reader-tool.active { background: white; color: var(--jade); }
 .sound-tool svg { width: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.story-meta { display: flex; gap: 14px; clear: both; padding-top: 50px; color: rgba(255,255,255,.7); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+.story-meta { display: flex; flex-wrap: wrap; gap: 10px; clear: both; padding-top: 50px; color: rgba(255,255,255,.7); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
 .reader-header h1 { margin-top: 8px; font-family: "Songti SC", serif; font-size: clamp(38px, 12vw, 58px); letter-spacing: .01em; }
 .reader-header p { margin: 6px 0 0; color: rgba(255,255,255,.73); }
 .reader-body { position: relative; z-index: 1; margin-top: -24px; padding: 25px max(21px, env(safe-area-inset-right)) calc(36px + env(safe-area-inset-bottom)) max(21px, env(safe-area-inset-left)); border-radius: 26px 26px 0 0; background: var(--paper); }
@@ -207,6 +207,25 @@ input[type="range"] { width: 100%; accent-color: var(--persimmon); }
 .audio-status { font-size: 12px; line-height: 1.5; color: var(--muted); text-align: center; margin: 0 auto 18px; max-width: 38em; }
 .audio-error { color: #9b4434; }
 .audio-playing { background: var(--gold) !important; color: var(--ink) !important; }
+.study-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.study-path { position: relative; display: grid; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); text-align: left; }
+.path-symbol { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 8px; border-radius: 12px; background: var(--jade-soft); color: var(--jade); font: 23px Georgia, serif; }
+.study-path:nth-child(2) .path-symbol { background: #f1ded2; color: #9c4a31; }
+.study-path strong { font: bold 17px Georgia, serif; }
+.study-path small { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.path-arrow { position: absolute; right: 16px; top: 22px; }
+.learning-focus { max-width: 690px; margin: 0 auto 30px; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; }
+.learning-focus h2 { font: 24px Georgia, serif; margin: 7px 0 12px; }
+.learning-focus ul { padding-left: 19px; margin: 0; color: #4b5a52; font-size: 13px; line-height: 1.75; }
+.learning-focus li + li { margin-top: 9px; }
+.practice-hint { margin: 19px 0 10px; color: var(--muted); font-size: 12px; }
+.practice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.practice-sound { display: grid; justify-items: center; gap: 5px; min-width: 0; padding: 14px 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 15px; text-align: center; }
+.practice-hanzi { font: 27px "Songti SC", serif; overflow-wrap: anywhere; }
+.practice-sound strong { color: #9c4a31; font-size: 12px; overflow-wrap: anywhere; }
+.practice-sound small { color: #59665f; font-size: 10px; line-height: 1.5; }
+.listen-label { margin-top: 5px; color: var(--jade); font-size: 11px; font-weight: 700; }
+.speaker-tag { margin: 0 0 5px; color: #9c4a31; font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .check-chip input:focus-visible + span, .switch input:focus-visible + span { outline: 3px solid var(--persimmon); outline-offset: 3px; }
 
 button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid rgba(200,107,74,.45); outline-offset: 3px; }

@@ -46,7 +46,7 @@ test('every word and full story has a non-empty, valid WAV recording',()=>{
   const {clips}=JSON.parse(readFileSync('dist/audio/manifest.json','utf8'));
   for(const story of stories){
     const tokens=story.paragraphs.flatMap(paragraph=>paragraph.tokens);
-    for(const text of [...tokens.filter(token=>!token.punct).map(token=>token.h),tokens.map(token=>token.h).join('')]){
+    for(const text of [...tokens.filter(token=>!token.punct).map(token=>token.h),...(story.coach?.practice ?? []).map(word=>word.h),tokens.map(token=>token.h).join('')]){
       assert.ok(clips[text],`No recording: ${text}`);const bytes=readFileSync(`dist/${clips[text].src}`);
       assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WAVE');
       assert.ok(statSync(`dist/${clips[text].src}`).size>1000);assert.ok(clips[text].duration>.1);

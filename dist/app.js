@@ -1,6 +1,7 @@
 import { MandarinPlayer } from "./speech.js?v=recordings-1";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
+const TOPICS = [["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 
 const defaultState = {
   name: "Learner",
@@ -38,7 +39,7 @@ init();
 
 async function init() {
   try {
-    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json"), fetch("./audio/manifest.json")]);
+    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=lessons-1"), fetch("./audio/manifest.json?v=lessons-1")]);
     if (!response.ok) throw new Error("Story library could not be loaded");
     stories = (await response.json()).stories;
     if (!audioResponse.ok) throw new Error("Audio library could not be loaded");
@@ -63,7 +64,7 @@ function loadState() {
     for (const key of ["streak", "totalMinutes"]) if (Number.isSafeInteger(saved[key]) && saved[key] >= 0) result[key] = saved[key];
     if (typeof saved.lastStudyDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(saved.lastStudyDate)) result.lastStudyDate = saved.lastStudyDate;
     if (Array.isArray(saved.completed)) result.completed = [...new Set(saved.completed.filter((value) => typeof value === "string"))];
-    if (Array.isArray(saved.topics)) result.topics = [...new Set(saved.topics.filter((value) => ["daily-life", "food", "travel", "shopping"].includes(value)))];
+    if (Array.isArray(saved.topics)) result.topics = [...new Set(saved.topics.filter((value) => TOPICS.some(([id]) => id === value)))];
     if (Array.isArray(saved.savedWords)) result.savedWords = saved.savedWords.filter((word) => word && ["h", "p", "e", "key"].every((key) => typeof word[key] === "string"));
     return result;
   } catch {
@@ -153,6 +154,7 @@ function renderHome() {
       ${storyCard(recommended, true)}
     </section>
 
+    ${studyPaths()}
     <section class="page-shell section-block compact-bottom">
       <div class="section-heading"><div><span class="eyebrow">Continue exploring</span><h2>Short reads</h2></div><a href="#library" class="text-link">See all</a></div>
       <div class="horizontal-stories">
@@ -162,14 +164,30 @@ function renderHome() {
   `;
 }
 
+function studyPaths() {
+  return `<section class="page-shell section-block"><div class="section-heading"><div><span class="eyebrow">Listen, then try it</span><h2>Build your basics</h2></div></div><div class="study-paths">
+    <button class="study-path" type="button" data-open-topic="pinyin"><span class="path-symbol" aria-hidden="true">ā</span><strong>Pinyin practice</strong><small>4 sound-focused lessons</small><span class="path-arrow" aria-hidden="true">→</span></button>
+    <button class="study-path" type="button" data-open-topic="conversation"><span class="path-symbol" aria-hidden="true">说</span><strong>Daily conversations</strong><small>6 useful everyday exchanges</small><span class="path-arrow" aria-hidden="true">→</span></button>
+  </div></section>`;
+}
+
+function learningFocus(story) {
+  if (!story.coach) return "";
+  return `<section class="learning-focus" aria-label="Learning focus">
+    <span class="eyebrow">${story.topic === "pinyin" ? "Pinyin lab" : "Say it in real life"}</span>
+    <h2>${escapeHtml(story.coach.title)}</h2>
+    <ul>${story.coach.notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>
+    <p class="practice-hint">Tap a sound, listen, then repeat aloud.</p>
+    <div class="practice-grid">${story.coach.practice.map((word) => `<button type="button" class="practice-sound" data-speak-word="${escapeAttr(word.h)}" aria-label="Hear ${escapeAttr(word.h)}"><span class="practice-hanzi" lang="zh-Hans">${escapeHtml(word.h)}</span><strong>${escapeHtml(word.p)}</strong><small>${escapeHtml(word.e)}</small><span class="listen-label" aria-hidden="true">▷ Listen</span></button>`).join("")}</div>
+  </section>`;
+}
+
 function renderLibrary() {
-  const topics = [
-    ["all", "All"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]
-  ];
+  const topics = [["all", "All"], ...TOPICS];
   const visible = stories.filter((story) => libraryFilter === "all" || story.topic === libraryFilter);
 
   app.innerHTML = `
-    <section class="page-shell page-title"><span class="eyebrow">Your reading shelf</span><h1>Story library</h1><p>Small stories, useful language, no pressure.</p></section>
+    <section class="page-shell page-title"><span class="eyebrow">Your reading shelf</span><h1>Story library</h1><p>${stories.length} short reads and guided lessons. Listen, repeat, then try the quick check.</p></section>
     <section class="page-shell">
       <div class="filter-row" role="group" aria-label="Filter stories by topic">
         ${topics.map(([value, label]) => `<button class="filter-chip ${libraryFilter === value ? "active" : ""}" type="button" data-filter="${value}">${label}</button>`).join("")}
@@ -195,9 +213,7 @@ function renderWords() {
 }
 
 function renderProfile() {
-  const topicOptions = [
-    ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]
-  ];
+  const topicOptions = TOPICS;
 
   app.innerHTML = `
     <section class="page-shell page-title"><span class="eyebrow">Make it yours</span><h1>Your path</h1><p>These preferences stay on this device.</p></section>
@@ -245,18 +261,20 @@ function renderReader() {
         <div class="reader-actions">
           <button class="reader-tool ${state.showPinyin ? "active" : ""}" type="button" data-toggle-pinyin aria-pressed="${state.showPinyin}">拼音</button>
           <button class="reader-tool ${state.showTranslation ? "active" : ""}" type="button" data-toggle-translation aria-pressed="${state.showTranslation}">EN</button>
-          <button class="reader-tool sound-tool" type="button" data-speak-story aria-label="Read story aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8m2.5-11a10 10 0 0 1 0 14" /></svg></button>
+          <button class="reader-tool sound-tool" type="button" data-speak-story="${escapeAttr(story.paragraphs.flatMap((paragraph) => paragraph.tokens).map((token) => token.h).join(""))}" aria-label="Read story aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8m2.5-11a10 10 0 0 1 0 14" /></svg></button>
         </div>
-        <div class="story-meta"><span>${story.level}</span><span>${story.minutes} min read</span></div>
+        <div class="story-meta"><span>${story.level}</span><span>${story.topicLabel}</span><span>${story.minutes} min</span></div>
         <h1>${story.title}</h1><p>${story.englishTitle}</p>
       </header>
 
       <div class="reader-body">
         <p class="reader-hint">Tap any word for its meaning.</p>
         <p class="audio-status" data-audio-status role="status"></p>
+        ${learningFocus(story)}
         <div class="story-copy ${state.showPinyin ? "show-pinyin" : "hide-pinyin"}">
           ${story.paragraphs.map((paragraph) => `
             <section class="story-paragraph">
+              ${paragraph.speaker ? `<p class="speaker-tag">${escapeHtml(paragraph.speaker)}</p>` : ""}
               <p class="chinese-copy">${paragraph.tokens.map((token) => tokenMarkup(token)).join("")}</p>
               ${state.showTranslation ? `<p class="paragraph-translation">${paragraph.translation}</p>` : ""}
             </section>`).join("")}
@@ -285,7 +303,7 @@ function renderReader() {
 function storyCard(story, featured) {
   const completed = state.completed.includes(story.id);
   return `<article class="story-card ${story.accent} ${featured ? "featured" : ""}">
-    <div class="story-card-top"><span class="story-level">${story.level}</span>${completed ? `<span class="complete-mark">✓ Read</span>` : `<span>${story.minutes} min</span>`}</div>
+    <div class="story-card-top"><span class="story-level">${story.level} · ${story.topicLabel}</span>${completed ? `<span class="complete-mark">✓ Read</span>` : `<span>${story.minutes} min</span>`}</div>
     <div class="story-card-copy"><span class="story-glyph" aria-hidden="true">${story.title.charAt(0)}</span><div><h3>${story.title}</h3><p>${story.englishTitle}</p><small>${story.summary}</small></div></div>
     <button class="story-open" type="button" data-open-story="${story.id}">${completed ? "Read again" : "Start reading"}<span aria-hidden="true">→</span></button>
   </article>`;
@@ -301,6 +319,14 @@ function tokenMarkup(token) {
 }
 
 function handleAppClick(event) {
+  const topic = event.target.closest("[data-open-topic]");
+  if (topic) {
+    libraryFilter = topic.dataset.openTopic;
+    currentView = "library";
+    if (location.hash === "#library") render();
+    else location.hash = "library";
+    return;
+  }
   const openStory = event.target.closest("[data-open-story]");
   if (openStory) {
     audio.stop();
@@ -487,7 +513,7 @@ function updateAudioControls() {
     element.classList.toggle("audio-error", audioState.status === "error");
   });
   document.querySelectorAll("[data-speak-word], [data-speak-story]").forEach((button) => {
-    const selected = active && (button.hasAttribute("data-speak-story") || button.dataset.speakWord === audioState.text);
+    const selected = active && (button.hasAttribute("data-speak-story") ? button.dataset.speakStory === audioState.text : button.dataset.speakWord === audioState.text);
     button.classList.toggle("audio-playing", selected);
     button.setAttribute("aria-pressed", String(selected));
     button.setAttribute("aria-label", selected ? "Stop audio" : button.hasAttribute("data-speak-story") ? "Read story aloud" : `Hear ${button.dataset.speakWord}`);

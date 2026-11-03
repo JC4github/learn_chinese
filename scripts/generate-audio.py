@@ -24,6 +24,7 @@ texts = []
 for story in stories:
     tokens = [token for paragraph in story["paragraphs"] for token in paragraph["tokens"]]
     texts.extend(token["h"] for token in tokens if not token.get("punct"))
+    texts.extend(sample["h"] for sample in story.get("coach", {}).get("practice", []))
     texts.append("".join(token["h"] for token in tokens))
 texts = list(dict.fromkeys(texts))
 

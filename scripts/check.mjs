@@ -15,7 +15,7 @@ if (manifest.display !== "standalone") throw new Error("PWA display mode must be
 if (!manifest.icons.some((icon) => icon.sizes === "180x180")) throw new Error("Missing iPhone Home Screen icon");
 
 const { stories } = JSON.parse(readFileSync("dist/data/stories.json", "utf8"));
-if (stories.length < 4) throw new Error("Starter library must contain at least four stories");
+if (stories.length < 14) throw new Error("Library must contain at least fourteen stories and guided lessons");
 for (const story of stories) {
   if (!story.paragraphs?.length || !story.quiz?.options?.length) throw new Error(`Incomplete story: ${story.id}`);
   const words = story.paragraphs.flatMap((paragraph) => paragraph.tokens).filter((token) => !token.punct);

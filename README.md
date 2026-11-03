@@ -4,7 +4,8 @@ Hanzi Path is a private, mobile-first Mandarin graded-reading app. It is an orig
 
 ## Current MVP
 
-- Four original beginner stories
+- Four original beginner stories, four pinyin lessons, and six daily conversations
+- Guided sound comparisons, reusable phrases, and labelled dialogue turns
 - Tap any Chinese word for pinyin and meaning
 - Bundled Mandarin recordings for words and stories
 - Optional pinyin and paragraph translations
@@ -40,7 +41,7 @@ Story content is stored in `dist/data/stories.json`. It can be expanded without 
 
 Tap a Chinese word, then the speaker in its definition sheet. Saved-word rows also play pronunciation. The reader speaker plays the whole story. Tap the active speaker again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app.
 
-Audio uses bundled recordings through Howler.js 2.2.4. All 81 unique words/phrases and all four full stories have audio, generated locally with Kokoro v1.1-zh through sherpa-onnx. The approximately 6.2 MB recording library is cached for offline use. No device speech voice, API key, or speech subscription is needed. Browser autoplay rules still require tapping a speaker.
+Audio uses bundled recordings through Howler.js 2.2.4. All words, phrases, pronunciation examples and full lessons have audio, generated locally with Kokoro v1.1-zh through sherpa-onnx. Existing recordings are reused when text matches. The recording library is cached for offline use. No device speech voice, API key, or speech subscription is needed. Browser autoplay rules still require tapping a speaker.
 
 See `AUDIO.md` for generation instructions, sources, and licenses. The large generation model stays in the ignored `work/` directory and is not shipped to the browser.
 

@@ -59,6 +59,19 @@ test('storage quota errors report failure rather than breaking the flow',()=>{
   const h=appHarness(null,true); h.evaluate('saveState()'); assert.match(h.elements.get('#toast').textContent,/could not be saved/);
 });
 
+test('playing a practice sample does not mark the full-story control as playing',()=>{
+  const h=appHarness();
+  h.evaluate(`
+    const controls = [{dataset:{speakStory:'完整故事'},hasAttribute:name=>name==='data-speak-story'}, {dataset:{speakWord:'妈'},hasAttribute:()=>false}];
+    controls.forEach(button=>{button.attrs={};button.classList={toggle(){}};button.setAttribute=(key,value)=>button.attrs[key]=value;});
+    document.querySelectorAll=selector=>selector.includes('[data-speak-word]')?controls:[];
+    audioState={status:'playing',text:'妈',message:'Playing'};
+    updateAudioControls();
+  `);
+  assert.equal(h.evaluate("controls[0].attrs['aria-pressed']"),'false');
+  assert.equal(h.evaluate("controls[1].attrs['aria-pressed']"),'true');
+});
+
 function workerHarness({offline=false}={}) {
   const handlers={}, deleted=[], cached=[], response={from:'cache'}, network={from:'network'};
   const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>({addAll:async files=>cached.push(...files),match:async()=>({json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})})}),keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>response},fetch:async()=>{if(offline)throw Error('offline');return network;}});

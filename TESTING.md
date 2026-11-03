@@ -1,5 +1,15 @@
 # Test report — 3 November 2026
 
+## Pinyin and conversation expansion (current)
+
+The library now contains 14 lessons: four original stories, four pinyin lessons and six daily conversations. Each guided lesson includes explanations and tappable pronunciation/phrase examples; dialogue turns have speaker labels. All original story IDs and saved progress remain compatible.
+
+All 23 automated tests pass, including vocabulary, full-lesson and practice-example audio coverage; pinyin tone examples; guided-content structure; quizzes for all 14 lessons; and independent playing states for a practice sample versus the full-story button.
+
+Browser checks at a 390 × 844 viewport opened all ten new lessons, verified explanations/examples and dialogue labels, exercised quiz feedback, and found no horizontal content overflow. The original 85 audio files are reused unchanged. There are 189 clips in total (14,202,744 bytes).
+
+The four tone-example recordings played and completed in the browser. A conversation phrase and new full-conversation narration also played. The full-story control correctly stayed inactive during individual example playback. A 320-pixel reader check had no horizontal overflow, and the home-page Pinyin shortcut selected the correct shelf. With the HTTP server stopped, the app reloaded a new pinyin lesson and its 马 recording played to completion offline. No new browser errors were observed during these checks.
+
 ## Bundled-audio update (current)
 
 The device-voice implementation described in the historical sections below has been replaced. The app now includes 85 WAV recordings, generated locally with Kokoro v1.1-zh and played through Howler.js 2.2.4. It no longer uses the Web Speech API or requires an installed Mandarin voice.
