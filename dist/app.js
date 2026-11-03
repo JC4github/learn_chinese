@@ -1,3 +1,5 @@
+import { MandarinPlayer } from "./speech.js";
+
 const STORAGE_KEY = "hanzi-path-state-v1";
 
 const defaultState = {
@@ -21,6 +23,12 @@ let activeStoryId = null;
 let quizSelection = null;
 let libraryFilter = "all";
 let deferredInstallPrompt = null;
+let audioState = { status: "idle", text: "", message: "Tap the speaker to hear Mandarin." };
+const audio = new MandarinPlayer({
+  synth: window.speechSynthesis,
+  Utterance: window.SpeechSynthesisUtterance,
+  onChange: (value) => { audioState = value; updateAudioControls(); },
+});
 
 const app = document.querySelector("#app");
 const wordDialog = document.querySelector("#word-dialog");
@@ -45,14 +53,26 @@ async function init() {
 function loadState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return { ...defaultState, ...saved };
+    const result = structuredClone(defaultState);
+    if (!saved || typeof saved !== "object" || Array.isArray(saved)) return result;
+    if (typeof saved.name === "string") result.name = saved.name.trim().slice(0, 24) || "Learner";
+    if (["Beginner 1", "Beginner 2"].includes(saved.level)) result.level = saved.level;
+    if ([5, 10, 15, 20, 25, 30].includes(saved.dailyMinutes)) result.dailyMinutes = saved.dailyMinutes;
+    for (const key of ["showPinyin", "showTranslation"]) if (typeof saved[key] === "boolean") result[key] = saved[key];
+    for (const key of ["streak", "totalMinutes"]) if (Number.isSafeInteger(saved[key]) && saved[key] >= 0) result[key] = saved[key];
+    if (typeof saved.lastStudyDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(saved.lastStudyDate)) result.lastStudyDate = saved.lastStudyDate;
+    if (Array.isArray(saved.completed)) result.completed = [...new Set(saved.completed.filter((value) => typeof value === "string"))];
+    if (Array.isArray(saved.topics)) result.topics = [...new Set(saved.topics.filter((value) => ["daily-life", "food", "travel", "shopping"].includes(value)))];
+    if (Array.isArray(saved.savedWords)) result.savedWords = saved.savedWords.filter((word) => word && ["h", "p", "e", "key"].every((key) => typeof word[key] === "string"));
+    return result;
   } catch {
-    return { ...defaultState };
+    return structuredClone(defaultState);
   }
 }
 
 function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch { showToast("Progress could not be saved. Check available storage or private browsing settings."); }
 }
 
 function getRoute() {
@@ -62,6 +82,8 @@ function getRoute() {
 
 function bindGlobalEvents() {
   window.addEventListener("hashchange", () => {
+    if (location.hash === "#app") return;
+    audio.stop();
     activeStoryId = null;
     quizSelection = null;
     currentView = getRoute();
@@ -82,6 +104,9 @@ function bindGlobalEvents() {
 
   document.addEventListener("click", handleAppClick);
   app.addEventListener("change", handleAppChange);
+  wordDialog.addEventListener("close", () => audio.stop());
+  window.addEventListener("pagehide", () => audio.stop());
+  document.addEventListener("visibilitychange", () => { if (document.hidden) audio.stop(); });
 }
 
 function render() {
@@ -90,6 +115,7 @@ function render() {
 
   if (activeStoryId) {
     renderReader();
+    app.scrollTo({ top: 0, behavior: "instant" });
     return;
   }
 
@@ -98,7 +124,7 @@ function render() {
   else if (currentView === "profile") renderProfile();
   else renderHome();
 
-  window.scrollTo({ top: 0, behavior: "instant" });
+  app.scrollTo({ top: 0, behavior: "instant" });
 }
 
 function renderHome() {
@@ -197,7 +223,7 @@ function renderProfile() {
       </div>
       <div class="settings-card toggle-card">
         <span><strong>Show pinyin by default</strong><small>You can still change this inside a story.</small></span>
-        <label class="switch"><input type="checkbox" data-setting="showPinyin" ${state.showPinyin ? "checked" : ""}/><span></span></label>
+        <label class="switch"><input type="checkbox" aria-label="Show pinyin by default" data-setting="showPinyin" ${state.showPinyin ? "checked" : ""}/><span></span></label>
       </div>
       <button class="secondary-button full-width" type="button" data-install>Install on this device</button>
       <button class="danger-link" type="button" data-reset>Reset all progress</button>
@@ -226,6 +252,7 @@ function renderReader() {
 
       <div class="reader-body">
         <p class="reader-hint">Tap any word for its meaning.</p>
+        <p class="audio-status" data-audio-status role="status"></p>
         <div class="story-copy ${state.showPinyin ? "show-pinyin" : "hide-pinyin"}">
           ${story.paragraphs.map((paragraph) => `
             <section class="story-paragraph">
@@ -251,6 +278,7 @@ function renderReader() {
       </div>
     </article>
   `;
+  updateAudioControls();
 }
 
 function storyCard(story, featured) {
@@ -274,6 +302,7 @@ function tokenMarkup(token) {
 function handleAppClick(event) {
   const openStory = event.target.closest("[data-open-story]");
   if (openStory) {
+    audio.stop();
     activeStoryId = openStory.dataset.openStory;
     quizSelection = null;
     render();
@@ -294,7 +323,7 @@ function handleAppClick(event) {
   }
 
   if (event.target.closest("[data-reader-back]")) {
-    window.speechSynthesis?.cancel();
+    audio.stop();
     activeStoryId = null;
     quizSelection = null;
     render();
@@ -361,7 +390,8 @@ function handleAppClick(event) {
 
   if (event.target.closest("[data-reset]")) {
     if (confirm("Reset your saved words, story progress, streak, and preferences?")) {
-      state = { ...defaultState };
+      audio.stop();
+      state = structuredClone(defaultState);
       saveState(); renderProfile(); showToast("Progress reset");
     }
   }
@@ -379,7 +409,7 @@ function handleAppChange(event) {
   }
   if (event.target.matches("[data-topic]")) {
     const selected = [...app.querySelectorAll("[data-topic]:checked")].map((input) => input.value);
-    state.topics = selected.length ? selected : ["daily-life"];
+    state.topics = selected;
     saveState();
   }
   if (event.target.matches("[data-setting]")) {
@@ -397,6 +427,7 @@ function getRecommendedStory() {
 }
 
 function showWord(word) {
+  audio.stop();
   const key = wordKey(word);
   const saved = state.savedWords.some((item) => item.key === key);
   const payload = JSON.stringify({ ...word, key });
@@ -404,6 +435,7 @@ function showWord(word) {
     <div class="word-detail">
       <button class="word-sound" type="button" data-speak-word="${escapeAttr(word.h)}" aria-label="Hear pronunciation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8" /></svg></button>
       <span class="word-hanzi">${escapeHtml(word.h)}</span><span class="word-pinyin">${escapeHtml(word.p)}</span><span class="word-meaning">${escapeHtml(word.e)}</span>
+      <p class="audio-status" data-audio-status role="status">Tap the speaker to hear Mandarin.</p>
       <button class="${saved ? "secondary-button" : "primary-button"} full-width" type="button" data-save-word='${escapeAttr(payload)}'>${saved ? "Remove from saved words" : "Save word"}</button>
     </div>`;
   wordDialog.showModal();
@@ -417,13 +449,14 @@ function toggleSavedWord(word) {
 }
 
 function completeStory() {
+  audio.stop();
   const story = stories.find((item) => item.id === activeStoryId);
   if (!state.completed.includes(story.id)) {
     state.completed.push(story.id);
     state.totalMinutes += story.minutes;
-    updateStreak();
-    saveState();
   }
+  updateStreak();
+  saveState();
   activeStoryId = null;
   currentView = "home";
   history.replaceState(null, "", "#home");
@@ -442,17 +475,21 @@ function updateStreak() {
 }
 
 function speak(text) {
-  if (!("speechSynthesis" in window)) {
-    showToast("Speech is not available in this browser");
-    return;
-  }
-  speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.82;
-  const voice = speechSynthesis.getVoices().find((item) => item.lang.toLowerCase().startsWith("zh"));
-  if (voice) utterance.voice = voice;
-  speechSynthesis.speak(utterance);
+  audio.play(text);
+}
+
+function updateAudioControls() {
+  const active = ["playing", "loading"].includes(audioState.status);
+  document.querySelectorAll("[data-audio-status]").forEach((element) => {
+    element.textContent = audioState.message;
+    element.classList.toggle("audio-error", audioState.status === "error");
+  });
+  document.querySelectorAll("[data-speak-word], [data-speak-story]").forEach((button) => {
+    const selected = active && (button.hasAttribute("data-speak-story") || button.dataset.speakWord === audioState.text);
+    button.classList.toggle("audio-playing", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    button.setAttribute("aria-label", selected ? "Stop audio" : button.hasAttribute("data-speak-story") ? "Read story aloud" : `Hear ${button.dataset.speakWord}`);
+  });
 }
 
 async function handleInstall() {

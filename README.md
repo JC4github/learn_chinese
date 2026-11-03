@@ -29,8 +29,19 @@ Then open the local address in a browser.
 ```powershell
 npm run icons
 npm run check
+npm test
 ```
 
 ## Content
 
 Story content is stored in `dist/data/stories.json`. It can be expanded without changing the interface code.
+
+## Audio
+
+Tap a Chinese word, then the speaker in its definition sheet. Saved-word rows also play pronunciation. The reader speaker plays the whole story. Tap the active speaker again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app.
+
+Audio uses the device's Mandarin speech voice. The app prefers local Mandarin voices, reports missing voices and playback failures, and does not substitute a Cantonese voice. Offline speech requires a locally installed Mandarin voice; no recorded narration is bundled.
+
+## Testing
+
+See `TESTING.md` for coverage, browser verification, and remaining device checks.
