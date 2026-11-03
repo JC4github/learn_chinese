@@ -1,0 +1,10 @@
+{
+  "name": "hanzi-path",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/generate-icons.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

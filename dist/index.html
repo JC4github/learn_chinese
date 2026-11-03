@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#173f38" />
+    <meta name="description" content="A private, personalised Mandarin graded-reading app." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hanzi Path" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Hanzi Path</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Hanzi Path home">
+        <span class="brand-mark" aria-hidden="true">路</span>
+        <span><strong>Hanzi Path</strong><small>读一点，懂更多</small></span>
+      </a>
+      <button class="icon-button install-button" id="install-button" type="button" aria-label="Install Hanzi Path">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" /></svg>
+      </button>
+    </header>
+
+    <main id="app" tabindex="-1" aria-live="polite">
+      <div class="loading-card"><span class="seal">读</span><p>Preparing today’s reading…</p></div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="#home" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" /></svg><span>Today</span></a>
+      <a href="#library" data-nav="library"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H11v18H6.5A2.5 2.5 0 0 0 4 22zm16 0A2.5 2.5 0 0 0 17.5 2H13v18h4.5A2.5 2.5 0 0 1 20 22z" /></svg><span>Library</span></a>
+      <a href="#words" data-nav="words"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a1 1 0 0 1 1 1v17l-8-4-8 4V4a1 1 0 0 1 1-1z" /></svg><span>Words</span></a>
+      <a href="#profile" data-nav="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0" /></svg><span>Me</span></a>
+    </nav>
+
+    <dialog id="word-dialog" class="sheet-dialog">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <div id="word-dialog-content"></div>
+    </dialog>
+
+    <dialog id="install-dialog" class="sheet-dialog install-dialog">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <span class="seal seal-small" aria-hidden="true">路</span>
+      <h2>Add Hanzi Path to your iPhone</h2>
+      <ol>
+        <li>Open this page in <strong>Safari</strong>.</li>
+        <li>Tap the <strong>Share</strong> button.</li>
+        <li>Choose <strong>Add to Home Screen</strong>.</li>
+      </ol>
+      <button class="primary-button full-width" type="button" data-close-dialog>Got it</button>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

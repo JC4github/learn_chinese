@@ -1,0 +1,128 @@
+{
+  "stories": [
+    {
+      "id": "morning-tea",
+      "title": "早上的一杯茶",
+      "englishTitle": "A Morning Cup of Tea",
+      "level": "Beginner 1",
+      "topic": "daily-life",
+      "topicLabel": "Daily life",
+      "minutes": 4,
+      "accent": "jade",
+      "summary": "A quiet start to Lin An’s day.",
+      "paragraphs": [
+        {
+          "translation": "This morning, Lin An got up very early. She walked to the kitchen and made herself a cup of tea.",
+          "tokens": [
+            {"h":"今天","p":"jīntiān","e":"today"},{"h":"早上","p":"zǎoshang","e":"morning"},{"h":"，","punct":true},{"h":"林安","p":"Lín Ān","e":"Lin An"},{"h":"起得","p":"qǐ de","e":"got up"},{"h":"很早","p":"hěn zǎo","e":"very early"},{"h":"。","punct":true},{"h":"她","p":"tā","e":"she"},{"h":"走到","p":"zǒu dào","e":"walked to"},{"h":"厨房","p":"chúfáng","e":"kitchen"},{"h":"，","punct":true},{"h":"给自己","p":"gěi zìjǐ","e":"for herself"},{"h":"泡了","p":"pào le","e":"made / steeped"},{"h":"一杯茶","p":"yì bēi chá","e":"a cup of tea"},{"h":"。","punct":true}
+          ]
+        },
+        {
+          "translation": "It was raining lightly outside, but the room was peaceful. She drank tea while planning her day.",
+          "tokens": [
+            {"h":"窗外","p":"chuāngwài","e":"outside the window"},{"h":"下着","p":"xiàzhe","e":"was falling"},{"h":"小雨","p":"xiǎoyǔ","e":"light rain"},{"h":"，","punct":true},{"h":"可是","p":"kěshì","e":"but"},{"h":"房间里","p":"fángjiān lǐ","e":"in the room"},{"h":"很安静","p":"hěn ānjìng","e":"very quiet"},{"h":"。","punct":true},{"h":"她","p":"tā","e":"she"},{"h":"一边","p":"yìbiān","e":"while"},{"h":"喝茶","p":"hē chá","e":"drank tea"},{"h":"，","punct":true},{"h":"一边","p":"yìbiān","e":"at the same time"},{"h":"计划","p":"jìhuà","e":"planned"},{"h":"今天","p":"jīntiān","e":"today"},{"h":"要做的事","p":"yào zuò de shì","e":"things to do"},{"h":"。","punct":true}
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "What was the weather like?",
+        "options": ["It was snowing", "There was light rain", "It was very sunny"],
+        "answer": 1,
+        "explanation": "窗外下着小雨 means that light rain was falling outside."
+      }
+    },
+    {
+      "id": "lunch-choice",
+      "title": "今天吃什么？",
+      "englishTitle": "What Should We Eat Today?",
+      "level": "Beginner 1",
+      "topic": "food",
+      "topicLabel": "Food",
+      "minutes": 5,
+      "accent": "persimmon",
+      "summary": "Two friends solve the daily lunch question.",
+      "paragraphs": [
+        {
+          "translation": "At noon, Xiao Yu and Daming were both hungry. They stood outside the office and discussed what to eat.",
+          "tokens": [
+            {"h":"中午","p":"zhōngwǔ","e":"noon"},{"h":"，","punct":true},{"h":"小雨","p":"Xiǎo Yǔ","e":"Xiao Yu"},{"h":"和","p":"hé","e":"and"},{"h":"大明","p":"Dà Míng","e":"Daming"},{"h":"都","p":"dōu","e":"both"},{"h":"饿了","p":"è le","e":"became hungry"},{"h":"。","punct":true},{"h":"他们","p":"tāmen","e":"they"},{"h":"站在","p":"zhàn zài","e":"stood at"},{"h":"公司外面","p":"gōngsī wàimiàn","e":"outside the office"},{"h":"，","punct":true},{"h":"商量","p":"shāngliang","e":"discussed"},{"h":"吃什么","p":"chī shénme","e":"what to eat"},{"h":"。","punct":true}
+          ]
+        },
+        {
+          "translation": "Xiao Yu wanted noodles, while Daming wanted rice. Then they saw a small restaurant that had both.",
+          "tokens": [
+            {"h":"小雨","p":"Xiǎo Yǔ","e":"Xiao Yu"},{"h":"想吃","p":"xiǎng chī","e":"wanted to eat"},{"h":"面条","p":"miàntiáo","e":"noodles"},{"h":"，","punct":true},{"h":"大明","p":"Dà Míng","e":"Daming"},{"h":"想吃","p":"xiǎng chī","e":"wanted to eat"},{"h":"米饭","p":"mǐfàn","e":"rice"},{"h":"。","punct":true},{"h":"后来","p":"hòulái","e":"later"},{"h":"，","punct":true},{"h":"他们","p":"tāmen","e":"they"},{"h":"看到","p":"kàndào","e":"saw"},{"h":"一家","p":"yì jiā","e":"one (business)"},{"h":"小饭馆","p":"xiǎo fànguǎn","e":"small restaurant"},{"h":"，","punct":true},{"h":"两种","p":"liǎng zhǒng","e":"both kinds"},{"h":"都有","p":"dōu yǒu","e":"were available"},{"h":"。","punct":true}
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "Why did the small restaurant suit both friends?",
+        "options": ["It had noodles and rice", "It was inside their office", "Lunch was free"],
+        "answer": 0,
+        "explanation": "The restaurant had both foods: 两种都有。"
+      }
+    },
+    {
+      "id": "wrong-bus",
+      "title": "坐错车了",
+      "englishTitle": "The Wrong Bus",
+      "level": "Beginner 2",
+      "topic": "travel",
+      "topicLabel": "Travel",
+      "minutes": 6,
+      "accent": "gold",
+      "summary": "A small mistake becomes a useful conversation.",
+      "paragraphs": [
+        {
+          "translation": "Chen Fei wanted to go to the museum, but he boarded the wrong bus. After ten minutes, the road looked unfamiliar.",
+          "tokens": [
+            {"h":"陈飞","p":"Chén Fēi","e":"Chen Fei"},{"h":"想去","p":"xiǎng qù","e":"wanted to go"},{"h":"博物馆","p":"bówùguǎn","e":"museum"},{"h":"，","punct":true},{"h":"但是","p":"dànshì","e":"but"},{"h":"他","p":"tā","e":"he"},{"h":"坐错了","p":"zuò cuò le","e":"took the wrong"},{"h":"公交车","p":"gōngjiāochē","e":"bus"},{"h":"。","punct":true},{"h":"十分钟后","p":"shí fēnzhōng hòu","e":"ten minutes later"},{"h":"，","punct":true},{"h":"路上","p":"lùshang","e":"on the road"},{"h":"看起来","p":"kàn qǐlái","e":"looked"},{"h":"很陌生","p":"hěn mòshēng","e":"unfamiliar"},{"h":"。","punct":true}
+          ]
+        },
+        {
+          "translation": "He asked the driver for help. The driver smiled and told him to get off at the next stop and take bus number eight back.",
+          "tokens": [
+            {"h":"他","p":"tā","e":"he"},{"h":"问","p":"wèn","e":"asked"},{"h":"司机","p":"sījī","e":"driver"},{"h":"怎么办","p":"zěnme bàn","e":"what to do"},{"h":"。","punct":true},{"h":"司机","p":"sījī","e":"driver"},{"h":"笑了笑","p":"xiào le xiào","e":"smiled"},{"h":"，","punct":true},{"h":"告诉他","p":"gàosu tā","e":"told him"},{"h":"下一站","p":"xià yí zhàn","e":"next stop"},{"h":"下车","p":"xià chē","e":"get off"},{"h":"，","punct":true},{"h":"再坐","p":"zài zuò","e":"then take"},{"h":"八路车","p":"bā lù chē","e":"bus number eight"},{"h":"回去","p":"huíqù","e":"go back"},{"h":"。","punct":true}
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "What did the driver tell Chen Fei to do first?",
+        "options": ["Walk to the museum", "Get off at the next stop", "Wait on the bus"],
+        "answer": 1,
+        "explanation": "The driver first said 下一站下车 — get off at the next stop."
+      }
+    },
+    {
+      "id": "weekend-market",
+      "title": "周末的小市场",
+      "englishTitle": "The Weekend Market",
+      "level": "Beginner 2",
+      "topic": "shopping",
+      "topicLabel": "Shopping",
+      "minutes": 6,
+      "accent": "plum",
+      "summary": "Mei discovers a friendly neighbourhood market.",
+      "paragraphs": [
+        {
+          "translation": "Every Saturday, there is a small market near Mei’s home. Vegetables, fruit, flowers, and handmade bread are sold there.",
+          "tokens": [
+            {"h":"每个星期六","p":"měi ge xīngqīliù","e":"every Saturday"},{"h":"，","punct":true},{"h":"美美家附近","p":"Měimei jiā fùjìn","e":"near Mei's home"},{"h":"都有","p":"dōu yǒu","e":"there is"},{"h":"一个","p":"yí ge","e":"one"},{"h":"小市场","p":"xiǎo shìchǎng","e":"small market"},{"h":"。","punct":true},{"h":"那里","p":"nàli","e":"there"},{"h":"卖","p":"mài","e":"sells"},{"h":"蔬菜","p":"shūcài","e":"vegetables"},{"h":"、","punct":true},{"h":"水果","p":"shuǐguǒ","e":"fruit"},{"h":"、","punct":true},{"h":"鲜花","p":"xiānhuā","e":"fresh flowers"},{"h":"和","p":"hé","e":"and"},{"h":"手工面包","p":"shǒugōng miànbāo","e":"handmade bread"},{"h":"。","punct":true}
+          ]
+        },
+        {
+          "translation": "Mei bought three red apples. The seller gave her one small pear and said, “Try this—it’s very sweet!”",
+          "tokens": [
+            {"h":"美美","p":"Měimei","e":"Mei"},{"h":"买了","p":"mǎi le","e":"bought"},{"h":"三个","p":"sān ge","e":"three"},{"h":"红苹果","p":"hóng píngguǒ","e":"red apples"},{"h":"。","punct":true},{"h":"老板","p":"lǎobǎn","e":"seller"},{"h":"又送给她","p":"yòu sòng gěi tā","e":"also gave her"},{"h":"一个","p":"yí ge","e":"one"},{"h":"小梨","p":"xiǎo lí","e":"small pear"},{"h":"，","punct":true},{"h":"说","p":"shuō","e":"said"},{"h":"：","punct":true},{"h":"“尝尝吧","p":"chángchang ba","e":"give it a try"},{"h":"，","punct":true},{"h":"很甜","p":"hěn tián","e":"very sweet"},{"h":"！”","punct":true}
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "What extra fruit did the seller give Mei?",
+        "options": ["A small pear", "A green apple", "Two oranges"],
+        "answer": 0,
+        "explanation": "老板又送给她一个小梨 means the seller also gave her a small pear."
+      }
+    }
+  ]
+}
