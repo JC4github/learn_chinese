@@ -104,8 +104,10 @@ h1 em { color: var(--jade); font-weight: 400; }
 .story-list { display: grid; gap: 15px; padding-bottom: 20px; }
 
 .reader-open .topbar, .reader-open .bottom-nav { display: none; }
-.reader-open { grid-template-rows: minmax(0, 1fr); }
-.reader-open #app { padding-bottom: 0; }
+/* Let Safari scroll the document while reading instead of a clipped fixed frame. */
+html.reader-open { height: auto; overflow: visible; background: var(--paper); }
+body.reader-open { position: static; display: block; height: auto; min-height: 100vh; min-height: 100dvh; overflow: visible; }
+.reader-open #app { overflow: visible; -webkit-overflow-scrolling: auto; padding-bottom: 0; }
 .reader-header { min-height: 295px; padding: calc(19px + env(safe-area-inset-top)) max(21px, env(safe-area-inset-right)) 30px max(21px, env(safe-area-inset-left)); color: white; }
 .reader-back { width: 43px; height: 43px; border: 1px solid rgba(255,255,255,.22); border-radius: 14px; background: rgba(255,255,255,.11); color: white; font-size: 22px; }
 .reader-actions { float: right; display: flex; gap: 7px; }

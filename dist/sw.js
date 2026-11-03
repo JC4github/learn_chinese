@@ -1,13 +1,15 @@
-const CACHE_NAME = "hanzi-path-v9";
+const CACHE_NAME = "hanzi-path-v10";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./styles.css?v=lessons-1",
+  "./styles.css?v=reader-scroll-1",
   "./app.js",
   "./speech.js",
   "./app.js?v=recordings-1",
   "./app.js?v=lessons-1",
+  "./app.js?v=reader-scroll-1",
   "./speech.js?v=recordings-1",
   "./vendor/howler.core.min.js",
   "./audio/manifest.json",

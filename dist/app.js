@@ -112,12 +112,14 @@ function bindGlobalEvents() {
 }
 
 function render() {
+  document.documentElement.classList.toggle("reader-open", Boolean(activeStoryId));
   document.body.classList.toggle("reader-open", Boolean(activeStoryId));
   updateNav();
 
   if (activeStoryId) {
     renderReader();
     app.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "instant" });
     return;
   }
 
@@ -127,6 +129,7 @@ function render() {
   else renderHome();
 
   app.scrollTo({ top: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 function renderHome() {

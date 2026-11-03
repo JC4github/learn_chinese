@@ -1,5 +1,13 @@
 # Test report — 3 November 2026
 
+## Phone lesson scrolling
+
+Lessons now use normal document scrolling. The reader releases the fixed body and nested main scroll area while open, then restores the app shell when returning to other pages. Opening and leaving a lesson resets both scroll positions, so a previously scrolled shelf cannot hide its beginning. Styles and app URLs are versioned for this change; the offline cache is v10.
+
+All 24 automated tests pass, including a new regression for opening and leaving lessons with nonzero scroll positions. Browser checks at 390 × 844 and 320 × 568 covered a long pinyin lesson, returning to its complete header, a word popup opened and closed while scrolled, and quiz feedback. A conversation lesson was scrolled in portrait then resized to 844 × 390 landscape and returned to the top. No horizontal overflow was observed. After returning to the library, the outer document stayed at zero and its bottom navigation stayed at the viewport bottom while the shelf scrolled.
+
+The original phone-only clipping was not reproduced in the desktop browser. This change removes the reader's fixed-frame/nested-scroll layout as a potential cause; confirmation on the user's physical iPhone is still needed. WebKit tracks related root-overflow/viewport inconsistencies ([240860](https://bugs.webkit.org/show_bug.cgi?id=240860), [220908](https://bugs.webkit.org/show_bug.cgi?id=220908)); these do not establish the cause of this particular report.
+
 ## Pinyin and conversation expansion (current)
 
 The library now contains 14 lessons: four original stories, four pinyin lessons and six daily conversations. Each guided lesson includes explanations and tappable pronunciation/phrase examples; dialogue turns have speaker labels. All original story IDs and saved progress remain compatible.

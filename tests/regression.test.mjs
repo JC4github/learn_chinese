@@ -8,8 +8,8 @@ function appHarness(saved = null, storageFailure = false) {
   const elements = new Map(), handlers = {}, store = new Map();
   if(saved!==null)store.set('hanzi-path-state-v1',typeof saved==='string'?saved:JSON.stringify(saved));
   const element = () => ({innerHTML:'',textContent:'',dataset:{},classList:{toggle(){},add(){},remove(){}},addEventListener(){},scrollTo(){},showModal(){},close(){},querySelectorAll:()=>[],setAttribute(){},removeAttribute(){}});
-  const document={body:element(),hidden:false,querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s);},querySelectorAll:()=>[],addEventListener:(name,fn)=>{handlers[name]??=[];handlers[name].push(fn);}};
-  const context=vm.createContext({document,window:{addEventListener(){}},location:{hash:'#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,structuredClone,console,Intl,Date,confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
+  const document={documentElement:element(),body:element(),hidden:false,querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s);},querySelectorAll:()=>[],addEventListener:(name,fn)=>{handlers[name]??=[];handlers[name].push(fn);}};
+  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,structuredClone,console,Intl,Date,confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
   const source=readFileSync(new URL('../dist/app.js',import.meta.url),'utf8').replace(/^import .*\n/,'').replace('\ninit();','');
   vm.runInContext(source,context);
   const evaluate=source=>vm.runInContext(source,context);
@@ -70,6 +70,28 @@ test('playing a practice sample does not mark the full-story control as playing'
   `);
   assert.equal(h.evaluate("controls[0].attrs['aria-pressed']"),'false');
   assert.equal(h.evaluate("controls[1].attrs['aria-pressed']"),'true');
+});
+
+test('opening and leaving a lesson switches scroll owners and resets both positions',()=>{
+  const h=appHarness();
+  h.evaluate(`
+    const scrollModes=[];
+    document.documentElement.classList.toggle=(name,enabled)=>scrollModes.push(['html',name,enabled]);
+    document.body.classList.toggle=(name,enabled)=>scrollModes.push(['body',name,enabled]);
+    let pageTop=850, appTop=650;
+    window.scrollTo=options=>{pageTop=options.top;};
+    app.scrollTo=options=>{appTop=options.top;};
+    handleAppClick({target:{closest:selector=>selector==='[data-open-story]'?{dataset:{openStory:'pinyin-four-tones'}}:null}});
+  `);
+  assert.equal(h.evaluate('pageTop + appTop'),0);
+  assert.equal(h.evaluate("scrollModes.every(([,name,enabled])=>name==='reader-open' && enabled)"),true);
+  h.evaluate(`
+    pageTop=950; appTop=400;
+    handleAppClick({target:{closest:selector=>selector==='[data-reader-back]'?{}:null}});
+  `);
+  assert.equal(h.evaluate('pageTop + appTop'),0);
+  assert.equal(h.evaluate('scrollModes.slice(-2).every(([, ,enabled])=>enabled===false)'),true);
+  assert.equal(h.evaluate('activeStoryId'),null);
 });
 
 function workerHarness({offline=false}={}) {
