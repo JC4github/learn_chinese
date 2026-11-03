@@ -8,7 +8,7 @@ All 30 automated tests pass. Coverage includes the exact collection size/topic d
 
 Browser checks opened all twenty new entries, verified rendered paragraphs/practice examples/source links, and exercised quiz feedback. All six home-page interest shortcuts selected their expected shelf counts (4/3/3/3/3/4). No horizontal overflow was observed in the actual narrow preview, measured at about 358 × 1412. This is a desktop browser preview, not a physical iPhone test. The repaired normal-document scrolling layout is retained.
 
-The new 原厂 practice recording and full car-meet narration played to completion online. The full-entry control stayed inactive during sample playback. With the HTTP server stopped, the updated app reloaded offline, an unplayed 种草 recording played and completed, and complete slang-entry narration started and stopped successfully offline. Offline cache v15 and versioned data/module/style URLs identify the complete release. Native-speaker review of synthetic speech and technical vocabulary remains an editorial follow-up.
+The new 原厂 practice recording and full car-meet narration played to completion online. The full-entry control stayed inactive during sample playback. With the HTTP server stopped, the updated app reloaded offline, an unplayed 种草 recording played and completed, and complete slang-entry narration started and stopped successfully offline. Offline cache v16 and versioned data/module/style URLs identify the complete release. Native-speaker review of synthetic speech and technical vocabulary remains an editorial follow-up.
 
 ## iPhone blank-area report — app 0.2.2 (confirmed by user)
 

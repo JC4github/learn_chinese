@@ -195,7 +195,7 @@ add('slang-running-late','马上到，是多快到？','“Almost There” in a 
   line('By the window. We have a seat for you—we are set!','靠窗|kào chuāng|by the window / 。 / 给你|gěi nǐ|for you / 留了位子|liú le wèizi|saved a seat / ， / 稳了|wěn le|we are set (casual) / ！','Group')
 ],'Which message gives the most useful arrival information?',['马上到 with no estimate','About ten more minutes','稳了 with no location'],1,'大概还有十分钟 gives a concrete estimate rather than a vague 马上到.');
 
-add('slang-zhongcao','这台相机把我种草了','When a Camera Review Makes You Want One','slang','Conversation','Recognise shopping slang and ask what you actually need.',[
+add('slang-zhongcao','看完评测，我被种草了','When a Camera Review Makes You Want One','slang','Conversation','Recognise shopping slang and ask what you actually need.',[
   '种草 zhòngcǎo literally means planting grass; online it can mean making someone want a product or becoming interested in one. 被种草了 means “I’ve been tempted”.',
   '拔草 is context-dependent: it can mean losing the desire to buy, or finally buying something to satisfy that desire. This conversation explicitly uses 不想买了 to mean “I no longer want it”. 安利 is a casual verb for enthusiastically recommending something.'
 ],[sample('种草','zhòngcǎo','make someone want a product (slang)'),sample('拔草','bácǎo','remove or satisfy a buying desire; context matters'),sample('安利','ānlì','enthusiastically recommend (casual)')],[

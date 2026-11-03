@@ -41,7 +41,7 @@ init();
 
 async function init() {
   try {
-    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=personal-20-1"), fetch("./audio/manifest.json?v=personal-20-1")]);
+    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=personal-20-2"), fetch("./audio/manifest.json?v=personal-20-2")]);
     if (!response.ok) throw new Error("Story library could not be loaded");
     stories = (await response.json()).stories;
     if (!audioResponse.ok) throw new Error("Audio library could not be loaded");
