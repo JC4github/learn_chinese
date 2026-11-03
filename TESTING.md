@@ -1,5 +1,17 @@
 # Test report — 3 November 2026
 
+## Bundled-audio update (current)
+
+The device-voice implementation described in the historical sections below has been replaced. The app now includes 85 WAV recordings, generated locally with Kokoro v1.1-zh and played through Howler.js 2.2.4. It no longer uses the Web Speech API or requires an installed Mandarin voice.
+
+All 19 current automated tests pass. Coverage includes valid recordings for every word and story, playback/stop/replay, stale events, loading timeouts, load/autoplay errors, offline audio caching, and Safari range responses. Existing learning-state, reset, storage, quiz, and offline navigation tests remain included.
+
+Real browser checks confirmed that full-story, selected-word and saved-word recordings enter the playing state on the same Windows browser where device speech failed. Selected-word playback completed and replayed successfully. Physical iPhone speaker output and native-speaker pronunciation review remain follow-up checks.
+
+With the local HTTP server stopped, the app was reloaded from its cache. Full-story playback started successfully. The previously unplayed word 计划 also played and completed offline. Full-story completion was verified online; word replay, stop and saved-word playback were also verified in the browser.
+
+The following sections retain the earlier navigation and application regression report. Statements about missing system voices and the earlier 18-test suite describe the superseded implementation; current audio setup and library sources are documented in `AUDIO.md`.
+
 ## Changes verified
 
 - The app shell is fixed to the dynamic viewport, with a dedicated scrolling main region. Header and bottom navigation occupy separate grid rows, preventing the navigation from drifting as content scrolls.

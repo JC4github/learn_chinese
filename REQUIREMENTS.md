@@ -24,7 +24,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 2. Provide short graded stories organised by level and topic.
 3. Allow every Chinese word to be tapped for pinyin and an English meaning.
 4. Allow pinyin and paragraph translations to be shown or hidden.
-5. Read story text aloud in Mandarin using an available device voice.
+5. Play bundled Mandarin recordings for every vocabulary item and complete story, without requiring an installed device speech voice. Cache all recordings for offline use after an initial online load.
 6. Let the learner save words for later review.
 7. End each story with a short comprehension check.
 8. Save preferences, completed stories, streak, minutes read, and saved words locally.

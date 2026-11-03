@@ -4,49 +4,6 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import { MandarinPlayer } from '../dist/speech.js';
 
-function player(voices = [{lang:'zh-CN', localService:true}]) {
-  const events = [], spoken = [], timers = new Map();
-  let nextTimer = 0;
-  const synth = { getVoices:()=>voices, addEventListener(){}, cancel(){}, speak(u){ spoken.push(u); } };
-  const instance = new MandarinPlayer({ synth, Utterance:class {constructor(text){this.text=text;}}, onChange:e=>events.push(e), schedule:fn=>{timers.set(++nextTimer,fn);return nextTimer;}, unschedule:id=>timers.delete(id) });
-  return {instance,events,spoken,timers,synth};
-}
-
-test('word audio uses Mandarin and slower playback, reports start and end',()=>{
-  const p=player(); p.instance.play('厨房');
-  assert.equal(p.spoken[0].text,'厨房'); assert.equal(p.spoken[0].lang,'zh-CN'); assert.equal(p.spoken[0].rate,.82);
-  p.spoken[0].onstart(); assert.equal(p.events.at(-1).status,'playing');
-  p.spoken[0].onend(); assert.equal(p.events.at(-1).status,'idle'); assert.equal(p.instance.current,null);
-});
-test('Mandarin preferred over Cantonese and English',()=>{
-  const p=player([{lang:'en-US'},{lang:'zh-HK'},{lang:'zh-TW'},{lang:'zh-CN',localService:true}]);
-  p.instance.play('你好'); assert.equal(p.spoken[0].voice.lang,'zh-CN');
-});
-test('Cantonese-only installation gives actionable message instead of wrong pronunciation',()=>{
-  const p=player([{lang:'zh-HK'},{lang:'yue-HK'}]); p.instance.play('你好');
-  assert.equal(p.spoken.length,0); assert.match(p.events.at(-1).message,/No Mandarin voice/);
-});
-test('voices loading asynchronously use zh-CN and can be replayed once installed',()=>{
-  const voices=[]; const p=player(voices); p.instance.play('你好'); assert.equal(p.spoken[0].lang,'zh-CN');
-  p.spoken[0].onend(); voices.push({lang:'zh-CN',localService:true});
-  p.instance.play('你好'); assert.equal(p.spoken[1].voice.localService,true);
-});
-test('same audio toggles stop and stale callbacks cannot corrupt a new request',()=>{
-  const p=player(); p.instance.play('茶'); const old=p.spoken[0]; p.instance.play('茶');
-  assert.equal(p.instance.current,null); p.instance.play('饭'); old.onend(); old.onerror({error:'interrupted'});
-  assert.equal(p.instance.current.text,'饭');
-});
-test('network failure, no-start timeout and synchronous failures are visible',()=>{
-  const p=player(); p.instance.play('茶'); p.spoken[0].onerror({error:'network'});
-  assert.match(p.events.at(-1).message,/internet connection/);
-  p.instance.play('饭'); [...p.timers.values()][0](); assert.match(p.events.at(-1).message,/did not start/);
-  p.synth.speak=()=>{throw Error('unavailable');}; p.instance.play('水'); assert.equal(p.events.at(-1).status,'error');
-});
-test('unsupported browsers provide a clear error',()=>{
-  const events=[]; new MandarinPlayer({onChange:e=>events.push(e)}).play('茶');
-  assert.equal(events.at(-1).status,'error');
-});
-
 function appHarness(saved = null, storageFailure = false) {
   const elements = new Map(), handlers = {}, store = new Map();
   if(saved!==null)store.set('hanzi-path-state-v1',typeof saved==='string'?saved:JSON.stringify(saved));
@@ -104,12 +61,12 @@ test('storage quota errors report failure rather than breaking the flow',()=>{
 
 function workerHarness({offline=false}={}) {
   const handlers={}, deleted=[], cached=[], response={from:'cache'}, network={from:'network'};
-  const context=vm.createContext({URL,Set,Promise,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>({addAll:async files=>cached.push(...files)}),keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>response},fetch:async()=>{if(offline)throw Error('offline');return network;}});
+  const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>({addAll:async files=>cached.push(...files),match:async()=>({json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})})}),keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>response},fetch:async()=>{if(offline)throw Error('offline');return network;}});
   vm.runInContext(readFileSync(new URL('../dist/sw.js',import.meta.url),'utf8'),context);
-  return {handlers,deleted,cached,response,network};
+  return {handlers,deleted,cached,response,network,context};
 }
 test('offline install caches the audio module and all shell assets',async()=>{
-  const h=workerHarness(); let task; h.handlers.install({waitUntil:p=>task=p}); await task; assert.ok(h.cached.includes('./speech.js'));
+  const h=workerHarness(); let task; h.handlers.install({waitUntil:p=>task=p}); await task; assert.ok(h.cached.includes('./speech.js')); assert.ok(h.cached.some(path=>path.endsWith('.wav')));
 });
 test('cache upgrade deletes only this app’s older caches',async()=>{
   const h=workerHarness(); let task; h.handlers.activate({waitUntil:p=>task=p}); await task;

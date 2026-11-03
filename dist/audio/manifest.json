@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "engine": "Kokoro-82M-v1.1-zh (int8)",
+  "voice": "zf_001",
+  "clips": {
+    "今天": {
+      "src": "audio/39e801c8f52be98ae0d82835.wav",
+      "duration": 0.736
+    },
+    "早上": {
+      "src": "audio/776e00d5ae62ed62b6cb36e6.wav",
+      "duration": 0.739
+    },
+    "林安": {
+      "src": "audio/fc2aafd9e1f1a8926b051f06.wav",
+      "duration": 0.677
+    },
+    "起得": {
+      "src": "audio/c64b278ef657f74f0d7fa381.wav",
+      "duration": 0.639
+    },
+    "很早": {
+      "src": "audio/1774be5b906f23bc7bccb192.wav",
+      "duration": 0.731
+    },
+    "她": {
+      "src": "audio/91a7106b06ff8d9b329eca18.wav",
+      "duration": 0.615
+    },
+    "走到": {
+      "src": "audio/7de9162ad587aa114ec4f904.wav",
+      "duration": 0.665
+    },
+    "厨房": {
+      "src": "audio/f609b59ca0856a868efa840f.wav",
+      "duration": 0.747
+    },
+    "给自己": {
+      "src": "audio/f1ff601ba2343d1b47bc29f4.wav",
+      "duration": 1.011
+    },
+    "泡了": {
+      "src": "audio/cd41f396501526edcab2a51f.wav",
+      "duration": 0.718
+    },
+    "一杯茶": {
+      "src": "audio/0d6dd317b1a31ea6e4d57ab8.wav",
+      "duration": 0.892
+    },
+    "窗外": {
+      "src": "audio/b582df0827a51033bf44756a.wav",
+      "duration": 0.687
+    },
+    "下着": {
+      "src": "audio/f17194c40ce7a292b6118867.wav",
+      "duration": 0.742
+    },
+    "小雨": {
+      "src": "audio/dd3c62119136adc2ee4fbba0.wav",
+      "duration": 0.733
+    },
+    "可是": {
+      "src": "audio/25a4e3493ff265e16b36b0a3.wav",
+      "duration": 0.714
+    },
+    "房间里": {
+      "src": "audio/8a38b5105ab790451c9f8511.wav",
+      "duration": 1.011
+    },
+    "很安静": {
+      "src": "audio/0f24ce722098d72c5d4c3822.wav",
+      "duration": 0.951
+    },
+    "一边": {
+      "src": "audio/f1357542091322c31fe428d3.wav",
+      "duration": 0.632
+    },
+    "喝茶": {
+      "src": "audio/8e633c2a107ea27a41902145.wav",
+      "duration": 0.729
+    },
+    "计划": {
+      "src": "audio/f2ba88c7ff0b96898447a941.wav",
+      "duration": 0.678
+    },
+    "要做的事": {
+      "src": "audio/6ace4dbcd3c667f915dafadf.wav",
+      "duration": 1.322
+    },
+    "今天早上，林安起得很早。她走到厨房，给自己泡了一杯茶。窗外下着小雨，可是房间里很安静。她一边喝茶，一边计划今天要做的事。": {
+      "src": "audio/86736689f51d3d7edb8eb9b8.wav",
+      "duration": 15.654
+    },
+    "中午": {
+      "src": "audio/8185e10507bf9bf090a6da1f.wav",
+      "duration": 0.706
+    },
+    "和": {
+      "src": "audio/629b19b411e0e3834f7bab66.wav",
+      "duration": 0.682
+    },
+    "大明": {
+      "src": "audio/00f370d1812567532757f826.wav",
+      "duration": 0.73
+    },
+    "都": {
+      "src": "audio/f1c610dfb04fa7dc14551348.wav",
+      "duration": 0.582
+    },
+    "饿了": {
+      "src": "audio/734f38c1d6abe94d683be517.wav",
+      "duration": 0.669
+    },
+    "他们": {
+      "src": "audio/ab8171a6f99aaf1c894b02ff.wav",
+      "duration": 0.648
+    },
+    "站在": {
+      "src": "audio/de2e0d4e72f35c0692889309.wav",
+      "duration": 0.706
+    },
+    "公司外面": {
+      "src": "audio/956ae9bfef4707b00f9b9411.wav",
+      "duration": 1.312
+    },
+    "商量": {
+      "src": "audio/95a31d37f66462afe89a9418.wav",
+      "duration": 0.674
+    },
+    "吃什么": {
+      "src": "audio/391f36b37b6b444f6a5d7425.wav",
+      "duration": 0.816
+    },
+    "想吃": {
+      "src": "audio/745b348bf2d6873085cb0561.wav",
+      "duration": 0.775
+    },
+    "面条": {
+      "src": "audio/536ee57149d0b6a89eb7f3a0.wav",
+      "duration": 0.769
+    },
+    "米饭": {
+      "src": "audio/088495fb94a6c3f5d4c78d92.wav",
+      "duration": 0.653
+    },
+    "后来": {
+      "src": "audio/f76c924e420174a9e66e67b1.wav",
+      "duration": 0.715
+    },
+    "看到": {
+      "src": "audio/c54153573cfa2eabcdb52785.wav",
+      "duration": 0.663
+    },
+    "一家": {
+      "src": "audio/a7633ed10780fe7f30f6028c.wav",
+      "duration": 0.655
+    },
+    "小饭馆": {
+      "src": "audio/059faa30302535e310a27590.wav",
+      "duration": 1.06
+    },
+    "两种": {
+      "src": "audio/87e373450c138063d77f2fba.wav",
+      "duration": 0.706
+    },
+    "都有": {
+      "src": "audio/81d45a428e4f136056161d75.wav",
+      "duration": 0.67
+    },
+    "中午，小雨和大明都饿了。他们站在公司外面，商量吃什么。小雨想吃面条，大明想吃米饭。后来，他们看到一家小饭馆，两种都有。": {
+      "src": "audio/4f238cb07ef165ccc6933b7c.wav",
+      "duration": 14.983
+    },
+    "陈飞": {
+      "src": "audio/eec8535e1c31cff4a12bbaf0.wav",
+      "duration": 0.745
+    },
+    "想去": {
+      "src": "audio/727e7f479b180bfebbae7f28.wav",
+      "duration": 0.765
+    },
+    "博物馆": {
+      "src": "audio/49ad98eabc2fb57afe4f1a2e.wav",
+      "duration": 0.943
+    },
+    "但是": {
+      "src": "audio/52aad68ed1dd836cfae376f3.wav",
+      "duration": 0.704
+    },
+    "他": {
+      "src": "audio/3eecff6fc560f38bca7e01f4.wav",
+      "duration": 0.615
+    },
+    "坐错了": {
+      "src": "audio/d73518d1813ce86a0c945bee.wav",
+      "duration": 0.984
+    },
+    "公交车": {
+      "src": "audio/fecd57e1dffdd64aa79a57c4.wav",
+      "duration": 0.99
+    },
+    "十分钟后": {
+      "src": "audio/746531a2a23005b7ae756986.wav",
+      "duration": 1.345
+    },
+    "路上": {
+      "src": "audio/b9329789ae2077126e1fd6fe.wav",
+      "duration": 0.644
+    },
+    "看起来": {
+      "src": "audio/f7c4fd8ecb3c899898436bc0.wav",
+      "duration": 0.906
+    },
+    "很陌生": {
+      "src": "audio/4ad9f9be12fcc0898a55ad6e.wav",
+      "duration": 0.916
+    },
+    "问": {
+      "src": "audio/b54bd92774b23e86f7d36973.wav",
+      "duration": 0.487
+    },
+    "司机": {
+      "src": "audio/77855dc4bc2281f7de55f021.wav",
+      "duration": 0.726
+    },
+    "怎么办": {
+      "src": "audio/f4d0ff4beaaba612fa63cf33.wav",
+      "duration": 0.768
+    },
+    "笑了笑": {
+      "src": "audio/ab013550bf779f30938615d3.wav",
+      "duration": 0.866
+    },
+    "告诉他": {
+      "src": "audio/611f194f491bc1c6b6a3aa0a.wav",
+      "duration": 0.927
+    },
+    "下一站": {
+      "src": "audio/bc36a842d1e9b10fa9e5bca1.wav",
+      "duration": 0.966
+    },
+    "下车": {
+      "src": "audio/7ee727210a61849a49ab2e78.wav",
+      "duration": 0.766
+    },
+    "再坐": {
+      "src": "audio/b191449073b6c8923735bfea.wav",
+      "duration": 0.706
+    },
+    "八路车": {
+      "src": "audio/863b4d8151b24a485bfd44e9.wav",
+      "duration": 0.924
+    },
+    "回去": {
+      "src": "audio/86b321044d0c39d35b7c249d.wav",
+      "duration": 0.741
+    },
+    "陈飞想去博物馆，但是他坐错了公交车。十分钟后，路上看起来很陌生。他问司机怎么办。司机笑了笑，告诉他下一站下车，再坐八路车回去。": {
+      "src": "audio/0961e9c698c2ae5567cebaba.wav",
+      "duration": 16.228
+    },
+    "每个星期六": {
+      "src": "audio/f6ef6d093b08d9785de61a85.wav",
+      "duration": 1.576
+    },
+    "美美家附近": {
+      "src": "audio/f04782326bd21e6c2a0f3f42.wav",
+      "duration": 1.621
+    },
+    "一个": {
+      "src": "audio/13ddbafe135b3bc19d79c0ee.wav",
+      "duration": 0.607
+    },
+    "小市场": {
+      "src": "audio/5c96a97bfb9a2d30d18d4b7f.wav",
+      "duration": 1.078
+    },
+    "那里": {
+      "src": "audio/6905bb596e1b68adcd3a9d72.wav",
+      "duration": 0.651
+    },
+    "卖": {
+      "src": "audio/ff3489325f464cfe60f49d29.wav",
+      "duration": 0.665
+    },
+    "蔬菜": {
+      "src": "audio/05b7ab1fc991881e3849c2f6.wav",
+      "duration": 0.751
+    },
+    "水果": {
+      "src": "audio/7db6fc97c97f8b8be8c413fb.wav",
+      "duration": 0.754
+    },
+    "鲜花": {
+      "src": "audio/bf011301b1248ac8512363b5.wav",
+      "duration": 0.746
+    },
+    "手工面包": {
+      "src": "audio/184cef33b07544c7a6c6b091.wav",
+      "duration": 1.32
+    },
+    "美美": {
+      "src": "audio/65bf6bd5ef25d672e788abaa.wav",
+      "duration": 0.712
+    },
+    "买了": {
+      "src": "audio/6177f79eb5d6fe827b019678.wav",
+      "duration": 0.692
+    },
+    "三个": {
+      "src": "audio/361d87b427e458ff7ba1d9ec.wav",
+      "duration": 0.721
+    },
+    "红苹果": {
+      "src": "audio/6bcb2907576e1c3dfec1ade1.wav",
+      "duration": 1.081
+    },
+    "老板": {
+      "src": "audio/003d0af33e0018334f47b5d7.wav",
+      "duration": 0.66
+    },
+    "又送给她": {
+      "src": "audio/72d4a39b60c7bb9eaa043de6.wav",
+      "duration": 1.387
+    },
+    "小梨": {
+      "src": "audio/039d852d6be64c425b8aa4ef.wav",
+      "duration": 0.735
+    },
+    "说": {
+      "src": "audio/06d1996fd141cf6e15d6319c.wav",
+      "duration": 0.652
+    },
+    "“尝尝吧": {
+      "src": "audio/1c1faa0205a29cf2ae524d64.wav",
+      "duration": 1.053
+    },
+    "很甜": {
+      "src": "audio/bc6e998fbfc8a5d7c5243698.wav",
+      "duration": 0.782
+    },
+    "每个星期六，美美家附近都有一个小市场。那里卖蔬菜、水果、鲜花和手工面包。美美买了三个红苹果。老板又送给她一个小梨，说：“尝尝吧，很甜！”": {
+      "src": "audio/56a6cc611f18c037543a2dd5.wav",
+      "duration": 16.718
+    }
+  }
+}

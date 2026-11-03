@@ -1,4 +1,4 @@
-import { MandarinPlayer } from "./speech.js";
+import { MandarinPlayer } from "./speech.js?v=recordings-1";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
 
@@ -25,8 +25,7 @@ let libraryFilter = "all";
 let deferredInstallPrompt = null;
 let audioState = { status: "idle", text: "", message: "Tap the speaker to hear Mandarin." };
 const audio = new MandarinPlayer({
-  synth: window.speechSynthesis,
-  Utterance: window.SpeechSynthesisUtterance,
+  Howl: window.Howl,
   onChange: (value) => { audioState = value; updateAudioControls(); },
 });
 
@@ -39,9 +38,11 @@ init();
 
 async function init() {
   try {
-    const response = await fetch("./data/stories.json");
+    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json"), fetch("./audio/manifest.json")]);
     if (!response.ok) throw new Error("Story library could not be loaded");
     stories = (await response.json()).stories;
+    if (!audioResponse.ok) throw new Error("Audio library could not be loaded");
+    audio.setClips((await audioResponse.json()).clips);
     bindGlobalEvents();
     render();
     registerServiceWorker();
@@ -482,6 +483,7 @@ function updateAudioControls() {
   const active = ["playing", "loading"].includes(audioState.status);
   document.querySelectorAll("[data-audio-status]").forEach((element) => {
     element.textContent = audioState.message;
+    element.dataset.state = audioState.status;
     element.classList.toggle("audio-error", audioState.status === "error");
   });
   document.querySelectorAll("[data-speak-word], [data-speak-story]").forEach((button) => {
