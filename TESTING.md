@@ -1,6 +1,18 @@
 # Test report — 3 November 2026
 
-## Phone lesson scrolling
+## iPhone blank-area report — app 0.2.2 (current)
+
+The user's before/after screenshots show a large paper-coloured blank area covering the top of a lesson card, not ordinary header scrolling. The screenshots also lack the newer pinned lesson controls; that suggests an older loaded page, but does not prove its version. The previous desktop scrolling checks did not reproduce this failure.
+
+All routes now use one normal document scroller. The root and body never switch between fixed and scrolling layouts; main has no nested overflow or momentum scroller. The topbar no longer has a backdrop filter, and the lesson body no longer uses an overlapping, separately stacked layer. Bottom navigation is a small fixed bar with reserved space below page content. Navigation scroll resets run after the layout frame rather than synchronously with replacement content. This removes potential WebKit rendering triggers; it is not a verified diagnosis of the physical-phone failure. Related primary reports: [fixed-layer cropping](https://bugs.webkit.org/show_bug.cgi?id=253399), [viewport and fixed-layout problems](https://bugs.webkit.org/show_bug.cgi?id=237961).
+
+The Me page displays App version 0.2.2 and has a Check for updates button that requests a fresh URL without clearing learning data. Navigation requests bypass the HTTP cache; offline responses use the active release's cache specifically. Service-worker registration bypasses its HTTP cache. Versioned script/style URLs and offline cache v13 keep the release coherent. A fresh launch URL uses `?update=iphone-clip-1` so older workers request a different document URL.
+
+All 27 automated tests pass. New/updated coverage checks deferred document scroll reset, update navigation that preserves progress, HTTP-cache bypass, and selecting the active cache instead of an older release. Browser checks confirmed visible overflow and a static body in the tone lesson, repeated scrolling back to the full header, pinned lesson controls, and anchored bottom navigation with clearance after the last library card. The Me page showed 0.2.2 and its update button returned to the same page through a fresh URL. With the HTTP server stopped, the app reloaded and the 马 example played successfully offline.
+
+The in-app browser measured about 358 × 1412 despite viewport override requests, so shorter viewport resizing was not verified in this session. No real iPhone/Safari device is connected. The exact blank-area failure remains unverified until the user tries version 0.2.2 on their phone; desktop geometry checks and passing tests do not establish that it is resolved.
+
+## Previous phone lesson scrolling attempt (superseded)
 
 Lessons now use normal document scrolling. The reader releases the fixed body and nested main scroll area while open, then restores the app shell when returning to other pages. Opening and leaving a lesson resets both scroll positions, so a previously scrolled shelf cannot hide its beginning. The back, pinyin, translation and audio controls stay in a sticky toolbar, including the iPhone safe area. Display toggles update the existing lesson instead of replacing its DOM and losing the reading position. Styles and app URLs are versioned for this change; the offline cache is v12.
 

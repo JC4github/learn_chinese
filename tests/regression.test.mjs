@@ -9,12 +9,13 @@ function appHarness(saved = null, storageFailure = false) {
   if(saved!==null)store.set('hanzi-path-state-v1',typeof saved==='string'?saved:JSON.stringify(saved));
   const element = () => ({innerHTML:'',textContent:'',dataset:{},classList:{toggle(){},add(){},remove(){}},addEventListener(){},scrollTo(){},showModal(){},close(){},querySelectorAll:()=>[],setAttribute(){},removeAttribute(){}});
   const document={documentElement:element(),body:element(),hidden:false,querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s);},querySelectorAll:()=>[],addEventListener:(name,fn)=>{handlers[name]??=[];handlers[name].push(fn);}};
-  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,structuredClone,console,Intl,Date,confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
-  const source=readFileSync(new URL('../dist/app.js',import.meta.url),'utf8').replace(/^import .*\n/,'').replace('\ninit();','');
+  const frames=[];
+  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home',href:'https://test.example/#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,structuredClone,console,Intl,Date,URL,requestAnimationFrame:callback=>frames.push(callback),confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
+  const source=readFileSync(new URL('../dist/app.js',import.meta.url),'utf8').replace(/^\uFEFF/,'').replace(/\r\n/g,'\n').replace(/^import .*\n/,'').replace('\ninit();','');
   vm.runInContext(source,context);
   const evaluate=source=>vm.runInContext(source,context);
   evaluate(`stories = ${readFileSync(new URL('../dist/data/stories.json',import.meta.url),'utf8')}.stories`);
-  return {evaluate,store,elements,handlers};
+  return {evaluate,store,elements,handlers,flushFrames:()=>{while(frames.length)frames.shift()();}};
 }
 test('invalid stored data recovers without breaking the app',()=>{
   for(const saved of ['invalid', {completed:null,savedWords:3,topics:'food',streak:-2,name:33}]){
@@ -72,26 +73,44 @@ test('playing a practice sample does not mark the full-story control as playing'
   assert.equal(h.evaluate("controls[1].attrs['aria-pressed']"),'true');
 });
 
-test('opening and leaving a lesson switches scroll owners and resets both positions',()=>{
+test('lesson navigation resets document scroll after layout without scrolling a nested frame',()=>{
   const h=appHarness();
   h.evaluate(`
     const scrollModes=[];
-    document.documentElement.classList.toggle=(name,enabled)=>scrollModes.push(['html',name,enabled]);
     document.body.classList.toggle=(name,enabled)=>scrollModes.push(['body',name,enabled]);
-    let pageTop=850, appTop=650;
+    let pageTop=850;
     window.scrollTo=options=>{pageTop=options.top;};
-    app.scrollTo=options=>{appTop=options.top;};
+    app.scrollTo=()=>{throw Error('Nested frame scrolled');};
     handleAppClick({target:{closest:selector=>selector==='[data-open-story]'?{dataset:{openStory:'pinyin-four-tones'}}:null}});
   `);
-  assert.equal(h.evaluate('pageTop + appTop'),0);
+  assert.equal(h.evaluate('pageTop'),850);
+  h.flushFrames();
+  assert.equal(h.evaluate('pageTop'),0);
   assert.equal(h.evaluate("scrollModes.every(([,name,enabled])=>name==='reader-open' && enabled)"),true);
   h.evaluate(`
-    pageTop=950; appTop=400;
+    pageTop=950;
     handleAppClick({target:{closest:selector=>selector==='[data-reader-back]'?{}:null}});
   `);
-  assert.equal(h.evaluate('pageTop + appTop'),0);
-  assert.equal(h.evaluate('scrollModes.slice(-2).every(([, ,enabled])=>enabled===false)'),true);
+  assert.equal(h.evaluate('pageTop'),950);
+  h.flushFrames();
+  assert.equal(h.evaluate('pageTop'),0);
+  assert.equal(h.evaluate('scrollModes.at(-1)[2]'),false);
   assert.equal(h.evaluate('activeStoryId'),null);
+});
+
+test('checking for updates requests a fresh page and retains saved progress',()=>{
+  const h=appHarness({completed:['morning-tea'],savedWords:[],name:'Learner'});
+  h.evaluate(`
+    let destination;
+    location.href='https://test.example/?existing=1#profile';
+    location.replace=url=>{destination=url;};
+    handleAppClick({target:{closest:selector=>selector==='[data-check-update]'?{}:null}});
+  `);
+  const destination=new URL(h.evaluate('destination'));
+  assert.ok(Number(destination.searchParams.get('update'))>0);
+  assert.equal(destination.hash,'#profile');
+  assert.equal(destination.searchParams.get('existing'),'1');
+  assert.deepEqual(JSON.parse(h.store.get('hanzi-path-state-v1')).completed,['morning-tea']);
 });
 
 test('reader display toggles preserve lesson DOM instead of rebuilding scrolled content',()=>{
@@ -113,10 +132,10 @@ test('reader display toggles preserve lesson DOM instead of rebuilding scrolled 
 });
 
 function workerHarness({offline=false}={}) {
-  const handlers={}, deleted=[], cached=[], response={from:'cache'}, network={from:'network'};
-  const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async()=>({addAll:async files=>cached.push(...files),match:async()=>({json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})})}),keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>response},fetch:async()=>{if(offline)throw Error('offline');return network;}});
+  const handlers={}, deleted=[], cached=[], opened=[], fetchOptions=[], response={from:'current-cache'}, network={from:'network'};
+  const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async name=>{opened.push(name);return {addAll:async files=>cached.push(...files),match:async path=>path==='./audio/manifest.json'?{json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})}:response};},keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>({from:'old-cache'})},fetch:async(request,options)=>{fetchOptions.push(options);if(offline)throw Error('offline');return network;}});
   vm.runInContext(readFileSync(new URL('../dist/sw.js',import.meta.url),'utf8'),context);
-  return {handlers,deleted,cached,response,network,context};
+  return {handlers,deleted,cached,opened,fetchOptions,response,network,context};
 }
 test('offline install caches the audio module and all shell assets',async()=>{
   const h=workerHarness(); let task; h.handlers.install({waitUntil:p=>task=p}); await task; assert.ok(h.cached.includes('./speech.js')); assert.ok(h.cached.some(path=>path.endsWith('.wav')));
@@ -130,6 +149,16 @@ test('offline navigation and known assets use cached content',async()=>{
   for(const request of [{method:'GET',url:'https://test.example/',mode:'navigate'},{method:'GET',url:'https://test.example/speech.js',mode:'cors'}]){
     let task; h.handlers.fetch({request,respondWith:p=>task=p}); assert.equal(await task,h.response);
   }
+});
+
+test('page refresh bypasses HTTP cache and offline assets use only the active release cache',async()=>{
+  const h=workerHarness(); let task;
+  h.handlers.fetch({request:{method:'GET',url:'https://test.example/?update=1',mode:'navigate'},respondWith:p=>task=p});
+  assert.equal(await task,h.network);
+  assert.equal(h.fetchOptions[0].cache,'no-store');
+  h.handlers.fetch({request:{method:'GET',url:'https://test.example/styles.css',mode:'cors'},respondWith:p=>task=p});
+  assert.equal(await task,h.response);
+  assert.ok(h.opened.every(name=>name===vm.runInContext('CACHE_NAME',h.context)));
 });
 test('unknown assets, cross-origin requests and writes are never replaced by HTML',()=>{
   const h=workerHarness({offline:true});

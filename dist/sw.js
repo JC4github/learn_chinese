@@ -1,15 +1,15 @@
-const CACHE_NAME = "hanzi-path-v12";
+const CACHE_NAME = "hanzi-path-v13";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./styles.css?v=lessons-1",
-  "./styles.css?v=reader-scroll-3",
+  "./styles.css?v=iphone-clip-1",
   "./app.js",
   "./speech.js",
   "./app.js?v=recordings-1",
   "./app.js?v=lessons-1",
-  "./app.js?v=reader-scroll-3",
+  "./app.js?v=iphone-clip-1",
   "./speech.js?v=recordings-1",
   "./vendor/howler.core.min.js",
   "./audio/manifest.json",
@@ -41,13 +41,13 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
   if (event.request.mode === "navigate") {
-    event.respondWith(fetch(event.request).catch(() => caches.match("./index.html")));
+    event.respondWith(fetch(event.request, { cache: "no-store" }).catch(() => caches.open(CACHE_NAME).then((cache) => cache.match("./index.html"))));
     return;
   }
   const isAudio = event.request.url.startsWith(new URL("./audio/", self.location.href).href) && /\/[a-f0-9]{24}\.wav$/.test(event.request.url);
   if (!assetUrls.has(event.request.url) && !isAudio) return;
   event.respondWith(
-    caches.match(event.request).then(async (cached) => {
+    caches.open(CACHE_NAME).then((cache) => cache.match(event.request)).then(async (cached) => {
       if (!cached) return fetch(event.request);
       // Safari's HTML5 audio fallback may request only bytes 0-1 to probe a file.
       const range = event.request.headers?.get("Range");

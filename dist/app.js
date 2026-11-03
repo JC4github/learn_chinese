@@ -1,6 +1,7 @@
 import { MandarinPlayer } from "./speech.js?v=recordings-1";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
+const APP_VERSION = "0.2.2";
 const TOPICS = [["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 
 const defaultState = {
@@ -112,14 +113,12 @@ function bindGlobalEvents() {
 }
 
 function render() {
-  document.documentElement.classList.toggle("reader-open", Boolean(activeStoryId));
   document.body.classList.toggle("reader-open", Boolean(activeStoryId));
   updateNav();
 
   if (activeStoryId) {
     renderReader();
-    app.scrollTo({ top: 0, behavior: "instant" });
-    window.scrollTo({ top: 0, behavior: "instant" });
+    resetPageScroll();
     return;
   }
 
@@ -128,8 +127,12 @@ function render() {
   else if (currentView === "profile") renderProfile();
   else renderHome();
 
-  app.scrollTo({ top: 0, behavior: "instant" });
-  window.scrollTo({ top: 0, behavior: "instant" });
+  resetPageScroll();
+}
+
+function resetPageScroll() {
+  // Let Safari commit the new layout before moving its composited scroll layers.
+  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
 }
 
 function renderHome() {
@@ -246,6 +249,7 @@ function renderProfile() {
         <label class="switch"><input type="checkbox" aria-label="Show pinyin by default" data-setting="showPinyin" ${state.showPinyin ? "checked" : ""}/><span></span></label>
       </div>
       <button class="secondary-button full-width" type="button" data-install>Install on this device</button>
+      <div class="settings-card"><span class="field-label">App version ${APP_VERSION}</span><button class="secondary-button full-width" type="button" data-check-update>Check for updates</button><p class="muted">Refresh the app without changing your learning progress.</p></div>
       <button class="danger-link" type="button" data-reset>Reset all progress</button>
       <p class="privacy-note">No account. No advertising. Your learning data stays in this browser.</p>
     </section>
@@ -336,6 +340,12 @@ function tokenMarkup(token) {
 }
 
 function handleAppClick(event) {
+  if (event.target.closest("[data-check-update]")) {
+    const url = new URL(location.href);
+    url.searchParams.set("update", Date.now());
+    location.replace(url.href);
+    return;
+  }
   const topic = event.target.closest("[data-open-topic]");
   if (topic) {
     libraryFilter = topic.dataset.openTopic;
@@ -564,7 +574,7 @@ function showToast(message) {
 }
 
 function registerServiceWorker() {
-  if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(() => {});
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(() => {});
 }
 
 function wordKey(word) { return `${word.h}|${word.p}|${word.e}`; }
