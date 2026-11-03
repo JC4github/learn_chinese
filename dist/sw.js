@@ -1,4 +1,4 @@
-const CACHE_NAME = "hanzi-path-v1";
+const CACHE_NAME = "hanzi-path-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
