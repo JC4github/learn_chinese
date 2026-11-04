@@ -1,6 +1,6 @@
 # Personalised reading library
 
-The library now contains 34 entries. The newest collection has exactly 20 original entries: ten articles, nine conversations and one chat. Chinese passages are about 80–120 characters each, with guided notes, three listening examples, optional translations, tappable phrase vocabulary and one comprehension question. Technical concepts have deliberately short explanations and glossed vocabulary; Beginner 2 is a scaffolded app category, not a formal proficiency certification.
+The library now contains 34 entries. The newest collection has exactly 20 original entries: ten articles, nine conversations and one chat. Chinese passages are about 80–120 characters each, with guided notes, three practice examples, optional translations, tappable phrase vocabulary and one comprehension question. Audio plays only where a suitable human recording is available. Technical concepts have deliberately short explanations and glossed vocabulary; Beginner 2 is a scaffolded app category, not a formal proficiency certification.
 
 | Interest | New entry | Practical or factual goal |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ The collection's authoring source is `scripts/add-personal-entries.mjs`; rerunni
 
 ## Original beginner paths
 
-The first 14 lessons consist of the four initial graded stories plus the ten additions below. Every Chinese vocabulary token, guided listening example and complete entry has bundled Mandarin audio. The content is authored for this project; the sources below were used to check general pronunciation guidance, not to copy lesson text.
+The first 14 lessons consist of the four initial graded stories plus the ten additions below. Pinyin practice uses human syllable recordings, with whole-word examples for neutral tones. Other words play only where available; there is no full-entry narration. The content is authored for this project; the sources below were used to check general pronunciation guidance, not to copy lesson text.
 
 | Path | Lesson | Practice goal |
 | --- | --- | --- |
@@ -52,4 +52,4 @@ Written pinyin includes common spoken tone changes for 一 and 不 in the new di
 
 Reference checks: [MIT Hanyu Pinyin: Tones](https://web.mit.edu/jinzhang/www/pinyin/tones/), [Open University: Getting Started with Chinese — Pinyin and Tones](https://www.open.edu/openlearn/mod/oucontent/view.php?id=106437&section=3), and [Chinese Language Institute: Pinyin chart](https://studycli.org/pinyin-chart/).
 
-The audio is synthetic. Native-speaker review remains a useful editorial check for pronunciation, names and natural teaching dialogue.
+The audio is human-recorded and appropriately credited in the app. Native-speaker review remains an editorial check for pronunciation, names and natural teaching dialogue. See AUDIO.md for source limitations and coverage.

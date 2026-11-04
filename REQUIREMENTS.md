@@ -1,8 +1,8 @@
 # Hanzi Path — Product Requirements
 
 Status: working MVP  
-Version: 0.3
-Updated: 3 November 2026
+Version: 0.4
+Updated: 5 November 2026
 
 ## Product direction
 
@@ -24,7 +24,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 2. Provide short graded stories organised by level and topic.
 3. Allow every Chinese word to be tapped for pinyin and an English meaning.
 4. Allow pinyin and paragraph translations to be shown or hidden.
-5. Play bundled Mandarin recordings for every vocabulary item and complete story, without requiring an installed device speech voice. Cache all recordings for offline use after an initial online load.
+5. Play only appropriately licensed human Mandarin recordings. Match text and pronunciation, including tones. Do not generate voices or stitch syllables into narration. Disable and label unavailable audio; remove full-entry narration until a genuine recording exists. Cache available recordings for offline use after an initial online load.
 6. Let the learner save words for later review.
 7. End each story with a short comprehension check.
 8. Save preferences, completed stories, streak, minutes read, and saved words locally.
@@ -41,7 +41,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 - Four pinyin lessons covering tones, sound contrasts, neutral tones and connected speech.
 - Six daily conversations covering introductions, ordering drinks, checkout, directions, plans and clarification.
 - Twenty personalised entries: four cars, three anime, three technology, three engineering, three creative arts and four internet slang entries. Formats: ten articles, nine conversations and one group chat.
-- One comprehension question per story or lesson, with bundled audio for all vocabulary and practice examples.
+- One comprehension question per story or lesson. Human audio covers all current pinyin practice examples and a subset of vocabulary; missing recordings are explicitly unavailable.
 - Browser-local personalisation and progress.
 - No account, cloud sync, payment, social features, or copied third-party content.
 

@@ -1,7 +1,7 @@
-import { MandarinPlayer } from "./speech.js?v=recordings-1";
+import { MandarinPlayer, pronunciationKey } from "./speech.js?v=human-2";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
-const APP_VERSION = "0.3.0";
+const APP_VERSION = "0.4.0";
 const INTEREST_TOPICS = [["cars", "JDM & cars", "车"], ["anime", "Anime", "画"], ["technology", "Technology", "芯"], ["engineering", "Engineering", "工"], ["arts", "Creative arts", "艺"], ["slang", "Internet slang", "梗"]];
 const TOPICS = [...INTEREST_TOPICS.map(([id, label]) => [id, label]), ["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 
@@ -26,7 +26,7 @@ let activeStoryId = null;
 let quizSelection = null;
 let libraryFilter = "all";
 let deferredInstallPrompt = null;
-let audioState = { status: "idle", text: "", message: "Tap the speaker to hear Mandarin." };
+let audioState = { status: "idle", text: "", key: "", message: "Human recordings only. Tap an available speaker to listen." };
 const audio = new MandarinPlayer({
   Howl: window.Howl,
   onChange: (value) => { audioState = value; updateAudioControls(); },
@@ -41,11 +41,13 @@ init();
 
 async function init() {
   try {
-    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=personal-20-2"), fetch("./audio/manifest.json?v=personal-20-2")]);
+    const [response, audioResponse] = await Promise.all([fetch("./data/stories.json?v=human-2"), fetch("./audio/manifest.json?v=human-2")]);
     if (!response.ok) throw new Error("Story library could not be loaded");
     stories = (await response.json()).stories;
     if (!audioResponse.ok) throw new Error("Audio library could not be loaded");
-    audio.setClips((await audioResponse.json()).clips);
+    const audioManifest = await audioResponse.json();
+    if (audioManifest.mode !== "human-only") throw new Error("Please refresh to load the human-recording library");
+    audio.setClips(audioManifest.clips);
     bindGlobalEvents();
     render();
     registerServiceWorker();
@@ -193,8 +195,8 @@ function learningFocus(story) {
     <span class="eyebrow">${story.topic === "pinyin" ? "Pinyin lab" : story.format === "Article" ? "Ideas & useful language" : story.topic === "slang" ? "Casual language in context" : "Say it in real life"}</span>
     <h2>${escapeHtml(story.coach.title)}</h2>
     <ul>${story.coach.notes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>
-    <p class="practice-hint">Tap a sound, listen, then repeat aloud.</p>
-    <div class="practice-grid">${story.coach.practice.map((word) => `<button type="button" class="practice-sound" data-speak-word="${escapeAttr(word.h)}" aria-label="Hear ${escapeAttr(word.h)}"><span class="practice-hanzi" lang="zh-Hans">${escapeHtml(word.h)}</span><strong>${escapeHtml(word.p)}</strong><small>${escapeHtml(word.e)}</small><span class="listen-label" aria-hidden="true">▷ Listen</span></button>`).join("")}</div>
+    <p class="practice-hint">Listen to available human recordings, then repeat aloud.</p>
+    <div class="practice-grid">${story.coach.practice.map((word) => `<button type="button" class="practice-sound" data-speak-word="${escapeAttr(word.h)}" data-speak-pinyin="${escapeAttr(word.p)}" aria-label="Hear ${escapeAttr(word.h)}" ${audio.hasRecording(word.h, word.p) ? "" : "disabled"}><span class="practice-hanzi" lang="zh-Hans">${escapeHtml(word.h)}</span><strong>${escapeHtml(word.p)}</strong><small>${escapeHtml(word.e)}</small><span class="listen-label" aria-hidden="true">${audio.hasRecording(word.h, word.p) ? "▷ Human recording" : "No recording yet"}</span></button>`).join("")}</div>
   </section>`;
 }
 
@@ -220,7 +222,7 @@ function renderWords() {
     <section class="page-shell">
       ${words.length ? `<div class="word-list">${words.map((word) => `
         <article class="saved-word">
-          <button class="saved-word-main" type="button" data-speak-word="${escapeAttr(word.h)}" aria-label="Hear ${escapeAttr(word.h)}"><span class="hanzi">${escapeHtml(word.h)}</span><span><strong>${escapeHtml(word.p)}</strong><small>${escapeHtml(word.e)}</small></span></button>
+          <button class="saved-word-main" type="button" data-speak-word="${escapeAttr(word.h)}" data-speak-pinyin="${escapeAttr(word.p)}" aria-label="Hear ${escapeAttr(word.h)}" ${audio.hasRecording(word.h, word.p) ? "" : "disabled"}><span class="hanzi">${escapeHtml(word.h)}</span><span><strong>${escapeHtml(word.p)}</strong><small>${escapeHtml(word.e)}${audio.hasRecording(word.h, word.p) ? " · Human recording" : " · No recording yet"}</small></span></button>
           <button class="remove-word" type="button" data-remove-word="${escapeAttr(word.key)}" aria-label="Remove ${escapeAttr(word.h)}">×</button>
         </article>`).join("")}</div>` : `
         <div class="empty-state"><span class="seal">字</span><h2>Your word garden is empty</h2><p>Open a story, tap a word, and choose “Save word”.</p><a class="primary-button" href="#library">Find a story</a></div>`}
@@ -259,6 +261,7 @@ function renderProfile() {
         <label class="switch"><input type="checkbox" aria-label="Show pinyin by default" data-setting="showPinyin" ${state.showPinyin ? "checked" : ""}/><span></span></label>
       </div>
       <button class="secondary-button full-width" type="button" data-install>Install on this device</button>
+      <div class="settings-card"><span class="field-label">Human recordings only</span><p class="muted">Recorded syllables and words play locally. Unrecorded words and full-entry narration have no audio.</p><a class="text-link" href="./audio/credits.html" target="_blank" rel="noopener">Recording credits & licences ↗</a></div>
       <div class="settings-card"><span class="field-label">App version ${APP_VERSION}</span><button class="secondary-button full-width" type="button" data-check-update>Check for updates</button><p class="muted">Refresh the app without changing your learning progress.</p></div>
       <button class="danger-link" type="button" data-reset>Reset all progress</button>
       <p class="privacy-note">No account. No advertising. Your learning data stays in this browser.</p>
@@ -278,7 +281,6 @@ function renderReader() {
         <div class="reader-actions">
           <button class="reader-tool ${state.showPinyin ? "active" : ""}" type="button" data-toggle-pinyin aria-pressed="${state.showPinyin}">拼音</button>
           <button class="reader-tool ${state.showTranslation ? "active" : ""}" type="button" data-toggle-translation aria-pressed="${state.showTranslation}">EN</button>
-          <button class="reader-tool sound-tool" type="button" data-speak-story="${escapeAttr(story.paragraphs.flatMap((paragraph) => paragraph.tokens).map((token) => token.h).join(""))}" aria-label="Read story aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8m2.5-11a10 10 0 0 1 0 14" /></svg></button>
         </div>
       </div>
       <header class="reader-header ${story.accent}">
@@ -287,7 +289,7 @@ function renderReader() {
       </header>
 
       <div class="reader-body">
-        <p class="reader-hint">Tap any word for its meaning.</p>
+        <p class="reader-hint">Tap any word for its meaning. Some words have human recordings; full-entry narration is not available.</p>
         <p class="audio-status" data-audio-status role="status"></p>
         ${learningFocus(story)}
         <div class="story-copy ${state.showPinyin ? "show-pinyin" : "hide-pinyin"}">
@@ -405,12 +407,6 @@ function handleAppClick(event) {
     saveState(); updateReaderPreferences(); return;
   }
 
-  if (event.target.closest("[data-speak-story]")) {
-    const story = stories.find((item) => item.id === activeStoryId);
-    speak(story.paragraphs.flatMap((paragraph) => paragraph.tokens).map((token) => token.h).join(""));
-    return;
-  }
-
   const answer = event.target.closest("[data-quiz-answer]");
   if (answer) {
     quizSelection = Number(answer.dataset.quizAnswer);
@@ -433,7 +429,7 @@ function handleAppClick(event) {
 
   const speakWord = event.target.closest("[data-speak-word]");
   if (speakWord) {
-    speak(speakWord.dataset.speakWord);
+    speak(speakWord.dataset.speakWord, speakWord.dataset.speakPinyin);
     return;
   }
 
@@ -498,12 +494,13 @@ function showWord(word) {
   const payload = JSON.stringify({ ...word, key });
   document.querySelector("#word-dialog-content").innerHTML = `
     <div class="word-detail">
-      <button class="word-sound" type="button" data-speak-word="${escapeAttr(word.h)}" aria-label="Hear pronunciation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8" /></svg></button>
+      <button class="word-sound" type="button" data-speak-word="${escapeAttr(word.h)}" data-speak-pinyin="${escapeAttr(word.p)}" aria-label="Hear pronunciation" ${audio.hasRecording(word.h, word.p) ? "" : "disabled"}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9zm12-1a6 6 0 0 1 0 8" /></svg></button>
       <span class="word-hanzi">${escapeHtml(word.h)}</span><span class="word-pinyin">${escapeHtml(word.p)}</span><span class="word-meaning">${escapeHtml(word.e)}</span>
-      <p class="audio-status" data-audio-status role="status">Tap the speaker to hear Mandarin.</p>
+      <p class="audio-status" data-audio-status data-audio-word="${escapeAttr(word.h)}" data-audio-pinyin="${escapeAttr(word.p)}" role="status">${audioDescription(word.h, word.p)}</p>
       <button class="${saved ? "secondary-button" : "primary-button"} full-width" type="button" data-save-word='${escapeAttr(payload)}'>${saved ? "Remove from saved words" : "Save word"}</button>
     </div>`;
   wordDialog.showModal();
+  updateAudioControls();
 }
 
 function toggleSavedWord(word) {
@@ -539,22 +536,30 @@ function updateStreak() {
   state.lastStudyDate = today;
 }
 
-function speak(text) {
-  audio.play(text);
+function speak(text, pinyin) {
+  audio.play(text, pinyin);
+}
+
+function audioDescription(text, pinyin) {
+  const clip = audio.getClip(text, pinyin);
+  return clip ? clip.kind === "syllable" ? "Human recording of this syllable in isolation. Connected speech may sound different." : "Human recording of the complete word." : "No human recording for this pronunciation yet.";
 }
 
 function updateAudioControls() {
   const active = ["playing", "loading"].includes(audioState.status);
   document.querySelectorAll("[data-audio-status]").forEach((element) => {
-    element.textContent = audioState.message;
+    const word = element.dataset.audioWord;
+    element.textContent = word && audioState.key !== pronunciationKey(word, element.dataset.audioPinyin) ? audioDescription(word, element.dataset.audioPinyin) : audioState.message;
     element.dataset.state = audioState.status;
     element.classList.toggle("audio-error", audioState.status === "error");
   });
-  document.querySelectorAll("[data-speak-word], [data-speak-story]").forEach((button) => {
-    const selected = active && (button.hasAttribute("data-speak-story") ? button.dataset.speakStory === audioState.text : button.dataset.speakWord === audioState.text);
+  document.querySelectorAll("[data-speak-word]").forEach((button) => {
+    const available = audio.hasRecording(button.dataset.speakWord, button.dataset.speakPinyin);
+    const selected = available && active && pronunciationKey(button.dataset.speakWord, button.dataset.speakPinyin) === audioState.key;
+    button.disabled = !available;
     button.classList.toggle("audio-playing", selected);
     button.setAttribute("aria-pressed", String(selected));
-    button.setAttribute("aria-label", selected ? "Stop audio" : button.hasAttribute("data-speak-story") ? "Read story aloud" : `Hear ${button.dataset.speakWord}`);
+    button.setAttribute("aria-label", selected ? "Stop audio" : available ? `Hear ${button.dataset.speakWord}` : `No human recording for ${button.dataset.speakWord}`);
   });
 }
 

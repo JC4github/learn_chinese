@@ -9,7 +9,7 @@ Hanzi Path is a private, mobile-first Mandarin graded-reading app. It is an orig
 - Short factual explainers with background links, and slang with context, register and neutral alternatives
 - Guided sound comparisons, reusable phrases, and labelled dialogue turns
 - Tap any Chinese word for pinyin and meaning
-- Bundled Mandarin recordings for words and stories
+- Human Mandarin recordings for available words and pinyin practice
 - Optional pinyin and paragraph translations
 - Saved-word list
 - Comprehension checks and local progress
@@ -41,11 +41,11 @@ Story content is stored in `dist/data/stories.json`. It can be expanded without 
 
 ## Audio
 
-Tap a Chinese word, then the speaker in its definition sheet. Saved-word rows also play pronunciation. The reader speaker plays the whole story. Tap the active speaker again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app.
+Tap a Chinese word, then an available speaker in its definition sheet. Saved-word rows and pinyin practice also play human recordings. Tap the active speaker again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app. Words without a recording are labelled and disabled; full-entry narration is unavailable.
 
-Audio uses bundled recordings through Howler.js 2.2.4. All words, phrases, pronunciation examples and full lessons have audio, generated locally with Kokoro v1.1-zh through sherpa-onnx. Existing recordings are reused when text matches. The recording library is cached for offline use. No device speech voice, API key, or speech subscription is needed. Browser autoplay rules still require tapping a speaker.
+Audio uses 212 human MP3 recordings from audio-cmn through Howler.js 2.2.4, covering 215 text/pronunciation pairs. Files are reused when both text and pronunciation match. All synthetic speech has been removed. The recording library is cached for offline use. No device speech voice, API key, or speech subscription is needed. Browser autoplay rules still require tapping a speaker.
 
-See `AUDIO.md` for generation instructions, sources, and licenses. The large generation model stays in the ignored `work/` directory and is not shipped to the browser.
+See `AUDIO.md` for import instructions, source credits, licences, coverage and pronunciation-review limits.
 
 ## Testing
 

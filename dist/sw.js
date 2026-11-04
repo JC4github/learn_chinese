@@ -1,24 +1,23 @@
-const CACHE_NAME = "hanzi-path-v16";
+const CACHE_NAME = "hanzi-path-v18";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
-  "./styles.css?v=lessons-1",
-  "./styles.css?v=personal-20-2",
+  "./styles.css?v=human-2",
   "./app.js",
   "./speech.js",
-  "./app.js?v=recordings-1",
-  "./app.js?v=lessons-1",
-  "./app.js?v=personal-20-2",
-  "./speech.js?v=recordings-1",
+  "./app.js?v=human-2",
+  "./speech.js?v=human-2",
+  "./pronunciation.js",
+  "./pronunciation.js?v=human-2",
   "./vendor/howler.core.min.js",
   "./audio/manifest.json",
-  "./audio/manifest.json?v=lessons-1",
-  "./audio/manifest.json?v=personal-20-2",
+  "./audio/manifest.json?v=human-2",
+  "./audio/credits.html",
+  "./audio/SOURCES.md",
   "./manifest.webmanifest",
   "./data/stories.json",
-  "./data/stories.json?v=lessons-1",
-  "./data/stories.json?v=personal-20-2",
+  "./data/stories.json?v=human-2",
   "./icons/icon.svg",
   "./icons/icon-180.png",
   "./icons/icon-512.png"
@@ -29,7 +28,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then(async (cache) => {
     await cache.addAll(APP_SHELL);
     const manifest = await (await cache.match("./audio/manifest.json")).json();
-    await cache.addAll(Object.values(manifest.clips).map((clip) => new URL(clip.src, self.location.href).href));
+    if (manifest.mode !== "human-only" || Object.values(manifest.clips).some(clip => clip.type !== "human")) throw new Error("Human recording manifest required");
+    await cache.addAll([...new Set(Object.values(manifest.clips).map((clip) => new URL(clip.src, self.location.href).href))]);
   }).then(() => self.skipWaiting()));
 });
 
@@ -46,7 +46,12 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(fetch(event.request, { cache: "no-store" }).catch(() => caches.open(CACHE_NAME).then((cache) => cache.match("./index.html"))));
     return;
   }
-  const isAudio = event.request.url.startsWith(new URL("./audio/", self.location.href).href) && /\/[a-f0-9]{24}\.wav$/.test(event.request.url);
+  const audioBase = new URL("./audio/", self.location.href).href;
+  if (event.request.url.startsWith(audioBase) && /\/[a-f0-9]{24}\.wav$/.test(event.request.url)) {
+    event.respondWith(Promise.resolve(new Response(null, { status: 410 })));
+    return;
+  }
+  const isAudio = event.request.url.startsWith(new URL("./audio/human/", self.location.href).href) && /\/[a-f0-9]{24}\.mp3$/.test(event.request.url);
   if (!assetUrls.has(event.request.url) && !isAudio) return;
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => cache.match(event.request)).then(async (cached) => {
@@ -68,7 +73,7 @@ async function audioRangeResponse(range, cached) {
   const end = match[1] && match[2] ? Math.min(Number(match[2]), bytes.byteLength - 1) : bytes.byteLength - 1;
   if (start > end || start >= bytes.byteLength) return invalid();
   return new Response(bytes.slice(start, end + 1), { status: 206, headers: {
-    "Content-Type": "audio/wav", "Content-Range": `bytes ${start}-${end}/${bytes.byteLength}`,
+    "Content-Type": "audio/mpeg", "Content-Range": `bytes ${start}-${end}/${bytes.byteLength}`,
     "Accept-Ranges": "bytes", "Content-Length": String(end - start + 1),
   } });
 }

@@ -226,6 +226,9 @@ input[type="range"] { width: 100%; accent-color: var(--persimmon); }
 .practice-sound strong { color: #9c4a31; font-size: 12px; overflow-wrap: anywhere; }
 .practice-sound small { color: #59665f; font-size: 10px; line-height: 1.5; }
 .listen-label { margin-top: 5px; color: var(--jade); font-size: 11px; font-weight: 700; }
+.practice-sound:disabled { opacity: .62; }
+.word-sound:disabled { opacity: .35; }
+.saved-word-main:disabled { opacity: .75; }
 .speaker-tag { margin: 0 0 5px; color: #9c4a31; font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .entry-sources { max-width: 690px; margin: 28px auto; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
 .entry-sources h2 { margin: 0 0 8px; font: bold 19px Georgia, serif; }

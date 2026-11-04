@@ -1,35 +1,33 @@
-# Bundled Mandarin audio
+# Human Mandarin recordings
 
-The app ships 763 synthetic Mandarin WAV files (63,800,204 bytes) for vocabulary, pronunciation examples and all 34 complete entries. The personal-interest expansion adds 574 recordings and reuses all 189 prior clips unchanged. Playback does not depend on the browser's Web Speech API or installed system voices.
+Hanzi Path 0.4.0 plays human recordings only. All 763 generated WAV files, synthesis scripts and full-entry narration have been removed. There is no browser/device voice, neural TTS, server speech service or stitched-syllable fallback.
 
-## Libraries selected
+## Source and coverage
 
-- [Howler.js 2.2.4](https://github.com/goldfire/howler.js): browser playback, mobile audio unlocking, stop/replay and load/play error events. MIT license; the bundled core and license are in `dist/vendor/`.
-- [sherpa-onnx 2.0.1](https://github.com/k2-fsa/sherpa-onnx): offline audio generation during authoring. Apache 2.0.
-- [Kokoro-82M-v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh): Mandarin synthesis model, Apache 2.0. Uses the official sherpa int8 model package and speaker 3, `zf_001`, at speed 0.86. Model license is retained in `dist/audio/KOKORO-LICENSE.txt`.
-- [Official speaker map and examples](https://k2-fsa.github.io/sherpa/onnx/tts/all/Chinese-English/kokoro-multi-lang-v1_1.html).
+The app bundles unchanged MP3s from [hugolpz/audio-cmn](https://github.com/hugolpz/audio-cmn), pinned to `f759a0f18f27690742957619e1248ed91e9b3f2c`. The current 34 entries request 730 distinct text/pronunciation pairs: 215 have recordings, represented by 212 unique files (2,251,420 bytes). The other 515 explicitly have no recording. Repeated words reuse the same file when their pronunciation matches.
 
-The model files are not part of the deployed app. Playback requests only same-origin bundled recordings. No text is sent to a speech service during playback.
+- Isolated syllables: Chen Wang (王琛), collection authors Wang Chen, Hugo Lopez and Nicolas Vion, 2013. CC BY-SA 3.0, verified in the original MP3 SWAC metadata.
+- Whole words: Yue Tan, Base Audio Libre De Mots Chinois / Shtooka Caen Tan, 2009. CC BY-SA 3.0 US. The upstream README identifies this collection and speaker; [Mandarin Audio Utilities' collection credits](https://github.com/trevorld/mandarin_audio_utilities/blob/master/cc_README.rst) document its licence.
+- MP3 processing and distribution: Hugo Lopez / audio-cmn. We preserve file bytes and only change filenames. Audio retains its own licence separately from app code and lesson text. In-app credits are available under Me.
 
-## Generate new or changed content
+This is a recording library, not arbitrary-text TTS. New prose does not automatically get narration. Exact words absent from the collection show “No recording yet.” Available pronunciation buttons still require a tap because of browser playback rules.
 
-1. Create a Python virtual environment under `work/audio-venv`.
-2. Install `scripts/requirements-audio.txt` into it.
-3. Download and extract the official model from:
-   `https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-int8-multi-lang-v1_1.tar.bz2`
-   into `work/kokoro-int8-multi-lang-v1_1`.
-4. Run `work/audio-venv/Scripts/python.exe scripts/generate-audio.py` on Windows. The script derives vocabulary, practice and full-entry text from `dist/data/stories.json`, validates and reuses existing clips, checks non-silent finite output, and atomically writes `dist/audio/manifest.json`. For larger batches, use `--workers 4 --threads 2`; each worker owns an independent local voice instance. `--model-dir <path>` can reuse an already-downloaded model. Temporary recordings are renamed only after a successful write, so an interrupted run can safely resume.
-5. Run `npm ci`, `npm run vendor`, `npm test`, and `npm run check`.
-6. Bump the service-worker cache version when publishing changed assets.
+## Tone selection and limits
 
-`--limit 1` generates one sample without replacing the complete manifest. File identity includes the model, speaker, speed and text. Changing generation settings should also change that identity prefix.
+Single-character matching uses the supplied pinyin including its tone mark; it never guesses from the character alone. Four-tone practice uses distinct `ma1`, `ma2`, `ma3` and `ma4` source files. Unknown/neutral tones cannot silently become first tone. Whole-word recordings are selected by exact Hanzi; words with conflicting in-app pinyin variants are excluded. Dictionary pinyin and natural connected speech can differ.
 
-## Offline and Safari
+[Upstream issue #7](https://github.com/hugolpz/audio-cmn/issues/7) reports degraded syllables and unsuitable/missing isolated neutral-tone samples. We exclude the explicitly flagged `san1`, `bang2`, `bang4`, `jv4`, `zhu2`, `zhu4` files. Neutral-tone teaching uses whole words 谢谢、什么、朋友. This excludes known reported problems; it is not certification that every remaining sample or word pronunciation has been independently reviewed by a Mandarin teacher. Native-speaker review remains necessary for teaching accuracy and polyphonic words.
 
-The service worker installs the entire recording library along with the app. Cached WAVs support byte-range responses for Safari's HTML5 fallback, including two-byte probes and suffix ranges. Opening the updated app online once is required before first offline playback.
+Other options researched included eSpeak NG (local formant synthesis) and neural local TTS such as sherpa/Kokoro. Both produce synthetic speech and therefore do not meet the learner's instruction to remove all synthetic voices. Unclear-provenance scraped pinyin collections were not imported.
 
-## Evaluation notes
+## Importing future recordings
 
-The plugin directory was searched for speech/voiceover providers. The relevant results require separate connected accounts, so none was installed. Azure Speech is an option for future dynamic generation but requires a provisioned speech resource. An edge-tts sample request was rejected by the service; it is not used by this implementation.
+Run `node scripts/import-human-audio.mjs` after editing lesson content. It downloads only matching human MP3s from the pinned source, verifies each file against its upstream Git blob SHA-1 and byte length, and writes explicit availability into `dist/audio/manifest.json`. Downloads are cached under ignored `work/native-audio-research`. No speech is generated. The one-time lesson migration is `scripts/configure-human-audio.mjs`.
 
-All speech is synthetic. WAV structure and non-silent output are validated; native-speaker pronunciation review remains useful for teaching content, especially names and polyphonic characters.
+The manifest records each pronunciation, speaker, licence, original path, source URL and integrity hash. Adding a new source requires establishing its provenance/licence and checking its actual pronunciation before adding it. Run `npm test` and `npm run check`; bump asset URLs and the service-worker cache when publishing changed assets.
+
+## Playback and offline updates
+
+[Howler.js 2.2.4](https://github.com/goldfire/howler.js) handles playback and mobile unlocking; its MIT licence is bundled in `dist/vendor`. No API key, speech subscription, installed system voice or external speech request is used. After one completed online installation, all 212 MP3s are cached for offline playback. Safari byte probes and suffix-range requests receive MP3 range responses.
+
+Cache v18 removes this app's older caches on activation. Requests for retired generated WAVs receive HTTP 410, preventing stale audio from being replayed through the new worker. Existing saved words and learning progress keep the same storage key. Open the app online and use Me → Check for updates to receive this release.

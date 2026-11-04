@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { MandarinPlayer } from '../dist/speech.js';
+import { MandarinPlayer, pronunciationKey } from '../dist/speech.js';
 
 function appHarness(saved = null, storageFailure = false) {
   const elements = new Map(), handlers = {}, store = new Map();
@@ -10,7 +10,7 @@ function appHarness(saved = null, storageFailure = false) {
   const element = () => ({innerHTML:'',textContent:'',dataset:{},classList:{toggle(){},add(){},remove(){}},addEventListener(){},scrollTo(){},showModal(){},close(){},querySelectorAll:()=>[],setAttribute(){},removeAttribute(){}});
   const document={documentElement:element(),body:element(),hidden:false,querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s);},querySelectorAll:()=>[],addEventListener:(name,fn)=>{handlers[name]??=[];handlers[name].push(fn);}};
   const frames=[];
-  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home',href:'https://test.example/#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,structuredClone,console,Intl,Date,URL,requestAnimationFrame:callback=>frames.push(callback),confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
+  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home',href:'https://test.example/#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,pronunciationKey,structuredClone,console,Intl,Date,URL,requestAnimationFrame:callback=>frames.push(callback),confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
   const source=readFileSync(new URL('../dist/app.js',import.meta.url),'utf8').replace(/^\uFEFF/,'').replace(/\r\n/g,'\n').replace(/^import .*\n/,'').replace('\ninit();','');
   vm.runInContext(source,context);
   const evaluate=source=>vm.runInContext(source,context);
@@ -60,17 +60,21 @@ test('storage quota errors report failure rather than breaking the flow',()=>{
   const h=appHarness(null,true); h.evaluate('saveState()'); assert.match(h.elements.get('#toast').textContent,/could not be saved/);
 });
 
-test('playing a practice sample does not mark the full-story control as playing',()=>{
+test('audio controls match text and tone, and unavailable words stay disabled',()=>{
   const h=appHarness();
   h.evaluate(`
-    const controls = [{dataset:{speakStory:'完整故事'},hasAttribute:name=>name==='data-speak-story'}, {dataset:{speakWord:'妈'},hasAttribute:()=>false}];
+    audio.setClips({'妈|mā':{type:'human',format:'mp3',src:'audio/human/0123456789abcdef01234567.mp3'}});
+    const controls = [{dataset:{speakWord:'妈',speakPinyin:'mǎ'}}, {dataset:{speakWord:'妈',speakPinyin:'mā'}}];
     controls.forEach(button=>{button.attrs={};button.classList={toggle(){}};button.setAttribute=(key,value)=>button.attrs[key]=value;});
     document.querySelectorAll=selector=>selector.includes('[data-speak-word]')?controls:[];
-    audioState={status:'playing',text:'妈',message:'Playing'};
+    audioState={status:'playing',text:'妈',key:'妈|mā',message:'Playing'};
     updateAudioControls();
   `);
   assert.equal(h.evaluate("controls[0].attrs['aria-pressed']"),'false');
   assert.equal(h.evaluate("controls[1].attrs['aria-pressed']"),'true');
+  assert.equal(h.evaluate('controls[0].disabled'),true);
+  h.evaluate("activeStoryId='pinyin-four-tones';renderReader()");
+  assert.doesNotMatch(h.elements.get('#app').innerHTML,/data-speak-story/);
 });
 
 test('lesson navigation resets document scroll after layout without scrolling a nested frame',()=>{
@@ -133,12 +137,12 @@ test('reader display toggles preserve lesson DOM instead of rebuilding scrolled 
 
 function workerHarness({offline=false}={}) {
   const handlers={}, deleted=[], cached=[], opened=[], fetchOptions=[], response={from:'current-cache'}, network={from:'network'};
-  const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async name=>{opened.push(name);return {addAll:async files=>cached.push(...files),match:async path=>path==='./audio/manifest.json'?{json:async()=>({clips:{word:{src:'audio/0123456789abcdef01234567.wav'}}})}:response};},keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>({from:'old-cache'})},fetch:async(request,options)=>{fetchOptions.push(options);if(offline)throw Error('offline');return network;}});
+  const context=vm.createContext({URL,Set,Promise,Response,self:{location:new URL('https://test.example/sw.js'),addEventListener:(name,fn)=>handlers[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}},caches:{open:async name=>{opened.push(name);return {addAll:async files=>cached.push(...files),match:async path=>path==='./audio/manifest.json'?{json:async()=>({mode:'human-only',clips:{word:{type:'human',src:'audio/human/0123456789abcdef01234567.mp3'}}})}:response};},keys:async()=>['other-app-v1','hanzi-path-v2','hanzi-path-v3'],delete:async key=>deleted.push(key),match:async()=>({from:'old-cache'})},fetch:async(request,options)=>{fetchOptions.push(options);if(offline)throw Error('offline');return network;}});
   vm.runInContext(readFileSync(new URL('../dist/sw.js',import.meta.url),'utf8'),context);
   return {handlers,deleted,cached,opened,fetchOptions,response,network,context};
 }
 test('offline install caches the audio module and all shell assets',async()=>{
-  const h=workerHarness(); let task; h.handlers.install({waitUntil:p=>task=p}); await task; assert.ok(h.cached.includes('./speech.js')); assert.ok(h.cached.some(path=>path.endsWith('.wav')));
+  const h=workerHarness(); let task; h.handlers.install({waitUntil:p=>task=p}); await task; assert.ok(h.cached.includes('./speech.js')); assert.ok(h.cached.includes('./pronunciation.js')); assert.ok(h.cached.some(path=>path.endsWith('.mp3')));assert.ok(!h.cached.some(path=>path.endsWith('.wav')));
 });
 test('cache upgrade deletes only this app’s older caches',async()=>{
   const h=workerHarness(); let task; h.handlers.activate({waitUntil:p=>task=p}); await task;
@@ -165,4 +169,10 @@ test('unknown assets, cross-origin requests and writes are never replaced by HTM
   for(const request of [{method:'GET',url:'https://test.example/missing.js',mode:'cors'},{method:'GET',url:'https://other.example/api',mode:'cors'},{method:'POST',url:'https://test.example/',mode:'cors'}]){
     let intercepted=false; h.handlers.fetch({request,respondWith:()=>intercepted=true}); assert.equal(intercepted,false);
   }
+});
+
+test('retired synthetic recordings are blocked even if an older cache still has them',async()=>{
+  const h=workerHarness();let task;
+  h.handlers.fetch({request:{method:'GET',url:'https://test.example/audio/0123456789abcdef01234567.wav',mode:'cors'},respondWith:p=>task=p});
+  assert.equal((await task).status,410);assert.equal(h.opened.length,0);assert.equal(h.fetchOptions.length,0);
 });
