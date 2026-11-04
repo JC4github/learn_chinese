@@ -48,3 +48,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 ## Next content milestone
 
 Review the expanded curriculum with a native Mandarin speaker, then adjust topic depth, difficulty and future slang selections from learner feedback.
+
+## Audio follow-up under evaluation
+
+On 5 November the learner requested Douyin-like Mandarin TTS for arbitrary words and future content. This reopens the human-only restriction for a suitable pretrained TTS engine; current release 0.4.0 still uses human recordings only. Prefer local operation inside the iPhone PWA, explicit pinyin corrections and reusable cached results. Compare tone accuracy and device performance before selecting or enabling an engine. See TTS_RESEARCH.md for Chinese-language research, browser-ready candidates, official Doubao online/native-offline options and verification limits.
