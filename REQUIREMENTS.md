@@ -1,7 +1,7 @@
 # Hanzi Path — Product Requirements
 
 Status: working MVP  
-Version: 0.4
+Version: 0.5
 Updated: 5 November 2026
 
 ## Product direction
@@ -24,7 +24,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 2. Provide short graded stories organised by level and topic.
 3. Allow every Chinese word to be tapped for pinyin and an English meaning.
 4. Allow pinyin and paragraph translations to be shown or hidden.
-5. Play only appropriately licensed human Mandarin recordings. Match text and pronunciation, including tones. Do not generate voices or stitch syllables into narration. Disable and label unavailable audio; remove full-entry narration until a genuine recording exists. Cache available recordings for offline use after an initial online load.
+5. Use the approved local wasmtts voice by default for existing and future articles, conversations, stories, selected words and saved words. Generate audio on the device and cache results by model, text and pronunciation for reuse. Reuse the existing speech-lab voice download. Keep human recordings for current pinyin sound exercises. Show one-time voice setup when needed, and support stop/replay, cancellation and offline generation.
 6. Let the learner save words for later review.
 7. End each story with a short comprehension check.
 8. Save preferences, completed stories, streak, minutes read, and saved words locally.
@@ -41,7 +41,7 @@ The product may take inspiration from common graded-reader learning patterns, bu
 - Four pinyin lessons covering tones, sound contrasts, neutral tones and connected speech.
 - Six daily conversations covering introductions, ordering drinks, checkout, directions, plans and clarification.
 - Twenty personalised entries: four cars, three anime, three technology, three engineering, three creative arts and four internet slang entries. Formats: ten articles, nine conversations and one group chat.
-- One comprehension question per story or lesson. Human audio covers all current pinyin practice examples and a subset of vocabulary; missing recordings are explicitly unavailable.
+- One comprehension question per story or lesson. The local reading voice handles narration and vocabulary; human recordings cover the current pinyin practice examples.
 - Browser-local personalisation and progress.
 - No account, cloud sync, payment, social features, or copied third-party content.
 
@@ -49,6 +49,6 @@ The product may take inspiration from common graded-reader learning patterns, bu
 
 Review the expanded curriculum with a native Mandarin speaker, then adjust topic depth, difficulty and future slang selections from learner feedback.
 
-## Audio follow-up under evaluation
+## Default audio policy
 
-On 5 November the learner requested Douyin-like Mandarin TTS for arbitrary words and future content. This reopens the human-only restriction for a suitable pretrained TTS engine; current release 0.4.0 still uses human recordings only. Prefer local operation inside the iPhone PWA, explicit pinyin corrections and reusable cached results. Compare tone accuracy and device performance before selecting or enabling an engine. See TTS_RESEARCH.md for Chinese-language research, browser-ready candidates, official Doubao online/native-offline options and verification limits.
+On 5 November the learner approved the wasmtts sample voice and requested it as the default for all future articles and texts. Release 0.5.0 integrates that voice into normal reading. New entries automatically receive Listen controls and on-device narration without a pre-generated audio manifest. Retain appropriately licensed assets and human tone references. See DEFAULT_AUDIO.md for implementation and verification, and TTS_RESEARCH.md for the earlier comparison.

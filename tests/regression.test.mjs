@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { MandarinPlayer, pronunciationKey } from '../dist/speech.js';
+import { ReadingPlayer, pronunciationKey } from '../dist/reading-audio.js';
 
 function appHarness(saved = null, storageFailure = false) {
   const elements = new Map(), handlers = {}, store = new Map();
@@ -10,7 +10,7 @@ function appHarness(saved = null, storageFailure = false) {
   const element = () => ({innerHTML:'',textContent:'',dataset:{},classList:{toggle(){},add(){},remove(){}},addEventListener(){},scrollTo(){},showModal(){},close(){},querySelectorAll:()=>[],setAttribute(){},removeAttribute(){}});
   const document={documentElement:element(),body:element(),hidden:false,querySelector:s=>{if(!elements.has(s))elements.set(s,element());return elements.get(s);},querySelectorAll:()=>[],addEventListener:(name,fn)=>{handlers[name]??=[];handlers[name].push(fn);}};
   const frames=[];
-  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home',href:'https://test.example/#home'},history:{replaceState(){}},navigator:{},MandarinPlayer,pronunciationKey,structuredClone,console,Intl,Date,URL,requestAnimationFrame:callback=>frames.push(callback),confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
+  const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#home',href:'https://test.example/#home'},history:{replaceState(){}},navigator:{},ReadingPlayer,pronunciationKey,structuredClone,console,Intl,Date,URL,requestAnimationFrame:callback=>frames.push(callback),confirm:()=>true,setTimeout:()=>1,clearTimeout(){},localStorage:{getItem:key=>store.get(key)??null,setItem:(key,value)=>{if(storageFailure)throw Error('quota');store.set(key,value);}}});
   const source=readFileSync(new URL('../dist/app.js',import.meta.url),'utf8').replace(/^\uFEFF/,'').replace(/\r\n/g,'\n').replace(/^import .*\n/,'').replace('\ninit();','');
   vm.runInContext(source,context);
   const evaluate=source=>vm.runInContext(source,context);
@@ -60,21 +60,22 @@ test('storage quota errors report failure rather than breaking the flow',()=>{
   const h=appHarness(null,true); h.evaluate('saveState()'); assert.match(h.elements.get('#toast').textContent,/could not be saved/);
 });
 
-test('audio controls match text and tone, and unavailable words stay disabled',()=>{
+test('audio controls match text, tone and source; human drills stay distinct from narration',()=>{
   const h=appHarness();
   h.evaluate(`
     audio.setClips({'妈|mā':{type:'human',format:'mp3',src:'audio/human/0123456789abcdef01234567.mp3'}});
-    const controls = [{dataset:{speakWord:'妈',speakPinyin:'mǎ'}}, {dataset:{speakWord:'妈',speakPinyin:'mā'}}];
+    const controls = [{dataset:{speakWord:'妈',speakPinyin:'mǎ',audioSource:'human'}}, {dataset:{speakWord:'妈',speakPinyin:'mā',audioSource:'human'}}];
     controls.forEach(button=>{button.attrs={};button.classList={toggle(){}};button.setAttribute=(key,value)=>button.attrs[key]=value;});
     document.querySelectorAll=selector=>selector.includes('[data-speak-word]')?controls:[];
-    audioState={status:'playing',text:'妈',key:'妈|mā',message:'Playing'};
+    audioState={status:'playing',text:'妈',key:'妈|mā',source:'human',message:'Playing'};
     updateAudioControls();
   `);
   assert.equal(h.evaluate("controls[0].attrs['aria-pressed']"),'false');
   assert.equal(h.evaluate("controls[1].attrs['aria-pressed']"),'true');
   assert.equal(h.evaluate('controls[0].disabled'),true);
   h.evaluate("activeStoryId='pinyin-four-tones';renderReader()");
-  assert.doesNotMatch(h.elements.get('#app').innerHTML,/data-speak-story/);
+  assert.match(h.elements.get('#app').innerHTML,/data-speak-story/);
+  assert.match(h.elements.get('#app').innerHTML,/data-audio-source="human"/);
 });
 
 test('lesson navigation resets document scroll after layout without scrolling a nested frame',()=>{
@@ -175,4 +176,14 @@ test('retired synthetic recordings are blocked even if an older cache still has 
   const h=workerHarness();let task;
   h.handlers.fetch({request:{method:'GET',url:'https://test.example/audio/0123456789abcdef01234567.wav',mode:'cors'},respondWith:p=>task=p});
   assert.equal((await task).status,410);assert.equal(h.opened.length,0);assert.equal(h.fetchOptions.length,0);
+});
+
+test('new future entries get full narration without adding a recording manifest entry',()=>{
+  const h=appHarness();h.evaluate(`
+    stories.push({...structuredClone(stories[0]),id:'future-article',paragraphs:[{tokens:[{h:'新文章',p:'xīn wénzhāng',e:'new article'},{h:'。',punct:true}],translation:'A new article.'}]});
+    activeStoryId='future-article';renderReader();
+    let spoken;audio.play=(text,pinyin,options)=>{spoken={text,pinyin,options};};
+    handleAppClick({target:{closest:selector=>selector==='[data-speak-story]'?{dataset:{speakStory:'future-article'}}:null}});
+  `);
+  assert.equal(h.evaluate('spoken.text'),'新文章。');assert.equal(h.evaluate('spoken.options.kind'),'story');
 });

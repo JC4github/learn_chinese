@@ -1,7 +1,7 @@
 import { readFileSync, statSync } from "node:fs";
 
 const required = [
-  "dist/index.html", "dist/styles.css", "dist/app.js", "dist/speech.js", "dist/pronunciation.js", "dist/sw.js", "dist/audio/credits.html", "dist/audio/SOURCES.md",
+  "dist/index.html", "dist/styles.css", "dist/app.js", "dist/speech.js", "dist/reading-audio.js", "dist/reading-voice.js", "dist/reading-worker.js", "dist/pronunciation.js", "dist/sw.js", "dist/audio/credits.html", "dist/audio/SOURCES.md",
   "dist/manifest.webmanifest", "dist/data/stories.json", "dist/audio/manifest.json", "dist/vendor/howler.core.min.js",
   "dist/icons/icon.svg", "dist/icons/icon-180.png", "dist/icons/icon-512.png"
 ];

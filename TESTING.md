@@ -1,5 +1,9 @@
 # Verification — human recordings, 0.4.0
 
+## Default reading voice, 0.5.0
+
+All 54 tests pass. The approved wasmtts voice is integrated with narration, selected and saved words, conversation examples and future-entry controls. New tests cover pronunciation matching, model setup, reusable output, long text, cancellation, stale events, retained human drills and worker scope. Fresh-install prompts and new synthesis after an offline main-app reload passed. See DEFAULT_AUDIO.md for the current implementation and browser results; the older sections below describe earlier releases.
+
 ## Optional wasmtts trial, 0.4.1
 
 The separate `/tts-lab/` article trial adds six tests, for 41 passing tests in total. Local article generation, media loading/playback, tone/conversation samples, cancellation/reload, saved-WAV reuse and synthesis of new text after an offline page reload passed in the desktop preview. See WASMTTS_TRIAL.md for measurements and limits. These results do not establish tonal correctness or physical iPhone performance.

@@ -1,6 +1,8 @@
-# Human Mandarin recordings
+# Mandarin audio
 
-Hanzi Path 0.4.0 plays human recordings only. All 763 generated WAV files, synthesis scripts and full-entry narration have been removed. There is no browser/device voice, neural TTS, server speech service or stitched-syllable fallback.
+Hanzi Path 0.5.0 uses the learner-approved local wasmtts voice by default for entry narration and vocabulary. Human recordings remain the references for the current pinyin exercises. See DEFAULT_AUDIO.md for default playback, reusable generated audio and shared offline setup; WASMTTS_TRIAL.md contains model sources and licences.
+
+The sections below document the human-recording collection introduced in 0.4.0. The previous 763 Kokoro WAV files and their generation scripts remain retired.
 
 ## Source and coverage
 
@@ -10,7 +12,7 @@ The app bundles unchanged MP3s from [hugolpz/audio-cmn](https://github.com/hugol
 - Whole words: Yue Tan, Base Audio Libre De Mots Chinois / Shtooka Caen Tan, 2009. CC BY-SA 3.0 US. The upstream README identifies this collection and speaker; [Mandarin Audio Utilities' collection credits](https://github.com/trevorld/mandarin_audio_utilities/blob/master/cc_README.rst) document its licence.
 - MP3 processing and distribution: Hugo Lopez / audio-cmn. We preserve file bytes and only change filenames. Audio retains its own licence separately from app code and lesson text. In-app credits are available under Me.
 
-This is a recording library, not arbitrary-text TTS. New prose does not automatically get narration. Exact words absent from the collection show “No recording yet.” Available pronunciation buttons still require a tap because of browser playback rules.
+This human sublibrary contains fixed recordings. The default reading voice now supplies narration and vocabulary audio beyond that collection, including new entries. Playback still requires a tap because of browser rules.
 
 ## Tone selection and limits
 

@@ -1,5 +1,7 @@
 # wasmtts sample article trial — 0.4.1
 
+Update: the learner approved this voice and release 0.5.0 makes it the default in normal reading. The model cache is shared with this trial. See DEFAULT_AUDIO.md. The text below records the original 0.4.1 trial.
+
 Open `/tts-lab/` on the existing private app, or Me → Open the speech lab. Download the optional voice pack, generate the article, and press the audio player's Play button. The text field accepts up to 400 characters; sample buttons include daily conversation, four tones, tone pairs and polyphonic words. Human tone recordings are supplied for comparison. Generated WAVs can be saved and are reused locally when text matches.
 
 Normal lessons retain their existing human-only playback. This trial is separate and does not silently enable synthetic narration throughout the library. It needs no speech account or API key and sends no text to a speech service.

@@ -1,6 +1,6 @@
 # Mandarin TTS options researched in Chinese
 
-Researched: 5 November 2026. This is a shortlist, not an integration or pronunciation-quality certification. The deployed 0.4.0 app still uses only human recordings; none of the engines below has been added to it.
+Researched: 5 November 2026. This document records the initial shortlist. After hearing the 0.4.1 trial, the learner approved wasmtts as the default; see DEFAULT_AUDIO.md for the 0.5.0 integration. No independent pronunciation-quality certification is claimed.
 
 ## Latest request
 

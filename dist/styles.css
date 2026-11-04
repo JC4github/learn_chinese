@@ -207,6 +207,8 @@ input[type="range"] { width: 100%; accent-color: var(--persimmon); }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 .audio-status { font-size: 12px; line-height: 1.5; color: var(--muted); text-align: center; margin: 0 auto 18px; max-width: 38em; }
 .audio-error { color: #9b4434; }
+.voice-download { display: block; margin: 0 auto 20px; }
+[data-voice-download][hidden] { display: none !important; }
 .audio-playing { background: var(--gold) !important; color: var(--ink) !important; }
 .study-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .study-path { position: relative; display: grid; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); text-align: left; }

@@ -9,7 +9,7 @@ Hanzi Path is a private, mobile-first Mandarin graded-reading app. It is an orig
 - Short factual explainers with background links, and slang with context, register and neutral alternatives
 - Guided sound comparisons, reusable phrases, and labelled dialogue turns
 - Tap any Chinese word for pinyin and meaning
-- Human Mandarin recordings for available words and pinyin practice
+- Local wasmtts narration and word audio, with human pinyin practice references
 - Optional pinyin and paragraph translations
 - Saved-word list
 - Comprehension checks and local progress
@@ -41,13 +41,13 @@ Story content is stored in `dist/data/stories.json`. It can be expanded without 
 
 ## Audio
 
-Tap a Chinese word, then an available speaker in its definition sheet. Saved-word rows and pinyin practice also play human recordings. Tap the active speaker again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app. Words without a recording are labelled and disabled; full-entry narration is unavailable.
+Tap Listen in an entry's toolbar for narration, or tap a Chinese word and its speaker. Saved-word rows use the same reading voice. Tap again to stop. Playback stops when leaving a story, closing its word sheet, or hiding the app. The current pinyin exercises keep their human recordings.
 
-Audio uses 212 human MP3 recordings from audio-cmn through Howler.js 2.2.4, covering 215 text/pronunciation pairs. Files are reused when both text and pronunciation match. All synthetic speech has been removed. The recording library is cached for offline use. No device speech voice, API key, or speech subscription is needed. Browser autoplay rules still require tapping a speaker.
+The default is the approved wasmtts Matcha/Vocos voice, generated on-device and played through Howler.js 2.2.4. New content needs no pre-generated recording manifest. A one-time 147 MB model pack is reused from the speech lab when present. Generated WAVs are cached by model, text and pronunciation. Both synthesis and replay work offline after setup. No installed system voice, speech API key or subscription is needed.
 
 See `AUDIO.md` for import instructions, source credits, licences, coverage and pronunciation-review limits.
 
-An optional wasmtts sample-article trial is available under Me → Open the speech lab, or `/tts-lab/`. It downloads a local voice pack only when requested. See `WASMTTS_TRIAL.md` for instructions and measured desktop/offline results. Normal lesson audio continues using human recordings.
+The sample-article speech lab remains available under Me → Open the speech lab, or `/tts-lab/`. See `DEFAULT_AUDIO.md` for the default integration and `WASMTTS_TRIAL.md` for model provenance and trial measurements.
 
 ## Testing
 
