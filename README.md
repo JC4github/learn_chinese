@@ -47,6 +47,8 @@ Audio uses 212 human MP3 recordings from audio-cmn through Howler.js 2.2.4, cove
 
 See `AUDIO.md` for import instructions, source credits, licences, coverage and pronunciation-review limits.
 
+An optional wasmtts sample-article trial is available under Me → Open the speech lab, or `/tts-lab/`. It downloads a local voice pack only when requested. See `WASMTTS_TRIAL.md` for instructions and measured desktop/offline results. Normal lesson audio continues using human recordings.
+
 ## Testing
 
 See `TESTING.md` for coverage, browser verification, and remaining device checks.

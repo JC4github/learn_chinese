@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": 3,
+  "locale": "zh-TW",
+  "purpose": "matcha-g2p-review.json 的 runtime 子集;完整證據、來源與 groupDecisions 留在 repo",
+  "profiles": {
+    "taiwan": {
+      "phraseOverrides": [
+        "作為",
+        "成為",
+        "名為",
+        "修為",
+        "極為",
+        "身為",
+        "視為",
+        "最為",
+        "譽為",
+        "淪為",
+        "記得",
+        "覺得",
+        "曉得",
+        "顯得",
+        "懶得",
+        "捨得",
+        "徵兆地",
+        "自主地",
+        "柵欄",
+        "駐紮",
+        "長短",
+        "長城",
+        "長劍",
+        "長河",
+        "長凳",
+        "長橋",
+        "長命",
+        "長生",
+        "長久",
+        "長遠",
+        "長袍",
+        "堤壩",
+        "著急",
+        "著重",
+        "執著",
+        "睡著",
+        "找著",
+        "碰著",
+        "逮著",
+        "嚇著",
+        "正著",
+        "摸不著",
+        "犯不著",
+        "睡不著",
+        "用得著",
+        "管不著",
+        "著手",
+        "答應",
+        "幾乎",
+        "暫時",
+        "熟悉",
+        "認識",
+        "意識",
+        "見識",
+        "資質",
+        "材質",
+        "期間",
+        "期待",
+        "會兒",
+        "今兒",
+        "這兒",
+        "個兒",
+        "那兒",
+        "事兒",
+        "哪兒",
+        "地兒",
+        "玩意兒",
+        "明兒",
+        "娃兒",
+        "人兒",
+        "鴉兒",
+        "老聾兒",
+        "嗯",
+        "微",
+        "血",
+        "究",
+        "熟",
+        "叔",
+        "姐姐",
+        "差不多",
+        "擁",
+        "顫",
+        "藉",
+        "爺爺",
+        "下巴",
+        "啞巴",
+        "嘴巴",
+        "掙錢",
+        "倒是",
+        "武將",
+        "適應",
+        "感應",
+        "對應",
+        "應對",
+        "重複",
+        "勁",
+        "識",
+        "期",
+        "質",
+        "頗",
+        "咋",
+        "仔細",
+        "彷彿",
+        "露出",
+        "謝謝",
+        "當真",
+        "情分",
+        "興許",
+        "更換",
+        "睡覺",
+        "佛門",
+        "搖頭晃腦",
+        "品相",
+        "興師",
+        "興盛",
+        "興起",
+        "修長",
+        "長達",
+        "重遊"
+      ],
+      "contextualRules": [
+        "著",
+        "和",
+        "得",
+        "為",
+        "子",
+        "頭",
+        "乾",
+        "差",
+        "當",
+        "分",
+        "還",
+        "處",
+        "教",
+        "卷",
+        "晃",
+        "長"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "pattern": "得",
+      "target": [
+        "de5"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "說看打聽變做走長嚇虧氣認笑害來當過寫活聊混想喝死管跑信殺吃瞧輸疼鬧罵猜稱藏生拿對樂算學哭差壓站比問配駛講砸下"
+    },
+    {
+      "pattern": "為",
+      "target": [
+        "wei2"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "以頗認稱難化分更大升人轉而呼所意結尤凝之同代"
+    },
+    {
+      "pattern": "子",
+      "target": [
+        "zi3"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "公男童老瓜仙棋甲"
+    },
+    {
+      "pattern": "頭",
+      "target": [
+        "tou5"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "丫念拳裡苦石骨枕"
+    },
+    {
+      "pattern": "乾",
+      "target": [
+        "gan1"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "脆淨涸枯糧瘦"
+    },
+    {
+      "pattern": "差",
+      "target": [
+        "cha1"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "點"
+    },
+    {
+      "pattern": "當",
+      "target": [
+        "dang4"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "是做回事成作"
+    },
+    {
+      "pattern": "分",
+      "target": [
+        "fen4"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "時輩過緣情身生"
+    },
+    {
+      "pattern": "還",
+      "target": [
+        "huan2"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "歸償交復",
+      "followingCharacters": "禮給手錢鄉價債嘴回清魂願童"
+    },
+    {
+      "pattern": "處",
+      "target": [
+        "chu3"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "相身獨",
+      "followingCharacters": "境置理世於"
+    },
+    {
+      "pattern": "教",
+      "target": [
+        "jiao1"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "書拳你我了出他給過她人劍"
+    },
+    {
+      "pattern": "卷",
+      "target": [
+        "juan4"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "畫書"
+    },
+    {
+      "pattern": "晃",
+      "target": [
+        "huang4"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "盪動"
+    },
+    {
+      "pattern": "長",
+      "target": [
+        "chang2"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "previousCharacters": "擅",
+      "followingCharacters": "褂脖槍線眉壽椅刀"
+    },
+    {
+      "pattern": "著",
+      "target": [
+        "zhe5"
+      ],
+      "implementation": "contextual-rule",
+      "status": "model-supported",
+      "previousCharacters": "住來含味坐對帶幫循急想抬抱拉拎拼拿掛揉提揹摸放曬望板活牽留盯看瞧穿站笑等苦裝視託說跑跟蹲退透靠領養仗低做偷兜冀厚受叨吃咬喊喝喪嗑嚷嚼夾奔守寫待忍忙念悠愣憋打扛拖拗拽指挲捏捧掙接握揣撐擺攔攥晃橫欠歪求沿由當皺瞅硬端管繃繞翹耐聊聽藉藏試護變貼走趁趴踩躲躺追逼量閉閒陪隔隨離頂順顧鬧黑仰佔候停傳冒刻叼向哭哼啃圍壓壯學就弄彎慣憑戴扎扯扶抽拄拍挑挨捻掖揪搓搶據擰收昧朝杵沾泛照熬發盪省瞞瞪磨立算紅縮繫罩耗聞衝讓跳載過防雜騎擱反負唱開磕舔流吹瞰記光披攢奉挎緊掇押懸淌撓拭挽捂拘浮別眨斜思徵合掰賴推跪數怨纏心冷踞溢抹持翻按抓叫憬綁馱動"
+    },
+    {
+      "pattern": "和",
+      "target": [
+        "han4"
+      ],
+      "implementation": "contextual-rule",
+      "status": "source-and-model-supported",
+      "followingCharacters": "一那小大陳山劍劉青白李金老裴兩陸馬謝曹崔寧落心周神十仙朱文師天魏齊顧水柳幾江林武桃書他張鄭粉玉徐少姜雲真桐龍宋三修各寶黃年董風扶不北晏曾手趙竹自身人石禮蠻納南姚王米我隋孫"
+    },
+    {
+      "pattern": "作為",
+      "target": [
+        "zuo4",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "成為",
+      "target": [
+        "cheng2",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "名為",
+      "target": [
+        "ming2",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "修為",
+      "target": [
+        "xiu1",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "極為",
+      "target": [
+        "ji2",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "身為",
+      "target": [
+        "shen1",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "視為",
+      "target": [
+        "shi4",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "最為",
+      "target": [
+        "zui4",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "譽為",
+      "target": [
+        "yu4",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "淪為",
+      "target": [
+        "lun2",
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "記得",
+      "target": [
+        "ji4",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "覺得",
+      "target": [
+        "jue2",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "曉得",
+      "target": [
+        "xiao3",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "顯得",
+      "target": [
+        "xian3",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "懶得",
+      "target": [
+        "lan3",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "捨得",
+      "target": [
+        "she3",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "徵兆地",
+      "target": [
+        "zheng1",
+        "zhao4",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "自主地",
+      "target": [
+        "zi4",
+        "zhu3",
+        "de5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "柵欄",
+      "target": [
+        "zha4",
+        "lan2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "駐紮",
+      "target": [
+        "zhu4",
+        "zha2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長短",
+      "target": [
+        "chang2",
+        "duan3"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長城",
+      "target": [
+        "chang2",
+        "cheng2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長劍",
+      "target": [
+        "chang2",
+        "jian4"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長河",
+      "target": [
+        "chang2",
+        "he2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長凳",
+      "target": [
+        "chang2",
+        "deng4"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長橋",
+      "target": [
+        "chang2",
+        "qiao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長命",
+      "target": [
+        "chang2",
+        "ming4"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長生",
+      "target": [
+        "chang2",
+        "sheng1"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長久",
+      "target": [
+        "chang2",
+        "jiu3"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長遠",
+      "target": [
+        "chang2",
+        "yuan3"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "長袍",
+      "target": [
+        "chang2",
+        "pao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "堤壩",
+      "target": [
+        "ti2",
+        "ba4"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "著急",
+      "target": [
+        "zhao1",
+        "ji2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "著重",
+      "target": [
+        "zhuo2",
+        "zhong4"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "執著",
+      "target": [
+        "zhi2",
+        "zhuo2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "睡著",
+      "target": [
+        "shui4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "找著",
+      "target": [
+        "zhao3",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "碰著",
+      "target": [
+        "peng4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "逮著",
+      "target": [
+        "dai3",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "嚇著",
+      "target": [
+        "xia4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "正著",
+      "target": [
+        "zheng4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "摸不著",
+      "target": [
+        "mo1",
+        "bu4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "犯不著",
+      "target": [
+        "fan4",
+        "bu4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "睡不著",
+      "target": [
+        "shui4",
+        "bu4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "用得著",
+      "target": [
+        "yong4",
+        "de5",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "管不著",
+      "target": [
+        "guan3",
+        "bu4",
+        "zhao2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "著手",
+      "target": [
+        "zhuo2",
+        "shou3"
+      ],
+      "implementation": "phrase-override",
+      "status": "confirmed"
+    },
+    {
+      "pattern": "答應",
+      "target": [
+        "da1",
+        "ying4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "幾乎",
+      "target": [
+        "ji1",
+        "hu1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "暫時",
+      "target": [
+        "zhan4",
+        "shi2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "熟悉",
+      "target": [
+        "shou2",
+        "xi1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "認識",
+      "target": [
+        "ren4",
+        "shi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "意識",
+      "target": [
+        "yi4",
+        "shi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "見識",
+      "target": [
+        "jian4",
+        "shi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "資質",
+      "target": [
+        "zi1",
+        "zhi2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "材質",
+      "target": [
+        "cai2",
+        "zhi2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "期間",
+      "target": [
+        "qi2",
+        "jian1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "期待",
+      "target": [
+        "qi2",
+        "dai4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "誰",
+      "target": [
+        "shei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "會兒",
+      "target": [
+        "hui3",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "今兒",
+      "target": [
+        "jin1",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "這兒",
+      "target": [
+        "zhe4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "個兒",
+      "target": [
+        "ge4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "那兒",
+      "target": [
+        "na4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "事兒",
+      "target": [
+        "shi4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "哪兒",
+      "target": [
+        "na3",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "地兒",
+      "target": [
+        "di4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "玩意兒",
+      "target": [
+        "wan2",
+        "yi4",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "明兒",
+      "target": [
+        "ming2",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "娃兒",
+      "target": [
+        "wa2",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "人兒",
+      "target": [
+        "ren2",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "鴉兒",
+      "target": [
+        "ya1",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "老聾兒",
+      "target": [
+        "lao3",
+        "long2",
+        "er1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "嗯",
+      "target": [
+        "en5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "微",
+      "target": [
+        "wei2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "血",
+      "target": [
+        "xie3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "究",
+      "target": [
+        "jiu4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "熟",
+      "target": [
+        "shou2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "叔",
+      "target": [
+        "shu2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "姐姐",
+      "target": [
+        "jie3",
+        "jie5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "差不多",
+      "target": [
+        "cha1",
+        "bu5",
+        "duo1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "擁",
+      "target": [
+        "yong3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "顫",
+      "target": [
+        "zhan4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "藉",
+      "target": [
+        "jie4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "爺爺",
+      "target": [
+        "ye2",
+        "ye5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "下巴",
+      "target": [
+        "xia4",
+        "ba5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "啞巴",
+      "target": [
+        "ya3",
+        "ba5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "嘴巴",
+      "target": [
+        "zui3",
+        "ba5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "掙錢",
+      "target": [
+        "zheng4",
+        "qian2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "倒是",
+      "target": [
+        "dao4",
+        "shi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "武將",
+      "target": [
+        "wu3",
+        "jiang4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "適應",
+      "target": [
+        "shi4",
+        "ying4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "感應",
+      "target": [
+        "gan3",
+        "ying4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "對應",
+      "target": [
+        "dui4",
+        "ying4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "應對",
+      "target": [
+        "ying4",
+        "dui4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "重複",
+      "target": [
+        "chong2",
+        "fu4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "勁",
+      "target": [
+        "jing4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "識",
+      "target": [
+        "shi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "期",
+      "target": [
+        "qi2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "質",
+      "target": [
+        "zhi2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "頗",
+      "target": [
+        "po3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "咋",
+      "target": [
+        "ze2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "仔細",
+      "target": [
+        "zi3",
+        "xi4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "彷彿",
+      "target": [
+        "fang3",
+        "fu2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "露出",
+      "target": [
+        "lou4",
+        "chu1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "謝謝",
+      "target": [
+        "xie4",
+        "xie5"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "當真",
+      "target": [
+        "dang4",
+        "zhen1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "情分",
+      "target": [
+        "qing2",
+        "fen4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "興許",
+      "target": [
+        "xing1",
+        "xu3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "更換",
+      "target": [
+        "geng1",
+        "huan4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "睡覺",
+      "target": [
+        "shui4",
+        "jiao4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "佛門",
+      "target": [
+        "fo2",
+        "men2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "搖頭晃腦",
+      "target": [
+        "yao2",
+        "tou2",
+        "huang4",
+        "nao3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "品相",
+      "target": [
+        "pin3",
+        "xiang4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "興師",
+      "target": [
+        "xing1",
+        "shi1"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "興盛",
+      "target": [
+        "xing1",
+        "sheng4"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "興起",
+      "target": [
+        "xing1",
+        "qi3"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "修長",
+      "target": [
+        "xiu1",
+        "chang2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "長達",
+      "target": [
+        "chang2",
+        "da2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    },
+    {
+      "pattern": "重遊",
+      "target": [
+        "chong2",
+        "you2"
+      ],
+      "implementation": "phrase-override",
+      "status": "source-and-model-supported"
+    }
+  ]
+}

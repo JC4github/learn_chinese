@@ -1,0 +1,74 @@
+{
+  "release": "v2.6.0",
+  "archiveSha": "f24e6435faf633de6fdbb632ccd72a8ae24bdd1eeb63d11e35eb98e3166fc14b",
+  "source": "https://github.com/enstw/wasmtts",
+  "assets": [
+    {
+      "path": "assets/matcha-lexicon-480ff389.txt",
+      "bytes": 2280376,
+      "sha256": "480ff389e829912009e4a9c4881daa321df6573abc6940cf990dd995a141d10b",
+      "source": "wasmtts v2.6.0 archive"
+    },
+    {
+      "path": "assets/matcha-tokens.txt",
+      "bytes": 21146,
+      "sha256": "77fee8e5e5dd96b3547119e6159292c648e99e065c54c97777722e3ce710b9a4",
+      "source": "https://huggingface.co/csukuangfj/matcha-icefall-zh-en/resolve/fbe59d77057428c32111d5f3ea4ed67a7d440c61/tokens.txt"
+    },
+    {
+      "path": "assets/phone-zh.fst",
+      "bytes": 88630,
+      "sha256": "1ac2b6fa56b1442320c4de7db08353bab8963a2b57f365eebcdd3a2d3562f8d7",
+      "source": "https://huggingface.co/csukuangfj/matcha-icefall-zh-en/resolve/fbe59d77057428c32111d5f3ea4ed67a7d440c61/phone-zh.fst"
+    },
+    {
+      "path": "assets/date-zh.fst",
+      "bytes": 59154,
+      "sha256": "eb8aa079ae3cb81d8f4404992f39d61a0cb990947512b5b8d1e54d1f6980e718",
+      "source": "https://huggingface.co/csukuangfj/matcha-icefall-zh-en/resolve/fbe59d77057428c32111d5f3ea4ed67a7d440c61/date-zh.fst"
+    },
+    {
+      "path": "assets/number-zh.fst",
+      "bytes": 64482,
+      "sha256": "743f402181fcfebf76cc2f0546b71fa26476e626fbe4e460fb7b4c3a7a8bd5bd",
+      "source": "https://huggingface.co/csukuangfj/matcha-icefall-zh-en/resolve/fbe59d77057428c32111d5f3ea4ed67a7d440c61/number-zh.fst"
+    },
+    {
+      "path": "assets/matcha-acoustic-steps6.onnx",
+      "bytes": 76385274,
+      "sha256": "f69a099ebe0b576d08a329dac5076fdd2e09f6cbc51b771ee96f84dc8198d7fe",
+      "source": "https://modelscope.cn/models/dengcunqin/matcha_tts_zh_en_20251010/resolve/f9ec409de129ed1b05c9262cd5b29a1ccec050e4/model-steps-6.onnx"
+    },
+    {
+      "path": "assets/matcha-vocos-16khz-univ.onnx",
+      "bytes": 53882848,
+      "sha256": "b599142a1fb8ff03de3e84ac35ff537c619e56f4267a6fe894851a42844acf9e",
+      "source": "https://github.com/k2-fsa/sherpa-onnx/releases/download/vocoder-models/vocos-16khz-univ.onnx"
+    },
+    {
+      "path": "runtime/ort-1.27.0-wasm.min.js",
+      "bytes": 50139,
+      "sha256": "ea3a767b15df7dbe3d695ec9c182ca0f15b2ce7750156c6b70276e11c28997f0",
+      "source": "https://unpkg.com/onnxruntime-web@1.27.0/dist/ort.wasm.min.js"
+    },
+    {
+      "path": "runtime/ort-1.27.0-wasm-simd-threaded.mjs",
+      "bytes": 24180,
+      "sha256": "0a1e718d99c41b22c21f2520ff4f9e883a6b5533856e398d21816ee8eb8185d3",
+      "source": "https://unpkg.com/onnxruntime-web@1.27.0/dist/ort-wasm-simd-threaded.mjs"
+    },
+    {
+      "path": "runtime/ort-1.27.0-wasm-simd-threaded.wasm",
+      "bytes": 13479978,
+      "sha256": "d1ab1b94b16a65b29d710d0b587b29e7bed336827577623913479b8afe8113e6",
+      "source": "https://unpkg.com/onnxruntime-web@1.27.0/dist/ort-wasm-simd-threaded.wasm"
+    },
+    {
+      "path": "runtime/lamejs-1.2.1.min.js",
+      "bytes": 156043,
+      "sha256": "15d285e2587b3bdbfd18a68de6ce07cc074f7480a82c3815da2dc1c348ec6df4",
+      "source": "https://unpkg.com/lamejs@1.2.1/lame.min.js"
+    }
+  ],
+  "bytes": 146492250
+}

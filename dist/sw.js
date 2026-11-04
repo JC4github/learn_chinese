@@ -1,4 +1,4 @@
-const CACHE_NAME = "hanzi-path-v18";
+const CACHE_NAME = "hanzi-path-v19";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,7 +6,7 @@ const APP_SHELL = [
   "./styles.css?v=human-2",
   "./app.js",
   "./speech.js",
-  "./app.js?v=human-2",
+  "./app.js?v=lab-1",
   "./speech.js?v=human-2",
   "./pronunciation.js",
   "./pronunciation.js?v=human-2",

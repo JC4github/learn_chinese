@@ -1,5 +1,9 @@
 # Verification — human recordings, 0.4.0
 
+## Optional wasmtts trial, 0.4.1
+
+The separate `/tts-lab/` article trial adds six tests, for 41 passing tests in total. Local article generation, media loading/playback, tone/conversation samples, cancellation/reload, saved-WAV reuse and synthesis of new text after an offline page reload passed in the desktop preview. See WASMTTS_TRIAL.md for measurements and limits. These results do not establish tonal correctness or physical iPhone performance.
+
 ## Automated checks
 
 `npm test`: all 35 tests pass. `npm run check`: all 34 entries and PWA assets pass.

@@ -43,4 +43,4 @@ Before changing production audio:
 5. Measure first-download size, cold-start time, tap-to-audio delay, memory and battery impact on the actual iPhone; test offline after a restart and interrupted downloads.
 6. Retain human isolated-tone examples as a reference. Cache any generated result by engine/model/voice/text/pronunciation, so later stories can reuse it without confusing different tones.
 
-No replacement package was installed and no synthetic fallback was enabled during this research.
+The initial research did not enable a replacement. The subsequent 0.4.1 trial is available at `dist/tts-lab/`: wasmtts v2.6.0 with a local voice pack, editable sample article, tone comparisons and explicit trial-only pronunciation overrides. Normal lessons continue using human recordings. See WASMTTS_TRIAL.md for setup, performance and verification limits.

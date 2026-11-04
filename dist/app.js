@@ -1,7 +1,7 @@
 import { MandarinPlayer, pronunciationKey } from "./speech.js?v=human-2";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
-const APP_VERSION = "0.4.0";
+const APP_VERSION = "0.4.1";
 const INTEREST_TOPICS = [["cars", "JDM & cars", "车"], ["anime", "Anime", "画"], ["technology", "Technology", "芯"], ["engineering", "Engineering", "工"], ["arts", "Creative arts", "艺"], ["slang", "Internet slang", "梗"]];
 const TOPICS = [...INTEREST_TOPICS.map(([id, label]) => [id, label]), ["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 
@@ -262,6 +262,7 @@ function renderProfile() {
       </div>
       <button class="secondary-button full-width" type="button" data-install>Install on this device</button>
       <div class="settings-card"><span class="field-label">Human recordings only</span><p class="muted">Recorded syllables and words play locally. Unrecorded words and full-entry narration have no audio.</p><a class="text-link" href="./audio/credits.html" target="_blank" rel="noopener">Recording credits & licences ↗</a></div>
+      <div class="settings-card"><span class="field-label">Try a new reading voice</span><p class="muted">Generate a sample article with an optional local voice pack.</p><a class="text-link" href="./tts-lab/">Open the speech lab ↗</a></div>
       <div class="settings-card"><span class="field-label">App version ${APP_VERSION}</span><button class="secondary-button full-width" type="button" data-check-update>Check for updates</button><p class="muted">Refresh the app without changing your learning progress.</p></div>
       <button class="danger-link" type="button" data-reset>Reset all progress</button>
       <p class="privacy-note">No account. No advertising. Your learning data stays in this browser.</p>

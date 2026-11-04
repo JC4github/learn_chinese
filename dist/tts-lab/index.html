@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173f38"><title>Speech lab — Hanzi Path</title>
+  <link rel="stylesheet" href="./lab.css?v=2">
+</head>
+<body>
+  <header><a href="../#profile">← Hanzi Path</a><span>Audio trial</span></header>
+  <main>
+    <p class="eyebrow">LISTEN & COMPARE</p><h1>A new voice for your reading.</h1>
+    <p class="intro">Try wasmtts on a short engineering article, then change the text. Speech is generated on this device.</p>
+    <section class="card" aria-labelledby="setup-title">
+      <h2 id="setup-title">Prepare the voice</h2>
+      <p>Download the voice pack once (about <span id="pack-size">147</span> MB). You can then generate speech offline. This is a synthetic voice trial.</p>
+      <button id="prepare" class="primary" disabled>Checking voice pack…</button>
+      <button id="cancel-setup" class="secondary" hidden>Cancel</button>
+      <progress id="download-progress" max="100" value="0" hidden aria-label="Voice download progress"></progress>
+      <p id="setup-status" role="status">Opening the speech lab…</p>
+    </section>
+    <section class="card" aria-labelledby="article-title">
+      <p class="eyebrow">ENGINEERING · EVERYDAY CHINESE</p><h2 id="article-title">为什么上坡要换挡？</h2>
+      <p class="subtitle">Why change gears uphill?</p>
+      <label for="sample-text">Article or your own text</label>
+      <textarea id="sample-text" rows="7" maxlength="400" lang="zh-Hans">骑自行车上坡时，你可以换到低速挡。这样踩起来轻松一些，但每转一圈，车子前进的距离也会变短。低速挡并没有创造能量，而是用速度换取更大的转动力。汽车的变速箱也利用了相似的原理。下次坐车爬坡时，听听发动机的声音有什么变化。</textarea>
+      <div class="samples" aria-label="Sample texts">
+        <button data-sample="article">Article</button><button data-sample="tones">Four tones</button><button data-sample="pairs">Tone pairs</button><button data-sample="conversation">Daily conversation</button><button data-sample="polyphones">Different readings</button>
+      </div>
+      <p class="muted">Up to 400 characters. The built-in pronunciation profile is based on Taiwan Mandarin; listen for regional differences.</p>
+      <div class="actions"><button id="generate" class="primary" disabled>Generate audio</button><button id="cancel-generation" class="secondary" hidden>Cancel</button></div>
+      <p id="generation-status" role="status">Prepare the voice to begin.</p>
+      <div id="result" hidden><audio id="generated-audio" controls preload="metadata" aria-label="Generated sample audio"></audio><p id="metrics" class="muted"></p><a id="download-audio" download="hanzi-path-speech-trial.wav">Save audio</a></div>
+      <details><summary>English translation of the article</summary><p>When cycling uphill, you can shift to a lower gear. Pedalling feels easier, but each turn moves the bicycle a shorter distance. A lower gear does not create energy: it trades speed for greater turning force. A car's gearbox uses a similar principle. Next time you ride uphill in a car, listen for changes in the engine sound.</p></details>
+    </section>
+    <section class="card" aria-labelledby="reference-title"><h2 id="reference-title">Compare with a human</h2><p>Use these real recordings as a reference for the four tones.</p><div class="samples" id="human-tones"><button data-human="妈|mā">妈 mā</button><button data-human="麻|má">麻 má</button><button data-human="马|mǎ">马 mǎ</button><button data-human="骂|mà">骂 mà</button></div><audio id="reference-audio" controls preload="none" aria-label="Human tone reference"></audio><p id="reference-status" role="status"></p></section>
+    <footer><a href="./credits.html">Voice & software credits</a><p>No text is sent to a speech service. Judge the tones and naturalness before using this voice for lessons.</p></footer>
+  </main><script type="module" src="./lab.js?v=2"></script>
+</body></html>
