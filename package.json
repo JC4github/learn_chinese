@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "howler": "2.2.4"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2"
   }
 }

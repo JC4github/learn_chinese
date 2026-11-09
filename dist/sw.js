@@ -1,12 +1,12 @@
-const CACHE_NAME = "hanzi-path-v24";
+const CACHE_NAME = "hanzi-path-v25";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
-  "./styles.css?v=reading-4",
+  "./styles.css?v=icon-1",
   "./app.js",
   "./speech.js",
-  "./app.js?v=reading-4",
+  "./app.js?v=icon-1",
   "./reading-audio.js?v=reading-2",
   "./reading-voice.js?v=reading-2",
   "./pronunciation.js?v=reading-2",
@@ -38,11 +38,13 @@ const APP_SHELL = [
   "./audio/credits.html",
   "./audio/SOURCES.md",
   "./manifest.webmanifest",
+  "./manifest.webmanifest?v=icon-1",
   "./data/stories.json",
   "./data/stories.json?v=human-2",
-  "./icons/icon.svg",
-  "./icons/icon-180.png",
-  "./icons/icon-512.png"
+  "./icons/icon-lu.svg",
+  "./icons/icon-lu-180.png",
+  "./icons/icon-lu-192.png",
+  "./icons/icon-lu-512.png"
 ];
 const assetUrls = new Set(APP_SHELL.map((path) => new URL(path, self.location.href).href));
 

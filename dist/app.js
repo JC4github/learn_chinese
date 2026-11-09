@@ -1,7 +1,7 @@
 import { ReadingPlayer, pronunciationKey } from "./reading-audio.js?v=reading-2";
 
 const STORAGE_KEY = "hanzi-path-state-v1";
-const APP_VERSION = "0.5.0";
+const APP_VERSION = "0.5.1";
 const INTEREST_TOPICS = [["cars", "JDM & cars", "车"], ["anime", "Anime", "画"], ["technology", "Technology", "芯"], ["engineering", "Engineering", "工"], ["arts", "Creative arts", "艺"], ["slang", "Internet slang", "梗"]];
 const TOPICS = [...INTEREST_TOPICS.map(([id, label]) => [id, label]), ["pinyin", "Pinyin"], ["conversation", "Conversations"], ["daily-life", "Daily life"], ["food", "Food"], ["travel", "Travel"], ["shopping", "Shopping"]];
 

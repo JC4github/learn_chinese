@@ -32,7 +32,7 @@ svg { display: block; }
 
 .topbar { display: flex; align-items: center; justify-content: space-between; padding: calc(12px + env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) 12px max(18px, env(safe-area-inset-left)); background: var(--paper); border-bottom: 1px solid rgba(28, 39, 36, 0.06); }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: var(--jade); color: var(--paper); font-family: "Songti SC", "Noto Serif CJK SC", serif; font-size: 23px; box-shadow: 0 5px 14px rgba(23, 63, 56, 0.2); }
+.brand-mark { display: block; border-radius: 14px; box-shadow: 0 5px 14px rgba(23, 63, 56, 0.2); }
 .brand strong, .brand small { display: block; }
 .brand strong { font-family: Georgia, "Songti SC", serif; font-size: 16px; letter-spacing: -0.01em; }
 .brand small { margin-top: 1px; color: var(--muted); font-size: 9px; letter-spacing: 0.09em; }
